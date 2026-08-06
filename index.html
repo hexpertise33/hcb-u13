@@ -888,11 +888,12 @@ const saison = [
     { t:'e', d:'Jeu 15/10', lib:'Entraînement' },
     { t:'m', d:'Sam 17/10', lib:'Championnat · J4', we:'sam 17 / dim 18 octobre' },
   ]},
-  { mois:'Novembre 2026', nMatch:3, nEntr:7, items:[
+  { mois:'Novembre 2026', nMatch:4, nEntr:7, items:[
     { t:'e', d:'Mer 04/11', lib:'Entraînement' },
     { t:'e', d:'Jeu 05/11', lib:'Entraînement' },
     { t:'m', d:'Sam 07/11', lib:'Championnat · J5', we:'sam 7 / dim 8 novembre' },
     { t:'e', d:'Jeu 12/11', lib:'Entraînement' },
+    { t:'m', d:'Sam 14/11', lib:'Championnat · J6', we:'sam 14 / dim 15 novembre' },
     { t:'e', d:'Mer 18/11', lib:'Entraînement' },
     { t:'e', d:'Jeu 19/11', lib:'Entraînement' },
     { t:'m', d:'Sam 21/11', lib:'Championnat · J7', we:'sam 21 / dim 22 novembre' },
@@ -910,7 +911,7 @@ const saison = [
     { t:'e', d:'Mer 16/12', lib:'Entraînement' },
     { t:'e', d:'Jeu 17/12', lib:'Entraînement' },
   ]},
-  { mois:'Janvier 2027', nMatch:2, nEntr:8, items:[
+  { mois:'Janvier 2027', nMatch:3, nEntr:8, items:[
     { t:'e', d:'Mer 06/01', lib:'Entraînement' },
     { t:'e', d:'Jeu 07/01', lib:'Entraînement' },
     { t:'e', d:'Mer 13/01', lib:'Entraînement' },
@@ -918,6 +919,7 @@ const saison = [
     { t:'m', d:'Sam 16/01', lib:'Championnat · J1', we:'sam 16 / dim 17 janvier' },
     { t:'e', d:'Mer 20/01', lib:'Entraînement' },
     { t:'e', d:'Jeu 21/01', lib:'Entraînement' },
+    { t:'m', d:'Sam 23/01', lib:'Championnat · J2', we:'sam 23 / dim 24 janvier' },
     { t:'e', d:'Mer 27/01', lib:'Entraînement' },
     { t:'e', d:'Jeu 28/01', lib:'Entraînement' },
     { t:'m', d:'Sam 30/01', lib:'Championnat · J3', we:'sam 30 / dim 31 janvier' },
@@ -943,22 +945,22 @@ const saison = [
     { t:'e', d:'Jeu 25/03', lib:'Entraînement' },
     { t:'e', d:'Mer 31/03', lib:'Entraînement' },
   ]},
-  { mois:'Avril 2027', nMatch:1, nEntr:5, items:[
+  { mois:'Avril 2027', nMatch:2, nEntr:5, items:[
     { t:'e', d:'Jeu 01/04', lib:'Entraînement' },
+    { t:'m', d:'Sam 03/04', lib:'Championnat · J8', we:'sam 3 / dim 4 avril' },
     { t:'e', d:'Mer 07/04', lib:'Entraînement' },
     { t:'e', d:'Jeu 08/04', lib:'Entraînement' },
     { t:'m', d:'Sam 10/04', lib:'Championnat · J9', we:'sam 10 / dim 11 avril' },
     { t:'e', d:'Mer 28/04', lib:'Entraînement' },
     { t:'e', d:'Jeu 29/04', lib:'Entraînement' },
   ]},
-  { mois:'Mai 2027', nMatch:2, nEntr:7, items:[
+  { mois:'Mai 2027', nMatch:1, nEntr:7, items:[
     { t:'m', d:'Sam 01/05', lib:'Championnat · J10', we:'sam 1 / dim 2 mai' },
     { t:'e', d:'Mer 05/05', lib:'Entraînement' },
     { t:'e', d:'Jeu 06/05', lib:'Entraînement' },
     { t:'e', d:'Mer 12/05', lib:'Entraînement' },
     { t:'e', d:'Mer 19/05', lib:'Entraînement' },
     { t:'e', d:'Jeu 20/05', lib:'Entraînement' },
-    { t:'m', d:'Sam 22/05', lib:'Finale', we:'sam 22 / dim 23 mai' },
     { t:'e', d:'Mer 26/05', lib:'Entraînement' },
     { t:'e', d:'Jeu 27/05', lib:'Entraînement' },
   ]},
@@ -1075,7 +1077,7 @@ function selectCal(btn){
 }
 
 function renderCalendar(){
-  let html = `<div class="week-head"><h2>Calendrier de la saison</h2><p>Entraînements le mercredi et le jeudi, et les matchs du championnat U13 Filles.</p><span class="compo">17 matchs · 71 entraînements</span></div>`;
+  let html = `<div class="week-head"><h2>Calendrier de la saison</h2><p>Entraînements le mercredi et le jeudi, et les matchs du championnat U13 Filles.</p><span class="compo">19 matchs · 71 entraînements</span></div>`;
   html += `<p class="cal-note">Entraînements hors vacances scolaires (zone A, académie de Bordeaux) et jours fériés. Les matchs ont lieu le week-end (samedi ou dimanche selon la convocation).</p>`;
   saison.forEach((mo, i) => {
     const open = i === 0 ? ' open' : '';
