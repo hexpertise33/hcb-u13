@@ -1,0 +1,896 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HCB Libourne · Prépa handball U13 Filles</title>
+<link rel="icon" type="image/jpeg" href="data:image/jpeg;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --violet:#a855f7;
+    --violet-clair:#c084fc;
+    --blanc:#f5f0ff;
+    --fond:#120820;
+    --carte:#1a0d30;
+    --jaune:#f4e7b0;
+    --vert:#fb923c;
+    --vert-clair:#fdba74;
+    --ligne:rgba(168,85,247,.28);
+    --wk:#a855f7;
+    --wk-light:#c084fc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Barlow',system-ui,sans-serif;
+    background:var(--fond);color:var(--blanc);
+    min-height:100vh;position:relative;overflow-x:hidden;line-height:1.55;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+    background:
+      radial-gradient(1100px 700px at 80% -10%, rgba(168,85,247,.16), transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 400' preserveAspectRatio='xMidYMid slice'%3E%3Cg fill='none' stroke='%23a855f7' stroke-opacity='0.16' stroke-width='2'%3E%3Crect x='20' y='20' width='760' height='360'/%3E%3Cline x1='400' y1='20' x2='400' y2='380'/%3E%3Ccircle cx='400' cy='200' r='42'/%3E%3Cpath d='M20 110 A 90 90 0 0 1 20 290'/%3E%3Cpath d='M780 110 A 90 90 0 0 0 780 290'/%3E%3Crect x='20' y='160' width='30' height='80'/%3E%3Crect x='750' y='160' width='30' height='80'/%3E%3C/g%3E%3C/svg%3E");
+    background-size:cover;
+  }
+  .wrap{position:relative;z-index:1;max-width:920px;margin:0 auto;padding:22px 18px 70px}
+
+  .badge{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Barlow Condensed';font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;font-size:15px;color:var(--violet-clair);
+    background:rgba(168,85,247,.12);border:1px solid var(--ligne);
+    padding:5px 16px 5px 5px;border-radius:999px;
+  }
+  .badge b{color:var(--blanc)}
+  .badge .logo{
+    width:44px;height:44px;border-radius:50%;background:#fff;
+    object-fit:contain;padding:3px;box-shadow:0 3px 12px rgba(0,0,0,.4);flex-shrink:0;
+  }
+  header{margin-top:22px}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:9px;margin-bottom:12px;
+    font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;
+    letter-spacing:.18em;font-size:13px;color:var(--violet-clair);
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--violet-clair)}
+  h1{
+    font-family:'Barlow Condensed';font-weight:800;
+    font-size:clamp(34px,7vw,56px);line-height:.98;letter-spacing:.01em;
+  }
+  h1 span{color:var(--violet-clair)}
+  .lead{color:rgba(245,240,255,.74);font-size:clamp(15px,2.4vw,18px);margin-top:12px;max-width:56ch}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+  .legend span{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:rgba(245,240,255,.8)}
+  .dot{width:26px;height:9px;border-radius:99px;flex-shrink:0}
+  .dot.ext{background:var(--vert)}
+  .dot.int{background:var(--violet)}
+
+  /* axes */
+  .axes{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  .axe{
+    font-family:'Barlow Condensed';font-weight:600;text-transform:uppercase;
+    letter-spacing:.05em;font-size:12.5px;color:var(--violet-clair);
+    background:rgba(168,85,247,.1);border:1px solid var(--ligne);
+    padding:5px 11px;border-radius:8px;
+  }
+
+  /* Onglets */
+  .tabs{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
+    margin:26px 0 8px;position:sticky;top:0;z-index:5;
+    background:linear-gradient(var(--fond) 70%,transparent);padding:10px 0;
+  }
+  .tab{
+    font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;
+    letter-spacing:.04em;font-size:15px;color:rgba(245,240,255,.7);
+    background:var(--carte);border:1px solid var(--ligne);border-radius:13px;
+    padding:11px 6px;cursor:pointer;transition:.18s;text-align:center;line-height:1.15;
+  }
+  .tab small{display:block;font-size:10px;font-weight:700;letter-spacing:.02em;color:var(--wk-light);margin-top:2px}
+  .tab:hover{border-color:var(--wk)}
+  .tab.active{
+    background:linear-gradient(135deg,var(--wk),color-mix(in srgb,var(--wk) 55%,#1a0d30));
+    color:#fff;border-color:transparent;box-shadow:0 10px 28px -10px var(--wk);
+  }
+  .tab.active small{color:rgba(255,255,255,.9)}
+
+  .week-head{
+    margin:18px 0 14px;padding:16px 18px;
+    background:linear-gradient(135deg,color-mix(in srgb,var(--wk) 20%,transparent),color-mix(in srgb,var(--wk) 4%,transparent));
+    border:1px solid color-mix(in srgb,var(--wk) 38%,transparent);border-radius:16px;
+  }
+  .week-head h2{font-family:'Barlow Condensed';font-weight:800;font-size:26px;color:var(--wk-light)}
+  .week-head p{color:rgba(245,240,255,.74);font-size:15px;margin-top:4px}
+  .week-head .compo{display:inline-block;margin-top:9px;font-size:13px;color:rgba(245,240,255,.65);
+    border:1px dashed color-mix(in srgb,var(--wk) 40%,transparent);border-radius:8px;padding:4px 10px}
+
+  .session{
+    border:1px solid color-mix(in srgb,var(--wk) 22%,transparent);
+    border-radius:16px;margin-bottom:12px;overflow:hidden;position:relative;
+  }
+  .session.int{background:linear-gradient(100deg,color-mix(in srgb,var(--wk) 12%,var(--carte)),var(--carte) 58%)}
+  .session.ext{background:linear-gradient(100deg,color-mix(in srgb,var(--vert) 11%,var(--carte)),var(--carte) 58%)}
+  .session::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px}
+  .session.int::before{background:var(--wk)}
+  .session.ext::before{background:var(--vert)}
+  .s-head{display:flex;align-items:center;gap:12px;padding:15px 18px 15px 22px;cursor:pointer;user-select:none}
+  .s-head .num{font-family:'Barlow Condensed';font-weight:800;font-size:22px;color:var(--wk-light);width:26px;text-align:center;flex-shrink:0}
+  .s-head .info{flex:1;min-width:0}
+  .s-head .info h3{font-family:'Barlow Condensed';font-weight:700;font-size:20px;line-height:1.1}
+  .s-head .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:5px}
+  .tag{font-size:11px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:3px 9px;border-radius:99px}
+  .tag.ext{background:color-mix(in srgb,var(--vert) 22%,transparent);color:var(--vert-clair);border:1px solid color-mix(in srgb,var(--vert) 40%,transparent)}
+  .tag.int{background:color-mix(in srgb,var(--wk) 24%,transparent);color:var(--wk-light);border:1px solid color-mix(in srgb,var(--wk) 42%,transparent)}
+  /* jauge d'intensité */
+  .lvl{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;
+    letter-spacing:.03em;text-transform:uppercase;color:var(--c);
+    background:color-mix(in srgb,var(--c) 16%,transparent);
+    border:1px solid color-mix(in srgb,var(--c) 36%,transparent);padding:3px 9px;border-radius:99px}
+  .lvl::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--c)}
+  .dur{font-size:12.5px;color:rgba(245,240,255,.6)}
+  .chev{transition:.25s;color:var(--wk-light);flex-shrink:0;font-size:20px}
+  .session.open .chev{transform:rotate(180deg)}
+
+  .s-body{display:none;padding:0 18px 18px 22px}
+  .session.open .s-body{display:block;animation:fade .3s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .intro{color:rgba(245,240,255,.74);font-size:14.5px;font-style:italic;
+    border-left:2px solid color-mix(in srgb,var(--wk) 55%,transparent);padding-left:12px;margin-bottom:16px}
+
+  .block-label{
+    display:flex;align-items:center;gap:8px;margin:6px 0 12px;
+    font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;
+    letter-spacing:.05em;font-size:13.5px;color:rgba(245,240,255,.85);
+  }
+  .block-label .pill{font-size:11px;background:rgba(245,240,255,.1);border:1px solid var(--ligne);padding:2px 8px;border-radius:6px;color:var(--wk-light)}
+
+  .phase{margin-bottom:16px}
+  .phase-title{
+    font-family:'Barlow Condensed';font-weight:700;text-transform:uppercase;
+    letter-spacing:.06em;font-size:14px;color:var(--wk-light);
+    display:flex;align-items:center;gap:8px;margin-bottom:8px;
+  }
+  .phase-title .t{font-size:12px;color:rgba(245,240,255,.5);font-weight:600;letter-spacing:.02em}
+  .phase-title::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--wk) 30%,transparent)}
+  .ex{display:flex;gap:11px;padding:9px 0;border-bottom:1px dashed color-mix(in srgb,var(--wk) 18%,transparent)}
+  .ex:last-child{border-bottom:none}
+  .ex .emo{font-size:20px;line-height:1.4;flex-shrink:0;width:24px;text-align:center}
+  .ex .txt{flex:1;min-width:0}
+  .ex .name{font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .dose-chip{color:var(--jaune);font-size:12.5px;font-weight:700;white-space:nowrap;flex-shrink:0}
+  .ex .det{color:rgba(245,240,255,.66);font-size:13.5px;margin-top:2px;font-style:italic}
+  .steps{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+  .steps li{position:relative;padding-left:17px;font-size:13.5px;color:rgba(245,240,255,.8);line-height:1.5}
+  .steps li::before{content:"";position:absolute;left:1px;top:8px;width:6px;height:6px;border-radius:50%;background:color-mix(in srgb,var(--wk) 75%,transparent)}
+  .cue{display:flex;gap:7px;margin-top:9px;font-size:13px;color:var(--vert-clair);
+    background:rgba(52,211,153,.09);border:1px solid rgba(52,211,153,.22);border-radius:9px;padding:8px 11px;line-height:1.45}
+  .cue .i{flex-shrink:0}
+
+  /* barre d'outils de séance */
+  .s-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:2px 0 14px}
+  .s-tools .block-label{margin:0}
+  .expand-all{
+    margin-left:auto;font-family:'Barlow';font-size:12.5px;font-weight:700;letter-spacing:.02em;
+    color:var(--wk-light);background:transparent;border:1px solid color-mix(in srgb,var(--wk) 38%,transparent);
+    border-radius:9px;padding:6px 13px;cursor:pointer;transition:.15s;white-space:nowrap;
+  }
+  .expand-all:hover{background:color-mix(in srgb,var(--wk) 14%,transparent);border-color:var(--wk)}
+  .expand-all:focus-visible{outline:2px solid var(--wk-light);outline-offset:2px}
+
+  /* déroulé repliable par exercice */
+  .drop{margin-top:9px}
+  .drop>summary{
+    list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:7px;
+    font-size:12.5px;font-weight:700;letter-spacing:.02em;color:var(--wk-light);
+    background:color-mix(in srgb,var(--wk) 14%,transparent);
+    border:1px solid color-mix(in srgb,var(--wk) 30%,transparent);
+    border-radius:8px;padding:5px 12px;user-select:none;transition:.15s;
+  }
+  .drop>summary:hover{background:color-mix(in srgb,var(--wk) 22%,transparent)}
+  .drop>summary::-webkit-details-marker{display:none}
+  .drop>summary::before{content:"\25B8";display:inline-block;transition:transform .2s;font-size:11px}
+  .drop[open]>summary::before{transform:rotate(90deg)}
+  .drop[open]>summary{margin-bottom:10px}
+  .drop-body{animation:fade .25s ease}
+
+  .ballon{
+    display:flex;gap:11px;align-items:flex-start;margin-top:14px;
+    background:rgba(249,115,22,.1);border:1px dashed rgba(249,115,22,.45);
+    border-radius:12px;padding:12px 14px;
+  }
+  .ballon .ico{font-size:22px;flex-shrink:0}
+  .ballon .b-txt b{color:#fdba74}
+  .ballon .b-txt{font-size:13.5px;color:rgba(245,240,255,.82)}
+
+  .note{
+    display:flex;gap:10px;margin-top:12px;
+    background:color-mix(in srgb,var(--wk) 13%,transparent);
+    border:1px solid color-mix(in srgb,var(--wk) 32%,transparent);
+    border-radius:12px;padding:11px 13px;font-size:13.5px;color:rgba(245,240,255,.85);
+  }
+  .note .ico{font-size:18px;flex-shrink:0}
+  footer{text-align:center;color:rgba(245,240,255,.42);font-size:12.5px;margin-top:40px;line-height:1.7}
+  @media(max-width:560px){ .tab{font-size:13px} }
+</style>
+
+<div class="wrap">
+  <span class="badge"><img class="logo" src="data:image/jpeg;base64,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" alt="Logo Libourne Handball">HCB <b>Libourne</b></span>
+
+  <header>
+    <div class="eyebrow">Formation des jeunes · Jeu de transition</div>
+    <h1>Prépa handball<br><span>U13 Filles</span></h1>
+    <p class="lead">4 semaines pour apprendre à jouer vite vers l'avant : montée de balle, contre-attaque, repli défensif et changement de statut, plus les qualités techniques individuelles. Tout avec ballon, dans le jeu.</p>
+    <div class="legend">
+      <span><i class="dot int"></i> Séance complète · 2 h</span>
+      <span><i class="dot ext"></i> Séance opposition · 1 h 30 (48 min de jeu)</span>
+    </div>
+    <div class="axes">
+      <span class="axe">🚀 Montée de balle</span>
+      <span class="axe">⚡ Contre-attaque</span>
+      <span class="axe">🛡️ Repli défensif</span>
+      <span class="axe">🔄 Changement de statut</span>
+      <span class="axe">🎯 Technique individuelle</span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs"></nav>
+  <main id="app"></main>
+
+  <footer>
+    HCB Libourne · Préparation physique équipe seniors filles<br>
+    Programme progressif sur 4 semaines. Hydratation avant/pendant/après, échauffement complet obligatoire. En cas de douleur, on arrête.
+  </footer>
+</div>
+
+<script>
+const program = {
+  S1: {
+    theme: "Fondations & jeu vers l'avant",
+    sub: "On construit les fondamentaux individuels (passe, réception, dribble, tir en course) et on donne l'envie de jouer vite vers l'avant : première montée de balle.",
+    compo: "2 séances · gymnase · avec ballon",
+    color: ["#38bdf8", "#7dd3fc"],
+    sessions: [
+      {
+        title: "Fondamentaux & montée de balle", place: "Séance 2 h", type: "long",
+        duration: "2 h · échauffement + corps + retour au calme",
+        intro: "Objectif : qualité de passe et de réception en mouvement, tir en course, et découverte de la montée de balle en surnombre (2c1). On manie beaucoup de ballon.",
+        phases: [
+          { name: "Échauffement", t: "20 min", ex: [
+            { e:"🤾‍♀️", n:"Réveil articulaire + prise de balle", dose:"5 min",
+              d:"Chaque joueuse avec un ballon.",
+              steps:[
+                "Mobilité générale (chevilles, hanches, épaules, poignets) en trottinant.",
+                "Maniement : tours de taille, passages de jambe, dribbles sur place des 2 mains.",
+              ],
+              cue:"On entre tout de suite avec le ballon : pas de tour de terrain sans balle." },
+            { e:"🔟", n:"Jeu : la passe à dix", dose:"10 min",
+              d:"2 équipes sur un demi-terrain, chasubles.",
+              steps:[
+                "Réaliser 10 passes consécutives sans interception = 1 point.",
+                "Interdiction de dribbler : on est obligée de se démarquer et de bouger.",
+                "Passes courtes et fortes, à hauteur de poitrine.",
+              ],
+              cue:"Le démarquage et la passe précise sont déjà le cœur du handball : on valorise le mouvement sans ballon." },
+            { e:"🔀", n:"Gammes de passes en mouvement", dose:"5 min",
+              d:"2 colonnes face à face à 8 m.",
+              steps:[
+                "On avance en se croisant, passe tendue au partenaire, puis on file dans l'autre colonne.",
+                "Réception + 3 appuis + passe, sans casser la course.",
+              ],
+              cue:"Regard vers l'avant, mains prêtes devant la poitrine avant de recevoir." },
+          ]},
+          { name: "Technique individuelle", t: "25 min", ex: [
+            { e:"🎯", n:"Passe en mouvement (2 mains)", dose:"10 min",
+              d:"Colonnes qui se croisent, passe tendue.",
+              steps:[
+                "Passe à hauteur de poitrine, bras armé haut, une main derrière la balle.",
+                "1er bloc main forte, 2e bloc main faible (obligatoire).",
+              ],
+              cue:"Une passe se reçoit et se redonne vite : on ne garde jamais la balle immobile." },
+            { e:"🥅", n:"Tir en course après feinte", dose:"15 min",
+              d:"Départ à 11 m face au but.",
+              steps:[
+                "Feinte de corps (changement d'appui) à 11 m pour éliminer une défenseuse imaginaire.",
+                "Enchaîner 3 appuis réglementaires puis tir en course.",
+                "1re série sans gardienne, 2e série avec gardienne.",
+              ],
+              cue:"Feinte franche puis explosivité sur les 3 appuis : on attaque le but, on ne recule pas." },
+          ]},
+          { name: "Situation : montée de balle en surnombre", t: "35 min", ex: [
+            { e:"2️⃣", n:"2 contre 1 en montée", dose:"20 min",
+              d:"2 attaquantes partent de leur zone, 1 défenseuse au milieu, 1 gardienne.",
+              steps:[
+                "Les 2 attaquantes montent le ballon vite vers le but adverse.",
+                "But : fixer la défenseuse (l'obliger à choisir) puis libérer la partenaire.",
+                "Finir avant que la défense adverse ne se replie.",
+              ],
+              cue:"Fixer = aller vers la défenseuse ballon en main ; dès qu'elle s'engage, on donne à la démarquée." },
+            { e:"3️⃣", n:"3 contre 2 en montée", dose:"15 min",
+              d:"Progression du 2c1 : 3 attaquantes, 2 défenseuses.",
+              steps:[
+                "Circulation de balle rapide pour créer le surnombre sur un côté.",
+                "Passes courtes et fortes, on garde de l'écartement pour étirer la défense.",
+              ],
+              cue:"On joue vite mais juste : le surnombre se conclut par un tir facile, pas par un exploit individuel." },
+          ]},
+          { name: "Match à thème", t: "35 min", ex: [
+            { e:"🏐", n:"Match 4c4 « montée valorisée »", dose:"35 min",
+              d:"Sur tout le terrain, équipes de 4 + gardienne, on tourne.",
+              steps:[
+                "But marqué rapidement après récupération (moins de ~8 s) = compte double.",
+                "On encourage systématiquement le jeu vers l'avant dès la récupération.",
+              ],
+              cue:"Le règlement du match récompense ce qu'on a travaillé : la vitesse vers le but." },
+          ]},
+          { name: "Retour au calme", t: "5 min", ex: [
+            { e:"🧘‍♀️", n:"Étirements & question du jour", dose:"5 min",
+              d:"En cercle, au calme.",
+              steps:[
+                "Étirements légers (jambes, épaules) + retour respiratoire.",
+                "Question technique : « c'est quoi, fixer une défenseuse ? » pour ancrer la notion.",
+              ],
+              cue:"On termine sur du sens : les filles repartent avec une idée claire en tête." },
+          ]},
+        ],
+        note: "Séance de fondations : beaucoup de ballon, beaucoup de répétitions, et déjà l'intention de jouer vers l'avant. On corrige la qualité de passe et le tir en course, tout le reste en découlera.",
+      },
+      {
+        title: "Manier vite sous opposition", place: "Séance 1 h 30", type: "oppo",
+        duration: "1 h 30 · dont 48 min d'opposition",
+        intro: "Objectif : réinvestir passe, dribble et tir en course dans du jeu réel. Séance courte et dense, avec 48 min d'opposition.",
+        phases: [
+          { name: "Échauffement", t: "20 min", ex: [
+            { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"5 min",
+              d:"Un ballon chacune.",
+              steps:[
+                "Mobilité en trottinant + dribbles 2 mains, changements de main.",
+              ],
+              cue:"On chauffe balle en main." },
+            { e:"👑", n:"Jeu : le roi du terrain", dose:"10 min",
+              d:"Zone délimitée, un ballon chacune.",
+              steps:[
+                "Chacune protège son ballon en dribblant et tente de sortir celui des autres de la zone.",
+                "Éliminée = un défi (5 jonglages) puis retour au jeu.",
+              ],
+              cue:"Dribble de protection + vision périphérique : on regarde partout, pas son ballon." },
+            { e:"🔺", n:"Passes en triangle en mouvement", dose:"5 min",
+              d:"Par 3, en avançant.",
+              steps:[
+                "Passe-suit : on passe puis on court derrière sa passe.",
+              ],
+              cue:"Rythme et précision avant l'opposition." },
+          ]},
+          { name: "Apprentissage court", t: "17 min", ex: [
+            { e:"⚡", n:"Rappel tir en course + montée 2c1", dose:"17 min",
+              d:"Vagues rapides avant l'opposition.",
+              steps:[
+                "2 vagues de tirs en course (main forte / main faible).",
+                "4 à 5 montées de balle 2c1 par joueuse pour réactiver la notion de surnombre.",
+              ],
+              cue:"Court et vif : on réactive, on ne refait pas toute la technique." },
+          ]},
+          { name: "Opposition", t: "48 min", ex: [
+            { e:"🥊", n:"Ateliers 3c3 sur demi-terrain", dose:"16 min",
+              d:"2 demi-terrains, on tourne, jeu libre.",
+              steps:[
+                "3 contre 3 tout terrain réduit, gardienne à chaque but.",
+                "But sur montée rapide valorisé.",
+              ],
+              cue:"Beaucoup de touches de balle par joueuse : c'est le but du petit effectif." },
+            { e:"🚫", n:"Match 4c4 « sans dribble »", dose:"16 min",
+              d:"Interdiction totale de dribbler.",
+              steps:[
+                "On ne peut avancer qu'en passant et en se démarquant.",
+                "Oblige le jeu collectif et le mouvement sans ballon.",
+              ],
+              cue:"Contrainte FFHB très efficace chez les jeunes : sans dribble, on apprend à jouer ensemble." },
+            { e:"🏆", n:"Tournoi 4c4 « montée de balle »", dose:"16 min",
+              d:"Plusieurs équipes, matchs courts.",
+              steps:[
+                "Matchs de 4 min, on enchaîne, tout le monde joue.",
+                "But rapide après récupération = double.",
+              ],
+              cue:"L'esprit tournoi met de l'intensité : on gagne en jouant vite vers l'avant." },
+          ]},
+          { name: "Retour au calme", t: "5 min", ex: [
+            { e:"🧘‍♀️", n:"Étirements & bilan express", dose:"5 min",
+              d:"En cercle.",
+              steps:[
+                "Étirements légers + 2-3 retours des joueuses sur la séance.",
+              ],
+              cue:"On valorise ce qui a bien marché en match." },
+          ]},
+        ],
+        note: "Séance orientée jeu : le maximum de temps balle en main et en opposition. Les contraintes (sans dribble, but rapide) guident sans bloquer le plaisir de jouer.",
+      },
+    ]
+  },
+  S2: {
+    theme: "Attaque rapide : la contre-attaque",
+    sub: "On exploite le surnombre dès la récupération : montée de balle rapide, fixer et libérer, finir vite. Premier travail du changement de statut défenseur → attaquant.",
+    compo: "2 séances · gymnase · avec ballon",
+    color: ["#34d399", "#6ee7b7"],
+    sessions: [
+      {
+        title: "Contre-attaque & surnombre", place: "Séance 2 h", type: "long",
+        duration: "2 h · échauffement + corps + retour au calme",
+        intro: "Objectif : déclencher la contre-attaque dès la récupération, jouer le surnombre (2c1, 3c2) et finir vite avant le repli adverse.",
+        phases: [
+          { name: "Échauffement", t: "20 min", ex: [
+            { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"5 min",
+              d:"Un ballon chacune.",
+              steps:[ "Mobilité + dribbles et jonglages en trottinant." ],
+              cue:"Balle en main dès le début." },
+            { e:"🎯", n:"Jeu : gardien chasseur inversé", dose:"10 min",
+              d:"Une joueuse au centre d'une zone, les autres traversent.",
+              steps:[
+                "La chasseuse lance le ballon (à la main) pour toucher les traverseuses sous la ceinture.",
+                "Touchée = elle devient chasseuse à son tour.",
+              ],
+              cue:"Lecture de trajectoire, esquive et réactivité : parfait avant un travail de vitesse." },
+            { e:"🔺", n:"Passes rapides en triangle", dose:"5 min",
+              d:"Par 3 en mouvement.",
+              steps:[ "Passe-suit, tendu, sur 20 m." ],
+              cue:"On prépare la vitesse d'exécution." },
+          ]},
+          { name: "Technique : relance & couloir de contre", t: "20 min", ex: [
+            { e:"🧤", n:"Relance de gardienne + course de contre-attaque", dose:"20 min",
+              d:"Gardienne au but, une ailière lancée dans son couloir.",
+              steps:[
+                "La gardienne arrête/récupère puis relance vite et long sur l'ailière déjà partie.",
+                "L'ailière reçoit en course dans son couloir et finit au but opposé.",
+                "On alterne couloir droit et gauche.",
+              ],
+              cue:"La contre-attaque commence par la gardienne : dès l'arrêt, elle cherche la joueuse la plus avancée." },
+          ]},
+          { name: "Situation : montée de balle", t: "35 min", ex: [
+            { e:"🌊", n:"Montée de balle en 2 vagues", dose:"20 min",
+              d:"1re vague (2 arrières) puis 2e vague (2 autres) qui déborde.",
+              steps:[
+                "La 1re vague monte vite le ballon, la 2e vague arrive lancée dans le dos de la défense.",
+                "Passes courtes et fortes, on garde de l'écartement pour étirer la défense.",
+              ],
+              cue:"Rythme + écartement : c'est ce qui fait déborder une défense qui recule." },
+            { e:"3️⃣", n:"3 attaquantes vs 2 zones de défense", dose:"15 min",
+              d:"1 défenseuse en 1re zone, 2 en 2e zone, gardienne.",
+              steps:[
+                "Les 3 attaquantes tentent de finir sans perdre la balle.",
+                "Variante : d'abord passes autorisées + dribble, puis passes uniquement.",
+              ],
+              cue:"Développe la vision périphérique et l'anticipation : on lit où sont les défenseuses avant de recevoir." },
+          ]},
+          { name: "Match à thème", t: "40 min", ex: [
+            { e:"⏱️", n:"Match 5c5 « contre-attaque »", dose:"40 min",
+              d:"Terrain entier, 5 + gardienne.",
+              steps:[
+                "À chaque récupération, 8 secondes pour armer un tir.",
+                "But marqué en contre (avant repli adverse) = double.",
+              ],
+              cue:"On installe l'automatisme : je récupère, je regarde tout de suite vers l'avant." },
+          ]},
+          { name: "Retour au calme", t: "5 min", ex: [
+            { e:"🧘‍♀️", n:"Étirements & question du jour", dose:"5 min",
+              d:"En cercle.",
+              steps:[ "Étirements + question : « quand part la contre-attaque ? » (réponse : dès la récupération)." ],
+              cue:"On ancre le déclencheur : la récupération de balle." },
+          ]},
+        ],
+        note: "Tout part de la récupération : gardienne et joueuses cherchent immédiatement la profondeur. On accepte des pertes de balle au début, c'est le prix de l'apprentissage de la vitesse.",
+      },
+      {
+        title: "Vitesse de transition", place: "Séance 1 h 30", type: "oppo",
+        duration: "1 h 30 · dont 48 min d'opposition",
+        intro: "Objectif : enchaîner récupération → montée de balle → finition, sous opposition. 48 min de jeu.",
+        phases: [
+          { name: "Échauffement", t: "20 min", ex: [
+            { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"5 min",
+              d:"Un ballon chacune.",
+              steps:[ "Mobilité + dribbles 2 mains." ],
+              cue:"Balle en main." },
+            { e:"💣", n:"Jeu : la bombe à retardement", dose:"10 min",
+              d:"En cercle, un ballon, le coach compte à rebours.",
+              steps:[
+                "Passes rapides dans le cercle ; à « zéro », celle qui a le ballon fait un gage (sprint aller-retour).",
+                "On accélère les passes au fil du jeu.",
+              ],
+              cue:"Prise de décision rapide sous pression : on ne garde jamais la balle." },
+            { e:"🔺", n:"Passes en mouvement", dose:"5 min",
+              d:"Par 3.",
+              steps:[ "Passe-suit tendu sur 20 m." ],
+              cue:"Rythme avant l'opposition." },
+          ]},
+          { name: "Apprentissage court", t: "17 min", ex: [
+            { e:"🌊", n:"2 vagues de montée de balle 3c2", dose:"17 min",
+              d:"Rappel rapide avant l'opposition.",
+              steps:[
+                "Enchaîner des montées 3c2 en 2 vagues, finition rapide.",
+                "On insiste sur les passes courtes et fortes.",
+              ],
+              cue:"On réactive le surnombre, court et vif." },
+          ]},
+          { name: "Opposition", t: "48 min", ex: [
+            { e:"🔁", n:"Jeu de transition 4c4 tout terrain", dose:"16 min",
+              d:"Terrain entier réduit, gardiennes.",
+              steps:[
+                "Dès la perte ou la récupération, on joue immédiatement vers l'avant.",
+                "But rapide = double.",
+              ],
+              cue:"Aucune pause : la transition, c'est la continuité entre défense et attaque." },
+            { e:"♻️", n:"Relais-match « contre continue »", dose:"16 min",
+              d:"3 équipes, une défend, une attaque, une attend.",
+              steps:[
+                "L'équipe qui récupère contre-attaque immédiatement vers l'autre but.",
+                "À la finition, l'équipe en attente entre en jeu : ça tourne en continu.",
+              ],
+              cue:"On répète beaucoup de transitions en peu de temps, avec de l'intensité." },
+            { e:"🏆", n:"Tournoi 4c4", dose:"16 min",
+              d:"Matchs courts.",
+              steps:[ "Matchs de 4 min, but rapide valorisé, tout le monde joue." ],
+              cue:"Le tournoi met la pression du résultat sur la vitesse de jeu." },
+          ]},
+          { name: "Retour au calme", t: "5 min", ex: [
+            { e:"🧘‍♀️", n:"Étirements & bilan express", dose:"5 min",
+              d:"En cercle.",
+              steps:[ "Étirements + retours des joueuses." ],
+              cue:"On valorise les belles contre-attaques du jour." },
+          ]},
+        ],
+        note: "Séance très intense : la transition ne se décrète pas, elle se répète. Beaucoup de courses vers l'avant, on gère le temps de récupération entre les blocs.",
+      },
+    ]
+  },
+  S3: {
+    theme: "Repli défensif & changement de statut",
+    sub: "L'autre sens de la transition : se replier vite après la perte de balle, défendre en reculant, et basculer instantanément d'attaquante à défenseuse.",
+    compo: "2 séances · gymnase · avec ballon",
+    color: ["#fbbf24", "#fcd34d"],
+    sessions: [
+      {
+        title: "Se replier & défendre", place: "Séance 2 h", type: "long",
+        duration: "2 h · échauffement + corps + retour au calme",
+        intro: "Objectif : repli organisé après la perte, défense en recul et duel 1c1, et changement de statut attaque → défense.",
+        phases: [
+          { name: "Échauffement", t: "20 min", ex: [
+            { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"5 min",
+              d:"Un ballon chacune.",
+              steps:[ "Mobilité + dribbles et changements de direction." ],
+              cue:"Balle en main." },
+            { e:"⛓️", n:"Jeu : balle aux prisonniers", dose:"10 min",
+              d:"2 équipes, ballon en mousse, terrain partagé.",
+              steps:[
+                "On élimine les adversaires en les touchant au ballon (sous la ceinture).",
+                "Passes entre partenaires pour se rapprocher de la cible.",
+              ],
+              cue:"Esquive, passes et lecture : on chauffe le corps et l'œil avant de défendre." },
+            { e:"🔀", n:"Passes en mouvement", dose:"5 min",
+              d:"Colonnes qui se croisent.",
+              steps:[ "Passe tendue + 3 appuis." ],
+              cue:"Rythme." },
+          ]},
+          { name: "Technique défensive", t: "25 min", ex: [
+            { e:"🛡️", n:"Défense en recul (1c1)", dose:"12 min",
+              d:"1 attaquante face à 1 défenseuse, du milieu vers le but.",
+              steps:[
+                "La défenseuse se place entre l'attaquante et le but, et recule en contrôlant.",
+                "Elle ne court pas après le ballon : elle protège son but et gêne la progression.",
+                "Contact bras fléchis, appuis actifs, regard sur le buste de l'attaquante.",
+              ],
+              cue:"Défendre en reculant, c'est gagner du temps pour que les partenaires se replient." },
+            { e:"🥊", n:"Duel 1 contre 1 défensif", dose:"13 min",
+              d:"Base de la défense placée.",
+              steps:[
+                "Position d'appuis, mains devant, on impose le contact légal.",
+                "On oriente l'attaquante vers l'extérieur ou l'aide.",
+              ],
+              cue:"Savoir défendre seule en 1c1 est la base de toute la défense : on y passe du temps." },
+          ]},
+          { name: "Situation : repli & changement de statut", t: "35 min", ex: [
+            { e:"↩️", n:"Repli après tir", dose:"18 min",
+              d:"L'attaque finit, puis se replie immédiatement.",
+              steps:[
+                "Après le tir, les 2 arrières sprintent en repli pour contrer la montée de balle adverse.",
+                "But du repli : interdire la passe dans le dos et gêner la progression.",
+              ],
+              cue:"Le repli commence à la seconde où le ballon quitte la main de la tireuse." },
+            { e:"🔄", n:"3c3 « transition attaque → défense »", dose:"17 min",
+              d:"À la perte de balle, changement de statut immédiat.",
+              steps:[
+                "Une équipe attaque ; à la perte, ses joueuses deviennent défenseuses et freinent la contre.",
+                "On valorise la 1re joueuse qui freine la porteuse adverse.",
+              ],
+              cue:"Changer de statut = arrêter de râler sur la perte et courir défendre tout de suite." },
+          ]},
+          { name: "Match à thème", t: "35 min", ex: [
+            { e:"⏱️", n:"Match 5c5 « repli chronométré »", dose:"35 min",
+              d:"Terrain entier.",
+              steps:[
+                "Après chaque tir, les attaquantes doivent toucher leur ligne de repli.",
+                "But encaissé sur une contre non repliée = malus pour l'équipe.",
+              ],
+              cue:"On rend le repli obligatoire et visible : personne ne reste à admirer son tir." },
+          ]},
+          { name: "Retour au calme", t: "5 min", ex: [
+            { e:"🧘‍♀️", n:"Étirements & question du jour", dose:"5 min",
+              d:"En cercle.",
+              steps:[ "Étirements + question : « à quel moment on se replie ? » (réponse : dès la perte / le tir)." ],
+              cue:"On ancre le déclencheur du repli." },
+          ]},
+        ],
+        note: "Le repli est un état d'esprit avant d'être une organisation : dès la perte, on court. On récompense l'effort défensif autant que les buts.",
+      },
+      {
+        title: "Défendre vite", place: "Séance 1 h 30", type: "oppo",
+        duration: "1 h 30 · dont 48 min d'opposition",
+        intro: "Objectif : réagir à la perte de balle et se replier sous opposition. 48 min de jeu, avec des situations de sur/sous-nombre.",
+        phases: [
+          { name: "Échauffement", t: "20 min", ex: [
+            { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"5 min",
+              d:"Un ballon chacune.",
+              steps:[ "Mobilité + dribbles 2 mains." ],
+              cue:"Balle en main." },
+            { e:"🎯", n:"Jeu : la revanche de l'entraîneur", dose:"10 min",
+              d:"Coach au centre, joueuses dispersées.",
+              steps:[
+                "Le coach lance des ballons en l'air ; les joueuses les rattrapent avant le rebond.",
+                "On complexifie : annoncer un prénom au lancer.",
+              ],
+              cue:"Réactivité et prise d'information : on regarde et on réagit vite." },
+            { e:"🔀", n:"Passes en mouvement", dose:"5 min",
+              d:"Colonnes.",
+              steps:[ "Passe tendue + appuis." ],
+              cue:"Rythme." },
+          ]},
+          { name: "Apprentissage court", t: "17 min", ex: [
+            { e:"↩️", n:"Rappel défense en recul + repli après tir", dose:"17 min",
+              d:"Vagues rapides.",
+              steps:[
+                "Quelques 1c1 en recul, puis 2 vagues de repli après tir.",
+              ],
+              cue:"Court et vif avant l'opposition." },
+          ]},
+          { name: "Opposition", t: "48 min", ex: [
+            { e:"🔄", n:"4c4 « changement de statut »", dose:"16 min",
+              d:"Tout terrain, att ↔ def en continu.",
+              steps:[
+                "Jeu continu ; on marque 1 point d'équipe chaque fois qu'un repli stoppe une contre.",
+              ],
+              cue:"Le repli réussi rapporte autant qu'un but : on met la défense à l'honneur." },
+            { e:"➕", n:"Supériorité / infériorité 4c3 puis 3c4", dose:"16 min",
+              d:"Une équipe en surnombre, puis on inverse.",
+              steps:[
+                "4c3 : apprendre à attaquer le surnombre (montée de balle).",
+                "3c4 : apprendre à défendre en infériorité (repli, on ferme le centre).",
+              ],
+              cue:"Défendre en infériorité oblige à un repli parfait : chaque appui compte." },
+            { e:"🏆", n:"Tournoi 4c4", dose:"16 min",
+              d:"Matchs courts.",
+              steps:[ "Matchs de 4 min, repli valorisé, tout le monde joue." ],
+              cue:"On garde l'intensité et le plaisir de la compétition." },
+          ]},
+          { name: "Retour au calme", t: "5 min", ex: [
+            { e:"🧘‍♀️", n:"Étirements & bilan express", dose:"5 min",
+              d:"En cercle.",
+              steps:[ "Étirements + retours des joueuses." ],
+              cue:"On félicite les efforts de repli." },
+          ]},
+        ],
+        note: "Le sur/sous-nombre est l'outil idéal pour faire vivre le repli : en infériorité, il n'y a pas d'autre choix que de défendre parfaitement ensemble.",
+      },
+    ]
+  },
+  S4: {
+    theme: "Jeu de transition complet",
+    sub: "On relie tout : monter la balle vite, se replier aussitôt, changer de statut dans les deux sens. Technique sous vitesse, opposition et mini-tournoi pour finir.",
+    compo: "2 séances · gymnase · avec ballon",
+    color: ["#a855f7", "#c084fc"],
+    sessions: [
+      {
+        title: "Transition dans les deux sens", place: "Séance 2 h", type: "long",
+        duration: "2 h · échauffement + corps + retour au calme",
+        intro: "Objectif : enchaîner attaque rapide et repli, changement de statut permanent, et exécuter la technique individuelle sous vitesse.",
+        phases: [
+          { name: "Échauffement", t: "20 min", ex: [
+            { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"5 min",
+              d:"Un ballon chacune.",
+              steps:[ "Mobilité + jonglages et dribbles variés." ],
+              cue:"Balle en main." },
+            { e:"🎪", n:"Jeu : le relais surprise", dose:"10 min",
+              d:"Parcours d'agilité (cônes, cerceaux) avec ballon, 2 équipes.",
+              steps:[
+                "Chaque joueuse enchaîne le parcours en dribble et ajoute un geste perso (feinte, pirouette, tir imaginaire).",
+                "Relais : on passe le ballon à la suivante.",
+              ],
+              cue:"Agilité, créativité et manipulation : on réveille le plaisir et la vivacité." },
+            { e:"🔺", n:"Passes rapides en mouvement", dose:"5 min",
+              d:"Par 3.",
+              steps:[ "Passe-suit tendu." ],
+              cue:"Rythme." },
+          ]},
+          { name: "Technique sous vitesse", t: "20 min", ex: [
+            { e:"⏱️", n:"Circuit technique chronométré", dose:"20 min",
+              d:"Parcours : slalom dribble main faible → passe → réception → tir en course.",
+              steps:[
+                "On enchaîne les 3 tâches sans s'arrêter, le plus vite possible mais propre.",
+                "Le coach chronomètre ; on cherche à battre son temps sans rater.",
+              ],
+              cue:"Vitesse ET propreté : une technique n'est acquise que si elle tient sous la vitesse." },
+          ]},
+          { name: "Situation : transition complète", t: "40 min", ex: [
+            { e:"♾️", n:"Vague continue montée de balle ↔ repli", dose:"22 min",
+              d:"Une équipe monte le ballon en surnombre ; à la finition, elle se replie pendant que l'autre contre.",
+              steps:[
+                "Boucle continue : attaque rapide, finition, repli immédiat, l'adversaire contre.",
+                "On ne s'arrête jamais : c'est la transition dans les deux sens.",
+              ],
+              cue:"C'est l'exercice-roi : il contient la montée de balle, le repli et le changement de statut." },
+            { e:"🔄", n:"4c4 « statut permanent »", dose:"18 min",
+              d:"Jeu continu tout terrain.",
+              steps:[
+                "Aucune remise en jeu lente : dès la récupération ou la perte, on repart.",
+              ],
+              cue:"On vit le handball moderne : un jeu de transitions permanentes." },
+          ]},
+          { name: "Match à thème", t: "35 min", ex: [
+            { e:"🏐", n:"Match 5c5 « transition valorisée »", dose:"35 min",
+              d:"Terrain entier.",
+              steps:[
+                "But sur montée rapide = double.",
+                "Contre stoppé par un repli réussi = 1 point défensif.",
+              ],
+              cue:"Attaque et défense sont récompensées à parts égales : c'est un jeu complet." },
+          ]},
+          { name: "Retour au calme", t: "5 min", ex: [
+            { e:"🧘‍♀️", n:"Étirements & synthèse", dose:"5 min",
+              d:"En cercle.",
+              steps:[ "Étirements + rappel des 4 notions : montée de balle, contre-attaque, repli, changement de statut." ],
+              cue:"On relie tout ce qui a été vu depuis 4 semaines." },
+          ]},
+        ],
+        note: "Séance de synthèse : tout ce qu'on a appris se retrouve dans la vague continue et le jeu à statut permanent. On laisse jouer, on guide peu, on observe beaucoup.",
+      },
+      {
+        title: "Mini-tournoi & bilan", place: "Séance 1 h 30", type: "oppo",
+        duration: "1 h 30 · dont 48 min d'opposition",
+        intro: "Objectif : tout mettre en application en match. Mini-tournoi, grand match final, et bilan des progrès de la préparation.",
+        phases: [
+          { name: "Échauffement", t: "20 min", ex: [
+            { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"5 min",
+              d:"Un ballon chacune.",
+              steps:[ "Mobilité + dribbles 2 mains." ],
+              cue:"Balle en main." },
+            { e:"🔟", n:"Jeu au choix : la passe à dix", dose:"10 min",
+              d:"2 équipes.",
+              steps:[ "10 passes = 1 point, sans dribble ; démarquage." ],
+              cue:"On chauffe dans l'esprit collectif." },
+            { e:"🥅", n:"Passes + tirs en course", dose:"5 min",
+              d:"Colonnes vers le but, gardiennes.",
+              steps:[ "Enchaînement passe puis tir en course, des 2 côtés." ],
+              cue:"On réveille le geste de finition." },
+          ]},
+          { name: "Rappel court", t: "17 min", ex: [
+            { e:"♾️", n:"2 vagues montée de balle + repli", dose:"17 min",
+              d:"Activation avant le tournoi.",
+              steps:[ "Quelques boucles montée de balle ↔ repli, à intensité progressive." ],
+              cue:"On active corps et cerveau avant de jouer." },
+          ]},
+          { name: "Opposition", t: "48 min", ex: [
+            { e:"🏆", n:"Mini-tournoi 4c4 (poules)", dose:"30 min",
+              d:"3-4 équipes, matchs courts.",
+              steps:[
+                "Matchs de 5 à 6 min, tout le monde joue, arbitrage tournant.",
+                "Règles valorisant la transition (but rapide double, repli = point).",
+              ],
+              cue:"Le tournoi révèle ce qui est acquis : on observe le jeu vers l'avant et les replis." },
+            { e:"🥇", n:"Grand match final 5c5", dose:"18 min",
+              d:"Les 2 meilleures équipes, ou grand match all-stars.",
+              steps:[ "Match complet, on laisse jouer, on encourage." ],
+              cue:"On finit la prépa par du plaisir de jeu : c'est la récompense de 4 semaines." },
+          ]},
+          { name: "Retour au calme", t: "5 min", ex: [
+            { e:"🧘‍♀️", n:"Étirements & bilan de prépa", dose:"5 min",
+              d:"En cercle, moment important.",
+              steps:[
+                "Étirements + bilan : chaque joueuse dit un progrès qu'elle a senti.",
+                "Le coach rappelle le chemin : monter la balle, contre-attaquer, se replier, changer de statut.",
+              ],
+              cue:"Grosse dose de valorisation : les filles repartent fières et avec des repères clairs de jeu." },
+          ]},
+        ],
+        note: "Séance-plaisir et bilan : le jeu prime, on mesure les progrès à travers le match plutôt que par des tests. On termine sur du positif et de la confiance.",
+      },
+    ]
+  },
+};
+
+const weeks = Object.keys(program);
+const tabsEl = document.getElementById('tabs');
+const appEl = document.getElementById('app');
+
+const INTENSITY = {
+  'S1.0':'Modéré', 'S1.1':'Modéré', 'S1.2':'Soutenu',
+  'S2.0':'Soutenu', 'S2.1':'Intense', 'S2.2':'Soutenu',
+  'S3.0':'Soutenu', 'S3.1':'Intense', 'S3.2':'Intense',
+  'S4.0':'Modéré', 'S4.1':'Soutenu', 'S4.2':'Modéré',
+};
+const INTENSITY_COLOR = { 'Calme':'#7dd3fc', 'Modéré':'#4ade80', 'Soutenu':'#fbbf24', 'Intense':'#fb5e6e' };
+
+weeks.forEach((w, i) => {
+  const b = document.createElement('button');
+  b.className = 'tab' + (i === 0 ? ' active' : '');
+  b.style.setProperty('--wk', program[w].color[0]);
+  b.style.setProperty('--wk-light', program[w].color[1]);
+  b.innerHTML = `${w}<small>${program[w].theme}</small>`;
+  b.onclick = () => selectWeek(w, b);
+  tabsEl.appendChild(b);
+});
+
+function toggleAll(btn){
+  const body = btn.closest('.s-body');
+  const dets = body.querySelectorAll('details.drop');
+  if(!dets.length) return;
+  const anyClosed = [...dets].some(d => !d.open);
+  dets.forEach(d => d.open = anyClosed);
+  btn.textContent = anyClosed ? 'Tout replier' : 'Tout déplier';
+}
+
+function selectWeek(w, btn){
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  render(w);
+}
+
+function render(w){
+  const data = program[w];
+  document.documentElement.style.setProperty('--wk', data.color[0]);
+  document.documentElement.style.setProperty('--wk-light', data.color[1]);
+  let html = `<div class="week-head"><h2>${w} · ${data.theme}</h2><p>${data.sub}</p><span class="compo">📋 ${data.compo}</span></div>`;
+  data.sessions.forEach((s, idx) => {
+    const cls = s.type === 'oppo' ? 'ext' : 'int';
+    const tagLabel = (s.type === 'oppo' ? '⚔️ ' : '🏐 ') + s.place;
+    let phasesHtml = '';
+    s.phases.forEach(ph => {
+      let exHtml = '';
+      ph.ex.forEach(x => {
+        const dose = x.dose ? `<span class="dose-chip">${x.dose}</span>` : '';
+        const det = x.d ? `<div class="det">${x.d}</div>` : '';
+        const steps = x.steps ? `<ol class="steps">${x.steps.map(s => `<li>${s}</li>`).join('')}</ol>` : '';
+        const cue = x.cue ? `<div class="cue"><span class="i">👉</span><div>${x.cue}</div></div>` : '';
+        const detail = (x.steps || x.cue)
+          ? `<details class="drop"><summary>Voir le déroulé</summary><div class="drop-body">${steps}${cue}</div></details>`
+          : '';
+        exHtml += `<div class="ex"><div class="emo">${x.e}</div><div class="txt">
+          <div class="name">${x.n}${dose}</div>
+          ${det}${detail}
+        </div></div>`;
+      });
+      const tspan = ph.t ? `<span class="t">${ph.t}</span>` : '';
+      phasesHtml += `<div class="phase"><div class="phase-title">${ph.name}${tspan}</div>${exHtml}</div>`;
+    });
+    const noteHtml = s.note ? `<div class="note"><span class="ico">🎯</span><div><b>Note coach · </b>${s.note}</div></div>` : '';
+    html += `
+      <article class="session ${cls}">
+        <div class="s-head" onclick="this.parentElement.classList.toggle('open')">
+          <span class="num">${idx+1}</span>
+          <div class="info">
+            <h3>${s.title}</h3>
+            <div class="meta">
+              <span class="tag ${cls}">${tagLabel}</span>
+              <span class="dur">⏱️ ${s.duration}</span>
+            </div>
+          </div>
+          <span class="chev">▾</span>
+        </div>
+        <div class="s-body">
+          <p class="intro">${s.intro}</p>
+          <div class="s-tools"><button class="expand-all" onclick="toggleAll(this)">Tout déplier</button></div>
+          ${phasesHtml}
+          ${noteHtml}
+        </div>
+      </article>`;
+  });
+  appEl.innerHTML = html;
+}
+
+render(weeks[0]);
+</script>
