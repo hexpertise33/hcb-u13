@@ -245,6 +245,14 @@
   .cal-sess[open]>summary::after{transform:rotate(180deg)}
   .sess-body{margin:2px 0 10px 6px;padding:4px 0 6px 14px;border-left:2px solid color-mix(in srgb,var(--wk) 32%,transparent)}
   .sess-obj{font-size:13.5px;color:rgba(245,240,255,.82);font-style:italic;margin-bottom:12px}
+
+  .princ{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+  .princ-item{display:flex;gap:12px;background:var(--carte);border:1px solid var(--ligne);border-radius:12px;padding:12px 14px}
+  .princ-item .pe{font-size:22px;flex-shrink:0;line-height:1.2}
+  .princ-item b{font-family:'Barlow Condensed';text-transform:uppercase;letter-spacing:.03em;font-size:15px;color:var(--violet-clair)}
+  .princ-item p{font-size:13.5px;color:rgba(245,240,255,.75);margin-top:2px}
+  .jeux-h{font-family:'Barlow Condensed';font-weight:800;text-transform:uppercase;font-size:20px;color:var(--violet-clair);margin:8px 0 12px}
+  .jeu-card{background:var(--carte);border:1px solid var(--ligne);border-radius:14px;padding:4px 16px;margin-bottom:10px}
 </style>
 
 <div class="wrap">
@@ -990,7 +998,7 @@ const seances = {
   '2026-08-26': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise de saison : prise de contact, maniement de balle et fondamentaux, dans le plaisir.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
@@ -1010,7 +1018,7 @@ const seances = {
   '2026-08-27': { th:'Rappel des fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Reprise de saison : prise de contact, maniement de balle et fondamentaux, dans le plaisir.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
@@ -1027,7 +1035,7 @@ const seances = {
   '2026-09-02': { th:'Fondamentaux', dur:'2 h', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🌀', n:'Feinte de corps + tir', dose:'13 min', d:'Feinte à 11 m puis 3 appuis et tir.', cue:'Feinte franche (changement d\'appui) qui fait réagir la défenseuse.' },
@@ -1047,7 +1055,7 @@ const seances = {
   '2026-09-03': { th:'Fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🥅', n:'Rappel tir en course', dose:'25 min', d:'Vagues de tirs, main forte et faible.', cue:'Court et vif avant l\'opposition.' },
@@ -1064,7 +1072,7 @@ const seances = {
   '2026-09-09': { th:'Fondamentaux', dur:'2 h', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🥅', n:'Tir en course (3 appuis)', dose:'13 min', d:'Réception en course puis 3 appuis et tir.', cue:'On compte 1-2-3 puis tir, bras armé haut ; d\'abord sans gardienne, puis avec.', steps:['Réception mains devant en course.','3 appuis réglementaires.','Tir vers le côté ouvert.'] },
@@ -1084,7 +1092,7 @@ const seances = {
   '2026-09-10': { th:'Fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🥅', n:'Rappel tir en course', dose:'25 min', d:'Vagues de tirs, main forte et faible.', cue:'Court et vif avant l\'opposition.' },
@@ -1101,7 +1109,7 @@ const seances = {
   '2026-09-16': { th:'Montée de balle', dur:'2 h', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
@@ -1121,7 +1129,7 @@ const seances = {
   '2026-09-17': { th:'Montée de balle', dur:'1 h 30 · 40 min oppo', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🌊', n:'2 vagues de montée 3c2', dose:'25 min', d:'Vagues rapides, finition.', cue:'On réactive le surnombre, court et vif.' },
@@ -1138,7 +1146,7 @@ const seances = {
   '2026-09-23': { th:'Montée de balle', dur:'2 h', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
@@ -1158,7 +1166,7 @@ const seances = {
   '2026-09-24': { th:'Montée de balle · pré-J1', dur:'1 h 30 · 40 min oppo', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J1 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🌊', n:'2 vagues de montée 3c2', dose:'25 min', d:'Vagues rapides, finition.', cue:'On réactive le surnombre, court et vif.' },
@@ -1174,7 +1182,7 @@ const seances = {
   '2026-09-30': { th:'Montée de balle · debrief J1', dur:'2 h', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J1 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
@@ -1194,7 +1202,7 @@ const seances = {
   '2026-10-01': { th:'Contre-attaque · pré-J2', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J2 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
@@ -1210,7 +1218,7 @@ const seances = {
   '2026-10-07': { th:'Contre-attaque · debrief J2', dur:'2 h', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J2 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🥅', n:'Duel face à la gardienne', dose:'12 min', d:'Départ lancée, choix du côté.', cue:'On tire à l\'opposé de la main de la gardienne.' },
@@ -1230,7 +1238,7 @@ const seances = {
   '2026-10-08': { th:'Contre-attaque', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
@@ -1247,7 +1255,7 @@ const seances = {
   '2026-10-14': { th:'Contre-attaque', dur:'2 h', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🥅', n:'Duel face à la gardienne', dose:'12 min', d:'Départ lancée, choix du côté.', cue:'On tire à l\'opposé de la main de la gardienne.' },
@@ -1267,7 +1275,7 @@ const seances = {
   '2026-10-15': { th:'Contre-attaque · pré-J4', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J4 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
@@ -1283,7 +1291,7 @@ const seances = {
   '2026-11-04': { th:'Repli & défense', dur:'2 h', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🧱', n:'Défendre autour du pivot', dose:'13 min', d:'Défendre une joueuse proche de la zone (nouveauté U13).', cue:'On reste entre le pivot et le but, on annonce.' },
@@ -1303,7 +1311,7 @@ const seances = {
   '2026-11-05': { th:'Repli & défense · pré-J5', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J5 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
@@ -1319,7 +1327,7 @@ const seances = {
   '2026-11-12': { th:'Repli & défense · pré-J6', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J6 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
@@ -1335,7 +1343,7 @@ const seances = {
   '2026-11-18': { th:'Repli & défense · debrief J6', dur:'2 h', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J6 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🧱', n:'Défendre autour du pivot', dose:'13 min', d:'Défendre une joueuse proche de la zone (nouveauté U13).', cue:'On reste entre le pivot et le but, on annonce.' },
@@ -1355,7 +1363,7 @@ const seances = {
   '2026-11-19': { th:'Repli & défense · pré-J7', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J7 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
@@ -1371,7 +1379,7 @@ const seances = {
   '2026-11-25': { th:'Changement de statut · debrief J7', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J7 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
@@ -1391,7 +1399,7 @@ const seances = {
   '2026-11-26': { th:'Changement de statut · pré-J8', dur:'1 h 30 · 40 min oppo', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J8 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔄', n:'Rappel statut permanent', dose:'25 min', d:'2 vagues montée ↔ repli.', cue:'On ne s\'arrête jamais.' },
@@ -1407,7 +1415,7 @@ const seances = {
   '2026-12-02': { th:'Jeu de transition complet · debrief J8', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J8 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
@@ -1427,7 +1435,7 @@ const seances = {
   '2026-12-03': { th:'Jeu de transition complet · pré-J9', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J9 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -1443,7 +1451,7 @@ const seances = {
   '2026-12-09': { th:'Jeu de transition complet · debrief J9', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J9 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
@@ -1463,7 +1471,7 @@ const seances = {
   '2026-12-10': { th:'Jeu de transition complet · pré-J10', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J10 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -1479,7 +1487,7 @@ const seances = {
   '2026-12-16': { th:'Jeu de transition complet · debrief J10', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J10 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
@@ -1499,7 +1507,7 @@ const seances = {
   '2027-01-06': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
@@ -1519,7 +1527,7 @@ const seances = {
   '2027-01-07': { th:'Rappel des fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
@@ -1536,7 +1544,7 @@ const seances = {
   '2027-01-13': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
@@ -1556,7 +1564,7 @@ const seances = {
   '2027-01-14': { th:'Rappel des fondamentaux · pré-J1', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Dernière séance avant le match J1 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
@@ -1572,7 +1580,7 @@ const seances = {
   '2027-01-20': { th:'Rappel des fondamentaux · debrief J1', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. On débriefe le match J1 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
@@ -1592,7 +1600,7 @@ const seances = {
   '2027-01-21': { th:'Rappel des fondamentaux · pré-J2', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Dernière séance avant le match J2 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
@@ -1608,7 +1616,7 @@ const seances = {
   '2027-01-27': { th:'Montée de balle · debrief J2', dur:'2 h', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J2 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
@@ -1628,7 +1636,7 @@ const seances = {
   '2027-01-28': { th:'Montée de balle · pré-J3', dur:'1 h 30 · 40 min oppo', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J3 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🌊', n:'2 vagues de montée 3c2', dose:'25 min', d:'Vagues rapides, finition.', cue:'On réactive le surnombre, court et vif.' },
@@ -1644,7 +1652,7 @@ const seances = {
   '2027-02-03': { th:'Contre-attaque · debrief J3', dur:'2 h', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J3 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🥅', n:'Duel face à la gardienne', dose:'12 min', d:'Départ lancée, choix du côté.', cue:'On tire à l\'opposé de la main de la gardienne.' },
@@ -1664,7 +1672,7 @@ const seances = {
   '2027-02-04': { th:'Contre-attaque · pré-J4', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J4 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
@@ -1680,7 +1688,7 @@ const seances = {
   '2027-02-10': { th:'Contre-attaque · debrief J4', dur:'2 h', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J4 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🥅', n:'Duel face à la gardienne', dose:'12 min', d:'Départ lancée, choix du côté.', cue:'On tire à l\'opposé de la main de la gardienne.' },
@@ -1700,7 +1708,7 @@ const seances = {
   '2027-02-11': { th:'Contre-attaque', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
@@ -1717,7 +1725,7 @@ const seances = {
   '2027-03-03': { th:'Repli & défense', dur:'2 h', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🧱', n:'Défendre autour du pivot', dose:'13 min', d:'Défendre une joueuse proche de la zone (nouveauté U13).', cue:'On reste entre le pivot et le but, on annonce.' },
@@ -1737,7 +1745,7 @@ const seances = {
   '2027-03-04': { th:'Repli & défense · pré-J5', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J5 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
@@ -1753,7 +1761,7 @@ const seances = {
   '2027-03-10': { th:'Repli & défense · debrief J5', dur:'2 h', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J5 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🥊', n:'Duel 1 contre 1 défensif', dose:'12 min', d:'Base de la défense placée.', cue:'On oriente l\'attaquante vers l\'extérieur, appuis actifs.' },
@@ -1773,7 +1781,7 @@ const seances = {
   '2027-03-11': { th:'Repli & défense · pré-J6', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J6 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
@@ -1789,7 +1797,7 @@ const seances = {
   '2027-03-17': { th:'Changement de statut · debrief J6', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J6 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
@@ -1809,7 +1817,7 @@ const seances = {
   '2027-03-18': { th:'Changement de statut · pré-J7', dur:'1 h 30 · 40 min oppo', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J7 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔄', n:'Rappel statut permanent', dose:'25 min', d:'2 vagues montée ↔ repli.', cue:'On ne s\'arrête jamais.' },
@@ -1825,7 +1833,7 @@ const seances = {
   '2027-03-24': { th:'Changement de statut · debrief J7', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J7 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
@@ -1845,7 +1853,7 @@ const seances = {
   '2027-03-25': { th:'Changement de statut', dur:'1 h 30 · 40 min oppo', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔄', n:'Rappel statut permanent', dose:'25 min', d:'2 vagues montée ↔ repli.', cue:'On ne s\'arrête jamais.' },
@@ -1862,7 +1870,7 @@ const seances = {
   '2027-03-31': { th:'Changement de statut', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
@@ -1882,7 +1890,7 @@ const seances = {
   '2027-04-01': { th:'Jeu de transition complet · pré-J8', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J8 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -1898,7 +1906,7 @@ const seances = {
   '2027-04-07': { th:'Jeu de transition complet · debrief J8', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J8 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
@@ -1918,7 +1926,7 @@ const seances = {
   '2027-04-08': { th:'Jeu de transition complet · pré-J9', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J9 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -1934,7 +1942,7 @@ const seances = {
   '2027-04-28': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
@@ -1954,7 +1962,7 @@ const seances = {
   '2027-04-29': { th:'Jeu de transition complet · pré-J10', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J10 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -1970,7 +1978,7 @@ const seances = {
   '2027-05-05': { th:'Changement de statut · debrief J10', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J10 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
@@ -1990,7 +1998,7 @@ const seances = {
   '2027-05-06': { th:'Changement de statut', dur:'1 h 30 · 40 min oppo', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔄', n:'Rappel statut permanent', dose:'25 min', d:'2 vagues montée ↔ repli.', cue:'On ne s\'arrête jamais.' },
@@ -2007,7 +2015,7 @@ const seances = {
   '2027-05-12': { th:'Changement de statut', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
@@ -2027,7 +2035,7 @@ const seances = {
   '2027-05-19': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
@@ -2047,7 +2055,7 @@ const seances = {
   '2027-05-20': { th:'Jeu de transition complet', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -2064,7 +2072,7 @@ const seances = {
   '2027-05-26': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
@@ -2084,7 +2092,7 @@ const seances = {
   '2027-05-27': { th:'Jeu de transition complet', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -2101,7 +2109,7 @@ const seances = {
   '2027-06-02': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
@@ -2121,7 +2129,7 @@ const seances = {
   '2027-06-03': { th:'Jeu de transition complet', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -2138,7 +2146,7 @@ const seances = {
   '2027-06-09': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
+      { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
@@ -2158,7 +2166,7 @@ const seances = {
   '2027-06-10': { th:'Jeu de transition complet', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
@@ -2175,7 +2183,7 @@ const seances = {
   '2027-06-16': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
@@ -2195,7 +2203,7 @@ const seances = {
   '2027-06-17': { th:'Rappel des fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'On passe vite : décision rapide sous pression.' },
+      { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
@@ -2212,7 +2220,7 @@ const seances = {
   '2027-06-23': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Esquive, passes et lecture du jeu.' },
+      { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
@@ -2232,7 +2240,7 @@ const seances = {
   '2027-06-24': { th:'Rappel des fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
     { n:'Apprentissage', t:'25 min', ex:[
       { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
@@ -2249,7 +2257,7 @@ const seances = {
   '2027-06-30': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Programme.', cue:'Réactivité et prise d\'information.' },
+      { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
     { n:'Technique', t:'25 min', ex:[
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
@@ -2276,21 +2284,17 @@ const INTENSITY = {
 };
 const INTENSITY_COLOR = { 'Calme':'#7dd3fc', 'Modéré':'#4ade80', 'Soutenu':'#fbbf24', 'Intense':'#fb5e6e' };
 
-weeks.forEach((w, i) => {
-  const b = document.createElement('button');
-  b.className = 'tab' + (i === 0 ? ' active' : '');
-  b.style.setProperty('--wk', program[w].color[0]);
-  b.style.setProperty('--wk-light', program[w].color[1]);
-  b.innerHTML = `${w}<small>${program[w].theme}</small>`;
-  b.onclick = () => selectWeek(w, b);
-  tabsEl.appendChild(b);
-});
-
 const calBtn = document.createElement('button');
-calBtn.className = 'tab tab-cal';
+calBtn.className = 'tab active';
 calBtn.innerHTML = `📅<small>Calendrier de la saison</small>`;
 calBtn.onclick = () => selectCal(calBtn);
 tabsEl.appendChild(calBtn);
+
+const jeuxBtn = document.createElement('button');
+jeuxBtn.className = 'tab';
+jeuxBtn.innerHTML = `🎮<small>Jeux & principes</small>`;
+jeuxBtn.onclick = () => selectJeux(jeuxBtn);
+tabsEl.appendChild(jeuxBtn);
 
 function toggleAll(btn){
   const body = btn.closest('.s-body');
@@ -2383,6 +2387,39 @@ function renderSeance(s){
   return h;
 }
 
+function selectJeux(btn){
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderJeux();
+}
+
+function renderJeux(){
+  document.documentElement.style.setProperty('--wk', '#a855f7');
+  document.documentElement.style.setProperty('--wk-light', '#c084fc');
+  let html = `<div class="week-head"><h2>Jeux & principes</h2><p>La philosophie de jeu de l'équipe, et les règles complètes des jeux utilisés à l'échauffement.</p></div>`;
+  const principes = [
+    ['🚀','Montée de balle',`Jouer vite vers l'avant dès la récupération : passes courtes et fortes, de l'écartement.`],
+    ['⚡','Contre-attaque',`Exploiter le surnombre (2c1, 3c2) : fixer une défenseuse et libérer la partenaire.`],
+    ['🛡️','Repli défensif',`Dès la perte ou le tir, on se replie : se placer entre l'attaquante et le but.`],
+    ['🔄','Changement de statut',`Basculer instantanément attaque ↔ défense, sans temps mort.`],
+    ['🎯','Technique individuelle',`Passe et réception propres, tir en course, dribble des 2 mains, feinte.`],
+  ];
+  html += `<div class="princ">`;
+  principes.forEach(p => { html += `<div class="princ-item"><span class="pe">${p[0]}</span><div><b>${p[1]}</b><p>${p[2]}</p></div></div>`; });
+  html += `</div><h3 class="jeux-h">Règles des jeux</h3>`;
+  const seen = new Set(); const jeux = [];
+  Object.values(program).forEach(w => w.sessions.forEach(s => s.phases.forEach(ph => ph.ex.forEach(x => {
+    if(x.n.indexOf('Jeu :') === 0 && !seen.has(x.n)){ seen.add(x.n); jeux.push(x); }
+  }))));
+  jeux.forEach(x => {
+    const det = x.d ? `<div class="det">${x.d}</div>` : '';
+    const steps = x.steps ? `<ol class="steps">${x.steps.map(st => `<li>${st}</li>`).join('')}</ol>` : '';
+    const cue = x.cue ? `<div class="cue"><span class="i">👉</span><div>${x.cue}</div></div>` : '';
+    html += `<div class="jeu-card"><div class="ex"><div class="emo">${x.e}</div><div class="txt"><div class="name">${x.n.replace('Jeu : ','')}</div>${det}${steps}${cue}</div></div></div>`;
+  });
+  appEl.innerHTML = html;
+}
+
 function renderCalendar(){
   let html = `<div class="week-head"><h2>Calendrier de la saison</h2><p>Entraînements le mercredi et le jeudi, et les matchs du championnat U13 Filles.</p><span class="compo">19 matchs · 70 entraînements</span></div>`;
   html += `<p class="cal-note">Entraînements hors vacances scolaires (zone A, académie de Bordeaux) et jours fériés. Les matchs ont lieu le week-end (samedi ou dimanche selon la convocation).</p>`;
@@ -2408,5 +2445,5 @@ function renderCalendar(){
   appEl.innerHTML = html;
 }
 
-render(weeks[0]);
+renderCalendar();
 </script>
