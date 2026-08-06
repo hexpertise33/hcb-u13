@@ -235,6 +235,16 @@
   .cal-lib{display:flex;flex-direction:column;line-height:1.25}
   .cal-lib b{font-size:14.5px}
   .cal-we{font-size:12.5px;color:rgba(245,240,255,.62)}
+
+  .cal-theme{margin-left:auto;font-size:12.5px;color:var(--violet-clair);font-style:italic;text-align:right;padding-left:8px}
+  .cal-sess{border-bottom:1px dashed rgba(168,85,247,.14)}
+  .cal-sess:last-child{border-bottom:none}
+  .cal-sess>summary{list-style:none;cursor:pointer}
+  .cal-sess>summary::-webkit-details-marker{display:none}
+  .cal-sess>summary::after{content:"\25BE";color:var(--violet-clair);margin-left:8px;transition:transform .2s;flex-shrink:0}
+  .cal-sess[open]>summary::after{transform:rotate(180deg)}
+  .sess-body{margin:2px 0 10px 6px;padding:4px 0 6px 14px;border-left:2px solid color-mix(in srgb,var(--wk) 32%,transparent)}
+  .sess-obj{font-size:13.5px;color:rgba(245,240,255,.82);font-style:italic;margin-bottom:12px}
 </style>
 
 <div class="wrap">
@@ -864,118 +874,552 @@ const appEl = document.getElementById('app');
 
 const saison = [
   { mois:'Août 2026', nMatch:0, nEntr:2, items:[
-    { t:'e', d:'Mer 26/08', lib:'Entraînement' },
-    { t:'e', d:'Jeu 27/08', lib:'Entraînement' },
+    { t:'e', iso:'2026-08-26', d:'Mer 26/08', lib:'Entraînement' },
+    { t:'e', iso:'2026-08-27', d:'Jeu 27/08', lib:'Entraînement' },
   ]},
   { mois:'Septembre 2026', nMatch:1, nEntr:9, items:[
-    { t:'e', d:'Mer 02/09', lib:'Entraînement' },
-    { t:'e', d:'Jeu 03/09', lib:'Entraînement' },
-    { t:'e', d:'Mer 09/09', lib:'Entraînement' },
-    { t:'e', d:'Jeu 10/09', lib:'Entraînement' },
-    { t:'e', d:'Mer 16/09', lib:'Entraînement' },
-    { t:'e', d:'Jeu 17/09', lib:'Entraînement' },
-    { t:'e', d:'Mer 23/09', lib:'Entraînement' },
-    { t:'e', d:'Jeu 24/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-02', d:'Mer 02/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-03', d:'Jeu 03/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-09', d:'Mer 09/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-10', d:'Jeu 10/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-16', d:'Mer 16/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-17', d:'Jeu 17/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-23', d:'Mer 23/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-24', d:'Jeu 24/09', lib:'Entraînement' },
     { t:'m', d:'Sam 26/09', lib:'Championnat · J1', we:'sam 26 / dim 27 septembre' },
-    { t:'e', d:'Mer 30/09', lib:'Entraînement' },
+    { t:'e', iso:'2026-09-30', d:'Mer 30/09', lib:'Entraînement' },
   ]},
   { mois:'Octobre 2026', nMatch:2, nEntr:5, items:[
-    { t:'e', d:'Jeu 01/10', lib:'Entraînement' },
+    { t:'e', iso:'2026-10-01', d:'Jeu 01/10', lib:'Entraînement' },
     { t:'m', d:'Sam 03/10', lib:'Championnat · J2', we:'sam 3 / dim 4 octobre' },
-    { t:'e', d:'Mer 07/10', lib:'Entraînement' },
-    { t:'e', d:'Jeu 08/10', lib:'Entraînement' },
-    { t:'e', d:'Mer 14/10', lib:'Entraînement' },
-    { t:'e', d:'Jeu 15/10', lib:'Entraînement' },
+    { t:'e', iso:'2026-10-07', d:'Mer 07/10', lib:'Entraînement' },
+    { t:'e', iso:'2026-10-08', d:'Jeu 08/10', lib:'Entraînement' },
+    { t:'e', iso:'2026-10-14', d:'Mer 14/10', lib:'Entraînement' },
+    { t:'e', iso:'2026-10-15', d:'Jeu 15/10', lib:'Entraînement' },
     { t:'m', d:'Sam 17/10', lib:'Championnat · J4', we:'sam 17 / dim 18 octobre' },
   ]},
   { mois:'Novembre 2026', nMatch:4, nEntr:7, items:[
-    { t:'e', d:'Mer 04/11', lib:'Entraînement' },
-    { t:'e', d:'Jeu 05/11', lib:'Entraînement' },
+    { t:'e', iso:'2026-11-04', d:'Mer 04/11', lib:'Entraînement' },
+    { t:'e', iso:'2026-11-05', d:'Jeu 05/11', lib:'Entraînement' },
     { t:'m', d:'Sam 07/11', lib:'Championnat · J5', we:'sam 7 / dim 8 novembre' },
-    { t:'e', d:'Jeu 12/11', lib:'Entraînement' },
+    { t:'e', iso:'2026-11-12', d:'Jeu 12/11', lib:'Entraînement' },
     { t:'m', d:'Sam 14/11', lib:'Championnat · J6', we:'sam 14 / dim 15 novembre' },
-    { t:'e', d:'Mer 18/11', lib:'Entraînement' },
-    { t:'e', d:'Jeu 19/11', lib:'Entraînement' },
+    { t:'e', iso:'2026-11-18', d:'Mer 18/11', lib:'Entraînement' },
+    { t:'e', iso:'2026-11-19', d:'Jeu 19/11', lib:'Entraînement' },
     { t:'m', d:'Sam 21/11', lib:'Championnat · J7', we:'sam 21 / dim 22 novembre' },
-    { t:'e', d:'Mer 25/11', lib:'Entraînement' },
-    { t:'e', d:'Jeu 26/11', lib:'Entraînement' },
+    { t:'e', iso:'2026-11-25', d:'Mer 25/11', lib:'Entraînement' },
+    { t:'e', iso:'2026-11-26', d:'Jeu 26/11', lib:'Entraînement' },
     { t:'m', d:'Sam 28/11', lib:'Championnat · J8', we:'sam 28 / dim 29 novembre' },
   ]},
-  { mois:'Décembre 2026', nMatch:2, nEntr:6, items:[
-    { t:'e', d:'Mer 02/12', lib:'Entraînement' },
-    { t:'e', d:'Jeu 03/12', lib:'Entraînement' },
+  { mois:'Décembre 2026', nMatch:2, nEntr:5, items:[
+    { t:'e', iso:'2026-12-02', d:'Mer 02/12', lib:'Entraînement' },
+    { t:'e', iso:'2026-12-03', d:'Jeu 03/12', lib:'Entraînement' },
     { t:'m', d:'Sam 05/12', lib:'Championnat · J9', we:'sam 5 / dim 6 décembre' },
-    { t:'e', d:'Mer 09/12', lib:'Entraînement' },
-    { t:'e', d:'Jeu 10/12', lib:'Entraînement' },
+    { t:'e', iso:'2026-12-09', d:'Mer 09/12', lib:'Entraînement' },
+    { t:'e', iso:'2026-12-10', d:'Jeu 10/12', lib:'Entraînement' },
     { t:'m', d:'Sam 12/12', lib:'Championnat · J10', we:'sam 12 / dim 13 décembre' },
-    { t:'e', d:'Mer 16/12', lib:'Entraînement' },
-    { t:'e', d:'Jeu 17/12', lib:'Entraînement' },
+    { t:'e', iso:'2026-12-16', d:'Mer 16/12', lib:'Entraînement' },
   ]},
   { mois:'Janvier 2027', nMatch:3, nEntr:8, items:[
-    { t:'e', d:'Mer 06/01', lib:'Entraînement' },
-    { t:'e', d:'Jeu 07/01', lib:'Entraînement' },
-    { t:'e', d:'Mer 13/01', lib:'Entraînement' },
-    { t:'e', d:'Jeu 14/01', lib:'Entraînement' },
+    { t:'e', iso:'2027-01-06', d:'Mer 06/01', lib:'Entraînement' },
+    { t:'e', iso:'2027-01-07', d:'Jeu 07/01', lib:'Entraînement' },
+    { t:'e', iso:'2027-01-13', d:'Mer 13/01', lib:'Entraînement' },
+    { t:'e', iso:'2027-01-14', d:'Jeu 14/01', lib:'Entraînement' },
     { t:'m', d:'Sam 16/01', lib:'Championnat · J1', we:'sam 16 / dim 17 janvier' },
-    { t:'e', d:'Mer 20/01', lib:'Entraînement' },
-    { t:'e', d:'Jeu 21/01', lib:'Entraînement' },
+    { t:'e', iso:'2027-01-20', d:'Mer 20/01', lib:'Entraînement' },
+    { t:'e', iso:'2027-01-21', d:'Jeu 21/01', lib:'Entraînement' },
     { t:'m', d:'Sam 23/01', lib:'Championnat · J2', we:'sam 23 / dim 24 janvier' },
-    { t:'e', d:'Mer 27/01', lib:'Entraînement' },
-    { t:'e', d:'Jeu 28/01', lib:'Entraînement' },
+    { t:'e', iso:'2027-01-27', d:'Mer 27/01', lib:'Entraînement' },
+    { t:'e', iso:'2027-01-28', d:'Jeu 28/01', lib:'Entraînement' },
     { t:'m', d:'Sam 30/01', lib:'Championnat · J3', we:'sam 30 / dim 31 janvier' },
   ]},
   { mois:'Février 2027', nMatch:1, nEntr:4, items:[
-    { t:'e', d:'Mer 03/02', lib:'Entraînement' },
-    { t:'e', d:'Jeu 04/02', lib:'Entraînement' },
+    { t:'e', iso:'2027-02-03', d:'Mer 03/02', lib:'Entraînement' },
+    { t:'e', iso:'2027-02-04', d:'Jeu 04/02', lib:'Entraînement' },
     { t:'m', d:'Sam 06/02', lib:'Championnat · J4', we:'sam 6 / dim 7 février' },
-    { t:'e', d:'Mer 10/02', lib:'Entraînement' },
-    { t:'e', d:'Jeu 11/02', lib:'Entraînement' },
+    { t:'e', iso:'2027-02-10', d:'Mer 10/02', lib:'Entraînement' },
+    { t:'e', iso:'2027-02-11', d:'Jeu 11/02', lib:'Entraînement' },
   ]},
   { mois:'Mars 2027', nMatch:3, nEntr:9, items:[
-    { t:'e', d:'Mer 03/03', lib:'Entraînement' },
-    { t:'e', d:'Jeu 04/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-03', d:'Mer 03/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-04', d:'Jeu 04/03', lib:'Entraînement' },
     { t:'m', d:'Sam 06/03', lib:'Championnat · J5', we:'sam 6 / dim 7 mars' },
-    { t:'e', d:'Mer 10/03', lib:'Entraînement' },
-    { t:'e', d:'Jeu 11/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-10', d:'Mer 10/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-11', d:'Jeu 11/03', lib:'Entraînement' },
     { t:'m', d:'Sam 13/03', lib:'Championnat · J6', we:'sam 13 / dim 14 mars' },
-    { t:'e', d:'Mer 17/03', lib:'Entraînement' },
-    { t:'e', d:'Jeu 18/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-17', d:'Mer 17/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-18', d:'Jeu 18/03', lib:'Entraînement' },
     { t:'m', d:'Sam 20/03', lib:'Championnat · J7', we:'sam 20 / dim 21 mars' },
-    { t:'e', d:'Mer 24/03', lib:'Entraînement' },
-    { t:'e', d:'Jeu 25/03', lib:'Entraînement' },
-    { t:'e', d:'Mer 31/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-24', d:'Mer 24/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-25', d:'Jeu 25/03', lib:'Entraînement' },
+    { t:'e', iso:'2027-03-31', d:'Mer 31/03', lib:'Entraînement' },
   ]},
   { mois:'Avril 2027', nMatch:2, nEntr:5, items:[
-    { t:'e', d:'Jeu 01/04', lib:'Entraînement' },
+    { t:'e', iso:'2027-04-01', d:'Jeu 01/04', lib:'Entraînement' },
     { t:'m', d:'Sam 03/04', lib:'Championnat · J8', we:'sam 3 / dim 4 avril' },
-    { t:'e', d:'Mer 07/04', lib:'Entraînement' },
-    { t:'e', d:'Jeu 08/04', lib:'Entraînement' },
+    { t:'e', iso:'2027-04-07', d:'Mer 07/04', lib:'Entraînement' },
+    { t:'e', iso:'2027-04-08', d:'Jeu 08/04', lib:'Entraînement' },
     { t:'m', d:'Sam 10/04', lib:'Championnat · J9', we:'sam 10 / dim 11 avril' },
-    { t:'e', d:'Mer 28/04', lib:'Entraînement' },
-    { t:'e', d:'Jeu 29/04', lib:'Entraînement' },
+    { t:'e', iso:'2027-04-28', d:'Mer 28/04', lib:'Entraînement' },
+    { t:'e', iso:'2027-04-29', d:'Jeu 29/04', lib:'Entraînement' },
   ]},
   { mois:'Mai 2027', nMatch:1, nEntr:7, items:[
     { t:'m', d:'Sam 01/05', lib:'Championnat · J10', we:'sam 1 / dim 2 mai' },
-    { t:'e', d:'Mer 05/05', lib:'Entraînement' },
-    { t:'e', d:'Jeu 06/05', lib:'Entraînement' },
-    { t:'e', d:'Mer 12/05', lib:'Entraînement' },
-    { t:'e', d:'Mer 19/05', lib:'Entraînement' },
-    { t:'e', d:'Jeu 20/05', lib:'Entraînement' },
-    { t:'e', d:'Mer 26/05', lib:'Entraînement' },
-    { t:'e', d:'Jeu 27/05', lib:'Entraînement' },
+    { t:'e', iso:'2027-05-05', d:'Mer 05/05', lib:'Entraînement' },
+    { t:'e', iso:'2027-05-06', d:'Jeu 06/05', lib:'Entraînement' },
+    { t:'e', iso:'2027-05-12', d:'Mer 12/05', lib:'Entraînement' },
+    { t:'e', iso:'2027-05-19', d:'Mer 19/05', lib:'Entraînement' },
+    { t:'e', iso:'2027-05-20', d:'Jeu 20/05', lib:'Entraînement' },
+    { t:'e', iso:'2027-05-26', d:'Mer 26/05', lib:'Entraînement' },
+    { t:'e', iso:'2027-05-27', d:'Jeu 27/05', lib:'Entraînement' },
   ]},
   { mois:'Juin 2027', nMatch:0, nEntr:9, items:[
-    { t:'e', d:'Mer 02/06', lib:'Entraînement' },
-    { t:'e', d:'Jeu 03/06', lib:'Entraînement' },
-    { t:'e', d:'Mer 09/06', lib:'Entraînement' },
-    { t:'e', d:'Jeu 10/06', lib:'Entraînement' },
-    { t:'e', d:'Mer 16/06', lib:'Entraînement' },
-    { t:'e', d:'Jeu 17/06', lib:'Entraînement' },
-    { t:'e', d:'Mer 23/06', lib:'Entraînement' },
-    { t:'e', d:'Jeu 24/06', lib:'Entraînement' },
-    { t:'e', d:'Mer 30/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-02', d:'Mer 02/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-03', d:'Jeu 03/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-09', d:'Mer 09/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-10', d:'Jeu 10/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-16', d:'Mer 16/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-17', d:'Jeu 17/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-23', d:'Mer 23/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-24', d:'Jeu 24/06', lib:'Entraînement' },
+    { t:'e', iso:'2027-06-30', d:'Mer 30/06', lib:'Entraînement' },
   ]},
 ];
+
+const seances = {
+ '2026-08-26': { th:"Reprise & plaisir", ob:"Reprendre contact avec le ballon et le groupe, dans le jeu. Zéro pression, un maximum de touches de balle et de sourires.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🤾‍♀️", n:"Réveil + prise de balle", dose:"7 min", d:"Un ballon chacune : mobilité en trottinant, tours de taille, dribbles 2 mains, jonglages.", cue:"On entre directement avec le ballon, pas de tour de terrain à vide." },
+     { e:"👑", n:"Jeu : le roi du terrain", dose:"13 min", d:"Règles complètes dans l'onglet Programme.", cue:"Tête haute, dribble de protection : on redécouvre la balle en s'amusant." },
+   ]},
+   { n:"Corps de séance", t:"60 min", ex:[
+     { e:"🔄", n:"Passes en mouvement (par 2)", dose:"15 min", d:"En avançant sur la largeur, passe tendue à hauteur de poitrine.", cue:"On regarde la partenaire, mains prêtes devant avant de recevoir." },
+     { e:"🥅", n:"Tirs libres au but (ludique)", dose:"15 min", d:"Ateliers de tir sans pression, avec gardiennes qui tournent.", cue:"On ose tirer, on prend du plaisir à marquer." },
+     { e:"🏐", n:"Petits matchs 3c3", dose:"30 min", d:"Sur demi-terrain, on tourne les équipes, jeu libre.", cue:"Beaucoup de ballons touchés par joueuse : le petit effectif fait tout." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[
+     { e:"🧘‍♀️", n:"Étirements & mot de bienvenue", dose:"5 min", d:"En cercle.", cue:"On pose les objectifs de la saison, on soude le groupe." },
+   ]},
+  ]},
+
+ '2026-08-27': { th:"Manipulation & mini-jeux", ob:"Affiner le maniement de balle (dribble 2 mains, passes) et remettre du jeu réduit, toujours dans le plaisir.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"7 min", d:"Dribbles, changements de main, jonglages en trottinant.", cue:"Balle en main." },
+     { e:"💣", n:"Jeu : la bombe à retardement", dose:"13 min", d:"Règles dans l'onglet Programme.", cue:"On passe vite : prise de décision sous pression, en riant." },
+   ]},
+   { n:"Corps de séance", t:"60 min", ex:[
+     { e:"🎯", n:"Circuit dribble (slalom)", dose:"15 min", d:"Slalom entre plots, main forte puis main faible, fini par une passe.", cue:"On travaille les 2 mains dès le début de saison." },
+     { e:"🔺", n:"Passes à 3 en triangle", dose:"15 min", d:"Passe-suit (voir onglet Programme).", cue:"On ne s'arrête jamais après une passe." },
+     { e:"🏐", n:"Tournoi 4c4", dose:"30 min", d:"Matchs courts, tout le monde joue.", cue:"Le jeu prime : on observe qui aime attaquer, défendre, tirer." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[
+     { e:"🧘‍♀️", n:"Étirements & ressenti", dose:"5 min", d:"En cercle.", cue:"On demande les sensations, on félicite." },
+   ]},
+  ]},
+
+ '2026-09-02': { th:"Passe & réception", ob:"Construire le fondamental n°1 : une passe précise et une réception propre en mouvement.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🔟", n:"Jeu : la passe à dix", dose:"20 min", d:"Règles dans l'onglet Programme, sans dribble.", cue:"Démarquage + passe précise : c'est le thème du jour, déjà en jeu." },
+   ]},
+   { n:"Technique", t:"25 min", ex:[
+     { e:"🎯", n:"Passe en mouvement (2 colonnes)", dose:"13 min", d:"Colonnes face à face à 8 m, on se croise en passant.", steps:["Réception mains devant, + 3 appuis, puis passe tendue.","Main forte, puis main faible obligatoire."], cue:"Passe à hauteur de poitrine, jamais dans les pieds." },
+     { e:"🤝", n:"Passe & va (donne-et-suit)", dose:"12 min", d:"Je passe puis je cours prendre la place devant.", cue:"La passe déclenche un déplacement." },
+   ]},
+   { n:"Situation & jeu", t:"30 min", ex:[
+     { e:"🏐", n:"Match 4c4 « obligation de passe »", dose:"30 min", d:"But validé seulement après 3 passes minimum dans l'équipe.", cue:"On force le jeu collectif et le démarquage." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & bilan", dose:"5 min", cue:"On rappelle : une bonne passe, c'est devant la partenaire." } ]},
+  ]},
+
+ '2026-09-03': { th:"Dribble & tir en course", ob:"Enchaîner conduite de balle et tir en course avec les 3 appuis réglementaires.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🤾‍♀️", n:"Maniement + mobilité", dose:"7 min", d:"Dribbles 2 mains, jonglages.", cue:"Balle en main." },
+     { e:"🎪", n:"Jeu : le relais surprise", dose:"13 min", d:"Règles dans l'onglet Programme.", cue:"Agilité + dribble + geste perso : on se lâche." },
+   ]},
+   { n:"Technique", t:"25 min", ex:[
+     { e:"🎯", n:"Dribble slalom + passe", dose:"10 min", d:"Slalom rapide, fini par une passe à une relayeuse.", cue:"Tête haute pendant le dribble." },
+     { e:"🥅", n:"Tir en course (3 appuis)", dose:"15 min", d:"Réception en course puis 3 appuis et tir.", steps:["Compter les appuis à voix haute : 1-2-3, tir.","D'abord sans gardienne, puis avec."], cue:"On attaque le but, bras armé haut." },
+   ]},
+   { n:"Jeu", t:"30 min", ex:[
+     { e:"🏐", n:"Match 5c5", dose:"30 min", d:"Jeu libre, on encourage le tir en course.", cue:"On ose la finition en mouvement." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Bilan : le tir en course, ça fait 3 appuis." } ]},
+  ]},
+
+ '2026-09-09': { th:"Montée de balle 2c1 (découverte)", ob:"Découvrir le surnombre : jouer vite vers l'avant, fixer une défenseuse et libérer la partenaire.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎯", n:"Jeu : gardien chasseur inversé", dose:"12 min", d:"Règles dans l'onglet Programme.", cue:"Lecture, esquive, réactivité." },
+     { e:"🔺", n:"Passes rapides par 3", dose:"8 min", d:"Passe-suit tendu.", cue:"On monte le rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"2️⃣", n:"2 contre 1 en montée", dose:"35 min", d:"2 attaquantes, 1 défenseuse, 1 gardienne.", steps:["Monter le ballon vite vers le but.","Fixer la défenseuse (aller vers elle) puis donner à la démarquée.","Finir avant le repli."], cue:"Fixer = aller vers la défenseuse ballon en main, puis libérer." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 4c4 « montée valorisée »", dose:"20 min", d:"But rapide après récupération = double.", cue:"On joue vers l'avant dès qu'on récupère." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Notion du jour : le surnombre, on le joue vite." } ]},
+  ]},
+
+ '2026-09-10': { th:"Réinvestissement en opposition", ob:"Remettre passe, tir et montée de balle dans du jeu réel, avec de l'opposition.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"👑", n:"Jeu : le roi du terrain", dose:"12 min", d:"Règles onglet Programme.", cue:"Dribble de protection." },
+     { e:"🔺", n:"Passes en mouvement", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Opposition", t:"55 min", ex:[
+     { e:"🥊", n:"Ateliers 3c3 tournants", dose:"25 min", d:"2 demi-terrains, on tourne.", cue:"Beaucoup de touches de balle." },
+     { e:"🚫", n:"Match 4c4 « sans dribble »", dose:"15 min", d:"Interdiction de dribbler.", cue:"On avance en passant et en se démarquant." },
+     { e:"🏐", n:"Match 5c5 libre", dose:"15 min", cue:"On laisse jouer, on encourage la montée de balle." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Bilan de la semaine." } ]},
+  ]},
+
+ '2026-09-16': { th:"Feinte & jeu dans l'intervalle", ob:"Éliminer par une feinte de corps et attaquer les espaces entre défenseuses.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎪", n:"Jeu : le relais surprise", dose:"12 min", d:"Règles onglet Programme.", cue:"On ose le geste." },
+     { e:"🥅", n:"Gammes de tir", dose:"8 min", d:"Colonnes vers le but.", cue:"On réveille la finition." },
+   ]},
+   { n:"Technique", t:"25 min", ex:[
+     { e:"🌀", n:"Tir en course après feinte", dose:"13 min", d:"Feinte à 11 m puis 3 appuis et tir.", steps:["Feinte de corps franche (changement d'appui).","Puis explosion sur les 3 appuis."], cue:"La feinte doit faire réagir une vraie défenseuse (semi-active)." },
+     { e:"↔️", n:"Jeu dans l'intervalle", dose:"12 min", d:"Attaquer l'espace entre 2 défenseuses passives.", cue:"La joueuse sans ballon appelle la balle dans l'intervalle." },
+   ]},
+   { n:"Jeu", t:"30 min", ex:[
+     { e:"🏐", n:"Match 5c5", dose:"30 min", d:"On valorise le une-contre-une gagnée par la feinte.", cue:"On ose éliminer." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Feinte + intervalle = on perce la défense." } ]},
+  ]},
+
+ '2026-09-17': { th:"Montée de balle 3c2 + match à thème", ob:"Passer du 2c1 au 3c2 : circuler la balle pour créer et jouer le surnombre.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"💣", n:"Jeu : la bombe à retardement", dose:"12 min", d:"Règles onglet Programme.", cue:"Passe vite et juste." },
+     { e:"🔺", n:"Passes par 3", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"30 min", ex:[
+     { e:"3️⃣", n:"3 contre 2 en montée", dose:"30 min", d:"3 attaquantes, 2 défenseuses, gardienne.", steps:["Circuler vite la balle pour attirer les 2 défenseuses d'un côté.","Renverser et finir de l'autre côté."], cue:"Passes courtes et fortes, on garde de l'écartement." },
+   ]},
+   { n:"Jeu", t:"25 min", ex:[
+     { e:"🏐", n:"Match 5c5 « contre-attaque »", dose:"25 min", d:"But en contre (avant repli adverse) = double.", cue:"On lit le surnombre et on le joue." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Le surnombre se crée par la circulation de balle." } ]},
+  ]},
+
+ '2026-09-23': { th:"Vers le 1er match", ob:"Mettre en confiance avant J1 : situations simples réussies, repères collectifs, plaisir.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🔟", n:"Jeu : la passe à dix", dose:"12 min", d:"Sans dribble.", cue:"Esprit collectif." },
+     { e:"🥅", n:"Tirs en course des 2 côtés", dose:"8 min", cue:"On réveille la finition." },
+   ]},
+   { n:"Situations de match", t:"35 min", ex:[
+     { e:"🌊", n:"Montée de balle 2c1 / 3c2 enchaînées", dose:"20 min", d:"Vagues rapides, finition.", cue:"On répète ce qui marchera samedi." },
+     { e:"🛡️", n:"Rappel repli simple", dose:"15 min", d:"Après le tir, on court se replier (notion).", cue:"On introduit : dès le tir, on rentre défendre." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5 avec repères", dose:"20 min", d:"On met en place les rôles pour le match.", cue:"Confiance : on félicite chaque réussite." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & consignes match", dose:"5 min", cue:"On explique le déroulé de J1, on rassure." } ]},
+  ]},
+
+ '2026-09-24': { th:"Activation avant J1", ob:"Séance courte et vive juste avant le 1er match : gestes de finition, vitesse, plaisir.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎯", n:"Jeu : gardien chasseur inversé", dose:"12 min", d:"Règles onglet Programme.", cue:"Réactivité." },
+     { e:"🔺", n:"Passes vives", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Activation", t:"30 min", ex:[
+     { e:"⚡", n:"Montées de balle rapides + tir", dose:"15 min", d:"2 vagues, finition franche.", cue:"On est vive et nette, sans se fatiguer." },
+     { e:"🥅", n:"Tirs de confiance", dose:"15 min", d:"Beaucoup de buts marqués, avec gardiennes.", cue:"On accumule des réussites avant le match." },
+   ]},
+   { n:"Jeu léger", t:"25 min", ex:[
+     { e:"🏐", n:"Match 4c4 fun", dose:"25 min", cue:"On termine sur du plaisir, groupe soudé." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & motivation", dose:"5 min", cue:"Prêtes pour J1 (26-27 sept), on y va confiantes." } ]},
+  ]},
+
+ '2026-09-30': { th:"Debrief J1 & contre-attaque", ob:"Corriger ce qu'on a vu au 1er match et lancer le thème d'octobre : la contre-attaque.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"⛓️", n:"Jeu : balle aux prisonniers", dose:"12 min", d:"Règles onglet Programme.", cue:"Esquive et passes." },
+     { e:"🔺", n:"Passes par 3", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"🧤", n:"Relance de gardienne + course de contre", dose:"18 min", d:"La gardienne relance vite sur une ailière lancée.", cue:"La contre commence par la gardienne." },
+     { e:"⚡", n:"Contre-attaque 2c1", dose:"17 min", d:"Départ après une récupération simulée.", cue:"On regarde vers l'avant dès la récupération." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5 « 8 secondes »", dose:"20 min", d:"8 s pour armer un tir après récupération.", cue:"On accélère la transition." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & retours J1", dose:"5 min", cue:"On garde le positif du match, on cible 1 progrès." } ]},
+  ]},
+
+ '2026-10-01': { th:"Contre-attaque en opposition (pré-J2)", ob:"Réinvestir la contre-attaque sous opposition avant J2 (3-4 oct).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"💣", n:"Jeu : la bombe à retardement", dose:"12 min", cue:"Passe vite." },
+     { e:"⚡", n:"Départs vifs + réception", dose:"8 min", cue:"On réveille la vitesse." },
+   ]},
+   { n:"Opposition", t:"55 min", ex:[
+     { e:"♻️", n:"Relais-match « contre continue »", dose:"20 min", d:"À la récupération, on contre immédiatement l'autre but.", cue:"Continuité défense→attaque." },
+     { e:"🔁", n:"Transition 4c4 tout terrain", dose:"20 min", d:"On joue vers l'avant à chaque changement de balle.", cue:"Aucune pause." },
+     { e:"🏐", n:"Match 5c5", dose:"15 min", cue:"Repères d'équipe avant J2." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & consignes J2", dose:"5 min", cue:"On rappelle : viser la profondeur." } ]},
+  ]},
+
+ '2026-10-07': { th:"Montée de balle en 2 vagues", ob:"Structurer la montée de balle : 1re vague rapide, 2e vague qui déborde dans le dos.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎪", n:"Jeu : le relais surprise", dose:"12 min", cue:"Vivacité." },
+     { e:"🔺", n:"Passes par 3", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"🌊", n:"Montée de balle en 2 vagues", dose:"35 min", d:"1re vague (2 joueuses) puis 2e vague lancée.", steps:["1re vague monte vite le ballon.","2e vague arrive dans le dos de la défense.","Passes courtes et fortes, écartement."], cue:"Rythme + écartement pour faire déborder une défense qui recule." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5 « montée valorisée »", dose:"20 min", cue:"But en montée rapide = double." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"2 vagues = on submerge la défense." } ]},
+  ]},
+
+ '2026-10-08': { th:"Debrief J2 & finition", ob:"Corriger J2 et soigner la finition (tir en course, 1c1 face à la gardienne).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎯", n:"Jeu : gardien chasseur inversé", dose:"12 min", cue:"Réactivité." },
+     { e:"🥅", n:"Gammes de tir", dose:"8 min", cue:"Finition." },
+   ]},
+   { n:"Technique", t:"30 min", ex:[
+     { e:"🥅", n:"Duel face à la gardienne", dose:"15 min", d:"Départ lancée, choix de tir (côté ouvert).", cue:"On regarde la gardienne, on tire à l'opposé de sa main." },
+     { e:"🌀", n:"Feinte + tir en course", dose:"15 min", d:"Éliminer puis finir.", cue:"Feinte franche, finition posée." },
+   ]},
+   { n:"Jeu", t:"25 min", ex:[
+     { e:"🏐", n:"Match 5c5", dose:"25 min", cue:"On valorise les finitions propres." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & retours J2", dose:"5 min", cue:"1 progrès ciblé pour la suite." } ]},
+  ]},
+
+ '2026-10-14': { th:"Montée de balle 3c2 + finition (pré-J4)", ob:"Enchaîner surnombre et finition avant J4 (17-18 oct).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🔟", n:"Jeu : la passe à dix", dose:"12 min", cue:"Collectif." },
+     { e:"🔺", n:"Passes vives", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"3️⃣", n:"3 contre 2 + finition", dose:"20 min", d:"Créer le surnombre puis conclure.", cue:"On finit facile, pas d'exploit individuel." },
+     { e:"⚡", n:"Contre-attaque enchaînée", dose:"15 min", d:"Récupération → montée → tir, en vagues.", cue:"Vitesse vers l'avant." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5 avec repères", dose:"20 min", cue:"On installe le jeu pour J4." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Consignes J4." } ]},
+  ]},
+
+ '2026-10-15': { th:"Activation avant J4", ob:"Séance vive et confiante avant J4, puis pause Toussaint.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎪", n:"Jeu : le relais surprise", dose:"12 min", cue:"Vivacité." },
+     { e:"🥅", n:"Tirs de confiance", dose:"8 min", cue:"On marque." },
+   ]},
+   { n:"Activation", t:"30 min", ex:[
+     { e:"⚡", n:"Montées rapides + tir", dose:"15 min", cue:"Vive et nette." },
+     { e:"🏐", n:"Petits matchs 4c4", dose:"15 min", cue:"Plaisir et repères." },
+   ]},
+   { n:"Jeu léger", t:"25 min", ex:[
+     { e:"🏐", n:"Match 5c5 fun", dose:"25 min", cue:"On finit avant les vacances sur du positif." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & mot vacances", dose:"5 min", cue:"Prêtes pour J4, puis bonnes vacances de Toussaint !" } ]},
+  ]},
+
+ '2026-11-04': { th:"Reprise & défense en recul", ob:"Reprise après les vacances et nouveau thème : la défense (se placer, reculer, défendre en 1c1).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"⛓️", n:"Jeu : balle aux prisonniers", dose:"12 min", cue:"Esquive et lecture." },
+     { e:"🔺", n:"Passes par 3", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Technique défensive", t:"35 min", ex:[
+     { e:"🛡️", n:"Défense en recul (1c1)", dose:"18 min", d:"Se placer entre l'attaquante et le but, reculer sans courir après le ballon.", steps:["Rester entre l'attaquante et le but.","Reculer en contrôlant, appuis actifs, mains devant."], cue:"On protège son but, on ne se jette pas sur le ballon." },
+     { e:"🥊", n:"Duel 1c1 défensif", dose:"17 min", d:"Base de la défense placée.", cue:"On oriente l'attaquante vers l'extérieur." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5", dose:"20 min", d:"On valorise les bons duels défensifs.", cue:"Défendre, c'est actif et courageux." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Défendre en reculant = gagner du temps." } ]},
+  ]},
+
+ '2026-11-05': { th:"Repli après tir (pré-J5)", ob:"Introduire le repli : dès le tir, on court défendre. Préparation à J5 (7-8 nov).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎯", n:"Jeu : la revanche de l'entraîneur", dose:"12 min", cue:"Réactivité." },
+     { e:"🔺", n:"Passes vives", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"↩️", n:"Repli après tir", dose:"20 min", d:"L'attaque tire, les arrières se replient aussitôt.", steps:["Dès que le ballon quitte la main, on sprinte en repli.","On gêne la montée de balle adverse, on interdit la passe dans le dos."], cue:"Le repli commence à la seconde du tir." },
+     { e:"🔄", n:"3c3 transition att→def", dose:"15 min", d:"À la perte, on devient défenseuse immédiatement.", cue:"On arrête de râler sur la perte, on court défendre." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5 « repli obligatoire »", dose:"20 min", d:"Après chaque tir, toucher sa ligne de repli.", cue:"Personne ne reste à admirer son tir." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & consignes J5", dose:"5 min", cue:"On se replie tous ensemble." } ]},
+  ]},
+
+ '2026-11-12': { th:"Changement de statut (pré-J6)", ob:"Basculer instantanément attaque↔défense. Debrief J5, préparation J6 (14-15 nov).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"💣", n:"Jeu : la bombe à retardement", dose:"12 min", cue:"Décision rapide." },
+     { e:"🔺", n:"Passes par 3", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"🔄", n:"4c4 « changement de statut »", dose:"20 min", d:"Jeu continu, att↔def sans temps mort.", cue:"1 point d'équipe chaque fois qu'un repli stoppe une contre." },
+     { e:"⚡", n:"Récupération → contre", dose:"15 min", d:"Dès la récupération, on repart vers l'avant.", cue:"Le déclencheur, c'est la récupération de balle." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5", dose:"20 min", cue:"On valorise attaque rapide ET repli." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & retours J5", dose:"5 min", cue:"Attaquante puis défenseuse : sans temps mort." } ]},
+  ]},
+
+ '2026-11-18': { th:"Transition & sur/sous-nombre", ob:"Vivre le repli en infériorité et l'attaque rapide en supériorité.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎯", n:"Jeu : gardien chasseur inversé", dose:"12 min", cue:"Réactivité." },
+     { e:"🔺", n:"Passes vives", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"➕", n:"Supériorité 4c3", dose:"18 min", d:"Attaquer le surnombre par la montée de balle.", cue:"On joue vite le surnombre." },
+     { e:"➖", n:"Infériorité 3c4", dose:"17 min", d:"Défendre en infériorité (repli, fermer le centre).", cue:"En infériorité, chaque appui compte, on ferme l'axe." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5", dose:"20 min", cue:"On applique repli et contre." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Sous-nombre = repli parfait ensemble." } ]},
+  ]},
+
+ '2026-11-19': { th:"Opposition & repli (pré-J7)", ob:"Réinvestir repli et changement de statut sous opposition avant J7 (21-22 nov).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"⛓️", n:"Jeu : balle aux prisonniers", dose:"12 min", cue:"Esquive et lecture." },
+     { e:"🔺", n:"Passes par 3", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Opposition", t:"55 min", ex:[
+     { e:"🔄", n:"4c4 statut permanent", dose:"20 min", d:"Jeu continu, repli valorisé.", cue:"Aucune pause att↔def." },
+     { e:"↩️", n:"Repli après tir chronométré", dose:"15 min", d:"Toucher la ligne de repli après le tir.", cue:"Tout le monde rentre." },
+     { e:"🏐", n:"Match 5c5", dose:"20 min", cue:"Repères avant J7." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & consignes J7", dose:"5 min", cue:"On défend tous ensemble." } ]},
+  ]},
+
+ '2026-11-25': { th:"Défense collective autour de la zone", ob:"Défendre à plusieurs : 1c1 solide, aide, et découverte de la défense autour du pivot.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎯", n:"Jeu : la revanche de l'entraîneur", dose:"12 min", cue:"Réactivité." },
+     { e:"🔺", n:"Passes vives", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Technique défensive", t:"35 min", ex:[
+     { e:"🥊", n:"Duel 1c1 + aide", dose:"18 min", d:"Une défenseuse défend, une 2e aide sur le côté.", cue:"On communique : « j'ai la balle », « je t'aide »." },
+     { e:"🧱", n:"Défendre autour du pivot", dose:"17 min", d:"Nouveauté U13 : défendre une joueuse proche de la zone.", cue:"On reste entre le pivot et le but, on annonce." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5", dose:"20 min", d:"1 point par bloc défensif annoncé.", cue:"On parle, on défend en équipe." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Défendre, c'est communiquer." } ]},
+  ]},
+
+ '2026-11-26': { th:"Opposition (pré-J8)", ob:"Beaucoup de jeu et de repli avant J8 (28-29 nov), en confiance.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🔟", n:"Jeu : la passe à dix", dose:"12 min", cue:"Collectif." },
+     { e:"⚡", n:"Montées rapides + tir", dose:"8 min", cue:"Vitesse." },
+   ]},
+   { n:"Opposition", t:"55 min", ex:[
+     { e:"♻️", n:"Relais-match « contre continue »", dose:"20 min", cue:"Transition sans arrêt." },
+     { e:"🔄", n:"4c4 changement de statut", dose:"15 min", cue:"Repli valorisé." },
+     { e:"🏐", n:"Match 5c5", dose:"20 min", cue:"Repères avant J8." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & consignes J8", dose:"5 min", cue:"Confiantes et solidaires." } ]},
+  ]},
+
+ '2026-12-02': { th:"Jeu de transition complet", ob:"Relier tout : monter la balle vite, se replier aussitôt, changer de statut dans les 2 sens.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎪", n:"Jeu : le relais surprise", dose:"12 min", cue:"Vivacité." },
+     { e:"🔺", n:"Passes par 3", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"♾️", n:"Vague continue montée ↔ repli", dose:"22 min", d:"Une équipe monte, se replie, l'autre contre, en boucle.", steps:["Attaque rapide → finition → repli immédiat.","L'adversaire contre aussitôt : ça ne s'arrête jamais."], cue:"L'exercice-roi : il contient montée de balle, repli et changement de statut." },
+     { e:"🔄", n:"4c4 statut permanent", dose:"13 min", d:"Aucune remise en jeu lente.", cue:"Handball moderne : transitions permanentes." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5 « transition valorisée »", dose:"20 min", d:"Montée rapide = double, repli réussi = point.", cue:"Attaque et défense récompensées à parts égales." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements", dose:"5 min", cue:"Tout est lié : on joue vers l'avant, on se replie." } ]},
+  ]},
+
+ '2026-12-03': { th:"Opposition (pré-J9)", ob:"Réinvestir la transition sous opposition avant J9 (5-6 déc).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"💣", n:"Jeu : la bombe à retardement", dose:"12 min", cue:"Décision rapide." },
+     { e:"⚡", n:"Montées rapides", dose:"8 min", cue:"Vitesse." },
+   ]},
+   { n:"Opposition", t:"55 min", ex:[
+     { e:"🔁", n:"Transition 4c4 tout terrain", dose:"20 min", cue:"On joue vers l'avant à chaque ballon." },
+     { e:"♻️", n:"Relais-match « contre continue »", dose:"15 min", cue:"Beaucoup de transitions." },
+     { e:"🏐", n:"Match 5c5", dose:"20 min", cue:"Repères avant J9." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & consignes J9", dose:"5 min", cue:"Vite vers l'avant, repli ensemble." } ]},
+  ]},
+
+ '2026-12-09': { th:"Statut permanent (pré-J10)", ob:"Debrief J9 et affiner le statut permanent avant J10 (12-13 déc).",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎯", n:"Jeu : gardien chasseur inversé", dose:"12 min", cue:"Réactivité." },
+     { e:"🔺", n:"Passes vives", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Situation", t:"35 min", ex:[
+     { e:"♾️", n:"Vague continue montée ↔ repli", dose:"20 min", cue:"On ne s'arrête jamais." },
+     { e:"➕", n:"Sur/sous-nombre 4c3 / 3c4", dose:"15 min", cue:"Attaquer le surnombre, défendre l'infériorité." },
+   ]},
+   { n:"Jeu", t:"20 min", ex:[
+     { e:"🏐", n:"Match 5c5 avec repères", dose:"20 min", cue:"On installe le jeu pour J10." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & retours J9", dose:"5 min", cue:"Consignes J10." } ]},
+  ]},
+
+ '2026-12-10': { th:"Activation avant J10", ob:"Séance vive et confiante avant le dernier match de la phase, J10.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"🎪", n:"Jeu : le relais surprise", dose:"12 min", cue:"Vivacité." },
+     { e:"🥅", n:"Tirs de confiance", dose:"8 min", cue:"On marque." },
+   ]},
+   { n:"Activation", t:"30 min", ex:[
+     { e:"⚡", n:"Montées rapides + tir", dose:"15 min", cue:"Vive et nette." },
+     { e:"🏐", n:"Petits matchs 4c4", dose:"15 min", cue:"Repères et plaisir." },
+   ]},
+   { n:"Jeu léger", t:"25 min", ex:[
+     { e:"🏐", n:"Match 5c5 fun", dose:"25 min", cue:"On finit sur du positif avant J10." },
+   ]},
+   { n:"Retour au calme", t:"5 min", ex:[ { e:"🧘‍♀️", n:"Étirements & motivation", dose:"5 min", cue:"Prêtes pour J10, on donne tout puis on savoure." } ]},
+  ]},
+
+ '2026-12-16': { th:"Dernière séance & bilan avant les vacances", ob:"Fêter le travail du trimestre : grands jeux, plaisir, bilan des progrès. Dernière séance avant Noël.",
+  ph:[
+   { n:"Échauffement", t:"20 min", ex:[
+     { e:"⛓️", n:"Jeu : balle aux prisonniers (grand)", dose:"12 min", cue:"On rit, on bouge." },
+     { e:"🔺", n:"Passes par 3", dose:"8 min", cue:"Rythme." },
+   ]},
+   { n:"Grand jeu", t:"55 min", ex:[
+     { e:"🏆", n:"Mini-tournoi 4c4 (poules)", dose:"35 min", d:"Matchs courts, tout le monde joue, arbitrage tournant.", cue:"On observe tous les progrès du trimestre en jeu." },
+     { e:"🥇", n:"Grand match final 5c5", dose:"20 min", d:"Match all-stars.", cue:"On laisse jouer, on encourage à fond." },
+   ]},
+   { n:"Retour au calme & bilan", t:"5 min", ex:[
+     { e:"🎉", n:"Étirements & bilan de trimestre", dose:"5 min", d:"En cercle, moment important.", cue:"Chaque joueuse dit un progrès ; on rappelle le chemin (fondamentaux, montée de balle, contre-attaque, repli). Joyeuses fêtes !" },
+   ]},
+  ]},
+};
 
 const INTENSITY = {
   'S1.0':'Modéré', 'S1.1':'Modéré', 'S1.2':'Soutenu',
@@ -1076,8 +1520,24 @@ function selectCal(btn){
   renderCalendar();
 }
 
+function renderSeance(s){
+  let h = `<p class="sess-obj"><b>Objectif · </b>${s.ob}</p>`;
+  s.ph.forEach(p => {
+    let ex = '';
+    p.ex.forEach(x => {
+      const dose = x.dose ? `<span class="dose-chip">${x.dose}</span>` : '';
+      const det = x.d ? `<div class="det">${x.d}</div>` : '';
+      const steps = x.steps ? `<ol class="steps">${x.steps.map(st => `<li>${st}</li>`).join('')}</ol>` : '';
+      const cue = x.cue ? `<div class="cue"><span class="i">👉</span><div>${x.cue}</div></div>` : '';
+      ex += `<div class="ex"><div class="emo">${x.e}</div><div class="txt"><div class="name">${x.n}${dose}</div>${det}${steps}${cue}</div></div>`;
+    });
+    h += `<div class="phase"><div class="phase-title">${p.n}<span class="t">${p.t||''}</span></div>${ex}</div>`;
+  });
+  return h;
+}
+
 function renderCalendar(){
-  let html = `<div class="week-head"><h2>Calendrier de la saison</h2><p>Entraînements le mercredi et le jeudi, et les matchs du championnat U13 Filles.</p><span class="compo">19 matchs · 71 entraînements</span></div>`;
+  let html = `<div class="week-head"><h2>Calendrier de la saison</h2><p>Entraînements le mercredi et le jeudi, et les matchs du championnat U13 Filles.</p><span class="compo">19 matchs · 70 entraînements</span></div>`;
   html += `<p class="cal-note">Entraînements hors vacances scolaires (zone A, académie de Bordeaux) et jours fériés. Les matchs ont lieu le week-end (samedi ou dimanche selon la convocation).</p>`;
   saison.forEach((mo, i) => {
     const open = i === 0 ? ' open' : '';
@@ -1086,7 +1546,12 @@ function renderCalendar(){
       if(it.t === 'm'){
         rows += `<div class="cal-row match"><span class="cal-date">${it.d}</span><span class="cal-badge m">Match</span><div class="cal-lib"><b>${it.lib}</b><span class="cal-we">${it.we}</span></div></div>`;
       } else {
-        rows += `<div class="cal-row"><span class="cal-date">${it.d}</span><span class="cal-badge e">Entraînement</span></div>`;
+        const s = seances[it.iso];
+        if(s){
+          rows += `<details class="cal-sess"><summary class="cal-row cal-row-clic"><span class="cal-date">${it.d}</span><span class="cal-badge e">Séance</span><span class="cal-theme">${s.th}</span></summary><div class="sess-body">${renderSeance(s)}</div></details>`;
+        } else {
+          rows += `<div class="cal-row"><span class="cal-date">${it.d}</span><span class="cal-badge e">Entraînement</span></div>`;
+        }
       }
     });
     const meta = `${mo.nEntr} entr.` + (mo.nMatch ? ` · ${mo.nMatch} match` + (mo.nMatch>1?'s':'') : '');
