@@ -268,10 +268,10 @@
   <header>
     <div class="eyebrow">HCB Libourne · U13 Filles · Jeu de transition</div>
     <h1>Saison<br><span>2026-2027</span></h1>
-    <p class="lead">Le programme complet des U13 Filles : calendrier des matchs, entraînements du mercredi (2 h) et du jeudi (1 h 30, dont 40 min d'opposition), et un jeu axé transition (montée de balle, contre-attaque, repli, changement de statut) et technique individuelle.</p>
+    <p class="lead">Le programme complet des U13 Filles : calendrier des matchs, entraînements du mercredi (2 h, dont 40 min d'opposition avec les -15 F) et du jeudi (1 h 30), et un jeu axé transition (montée de balle, contre-attaque, repli, changement de statut) et technique individuelle.</p>
     <div class="legend">
-      <span><i class="dot int"></i> Séance complète · 2 h</span>
-      <span><i class="dot ext"></i> Séance opposition · 1 h 30 (opposition)</span>
+      <span><i class="dot int"></i> Mercredi · 2 h (dont 40 min d'opposition avec les -15 F)</span>
+      <span><i class="dot ext"></i> Jeudi · 1 h 30 (technique & jeu)</span>
     </div>
     <div class="axes">
       <span class="axe">🚀 Montée de balle</span>
@@ -1002,7 +1002,7 @@ const saison = [
 ];
 
 const seances = {
-  '2026-08-26': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise de saison : prise de contact, maniement de balle et fondamentaux, dans le plaisir.', ph:[
+  '2026-08-26': { th:'Rappel des fondamentaux', dur:'2 h · 40 min oppo (-15 F)', ob:'Reprise de saison : prise de contact, maniement de balle et fondamentaux, dans le plaisir.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
@@ -1011,35 +1011,36 @@ const seances = {
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
-      { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'30 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-08-27': { th:'Rappel des fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Reprise de saison : prise de contact, maniement de balle et fondamentaux, dans le plaisir.', ph:[
+  '2026-08-27': { th:'Rappel des fondamentaux', dur:'1 h 30', ob:'Reprise de saison : prise de contact, maniement de balle et fondamentaux, dans le plaisir.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'16 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'20 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-09-02': { th:'Fondamentaux', dur:'2 h', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+  '2026-09-02': { th:'Fondamentaux', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
@@ -1048,35 +1049,36 @@ const seances = {
       { e:'🌀', n:'Feinte de corps + tir', dose:'13 min', d:'Feinte à 11 m puis 3 appuis et tir.', cue:'Feinte franche (changement d\'appui) qui fait réagir la défenseuse.' },
       { e:'🎯', n:'Passe en mouvement (2 mains)', dose:'12 min', d:'2 colonnes qui se croisent, passe tendue.', cue:'Main forte puis main faible ; passe à hauteur de poitrine, jamais dans les pieds.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🤝', n:'Passe & va (donne-et-suit)', dose:'18 min', d:'Je passe puis je cours prendre la place devant.', cue:'La passe déclenche un déplacement, on ne s\'arrête jamais.' },
-      { e:'↔️', n:'Jeu dans l\'intervalle', dose:'18 min', d:'Attaquer l\'espace entre 2 défenseuses.', cue:'La joueuse sans ballon appelle la balle dans l\'intervalle.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 4c4 « obligation de passe »', dose:'30 min', d:'But validé après 3 passes minimum.', cue:'On force le jeu collectif et le démarquage.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-09-03': { th:'Fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+  '2026-09-03': { th:'Fondamentaux', dur:'1 h 30', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🥅', n:'Rappel tir en course', dose:'25 min', d:'Vagues de tirs, main forte et faible.', cue:'Court et vif avant l\'opposition.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🎯', n:'Passe en mouvement (2 mains)', dose:'12 min', d:'2 colonnes qui se croisent, passe tendue.', cue:'Main forte puis main faible ; passe à hauteur de poitrine, jamais dans les pieds.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 4c4 « obligation de passe »', dose:'16 min', d:'But validé après 3 passes minimum.', cue:'On force le jeu collectif et le démarquage.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'↔️', n:'Jeu dans l\'intervalle', dose:'18 min', d:'Attaquer l\'espace entre 2 défenseuses.', cue:'La joueuse sans ballon appelle la balle dans l\'intervalle.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 4c4 « obligation de passe »', dose:'20 min', d:'But validé après 3 passes minimum.', cue:'On force le jeu collectif et le démarquage.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-09-09': { th:'Fondamentaux', dur:'2 h', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+  '2026-09-09': { th:'Fondamentaux', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
@@ -1085,35 +1087,36 @@ const seances = {
       { e:'🥅', n:'Tir en course (3 appuis)', dose:'13 min', d:'Réception en course puis 3 appuis et tir.', cue:'On compte 1-2-3 puis tir, bras armé haut ; d\'abord sans gardienne, puis avec.', steps:['Réception mains devant en course.','3 appuis réglementaires.','Tir vers le côté ouvert.'] },
       { e:'🎯', n:'Dribble slalom (main faible)', dose:'10 min', d:'Slalom entre plots, main faible, fini par une passe.', cue:'Tête haute pendant le dribble, on développe la main faible.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🤝', n:'Passe & va (donne-et-suit)', dose:'18 min', d:'Je passe puis je cours prendre la place devant.', cue:'La passe déclenche un déplacement, on ne s\'arrête jamais.' },
+    ]},
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
+    ]},
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
+    ]},
+  ]},
+  '2026-09-10': { th:'Fondamentaux', dur:'1 h 30', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+    { n:'Échauffement', t:'20 min', ex:[
+      { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
+      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
+    ]},
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🎯', n:'Dribble slalom (main faible)', dose:'10 min', d:'Slalom entre plots, main faible, fini par une passe.', cue:'Tête haute pendant le dribble, on développe la main faible.' },
+    ]},
+    { n:'Situation', t:'25 min', ex:[
       { e:'↔️', n:'Jeu dans l\'intervalle', dose:'18 min', d:'Attaquer l\'espace entre 2 défenseuses.', cue:'La joueuse sans ballon appelle la balle dans l\'intervalle.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 4c4 « obligation de passe »', dose:'30 min', d:'But validé après 3 passes minimum.', cue:'On force le jeu collectif et le démarquage.' },
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 4c4 « obligation de passe »', dose:'20 min', d:'But validé après 3 passes minimum.', cue:'On force le jeu collectif et le démarquage.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-09-10': { th:'Fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Travail : fondamentaux. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
-    { n:'Échauffement', t:'20 min', ex:[
-      { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
-    ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🥅', n:'Rappel tir en course', dose:'25 min', d:'Vagues de tirs, main forte et faible.', cue:'Court et vif avant l\'opposition.' },
-    ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 4c4 « obligation de passe »', dose:'16 min', d:'But validé après 3 passes minimum.', cue:'On force le jeu collectif et le démarquage.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
-    ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
-    ]},
-  ]},
-  '2026-09-16': { th:'Montée de balle', dur:'2 h', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+  '2026-09-16': { th:'Montée de balle', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
@@ -1122,71 +1125,74 @@ const seances = {
       { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
       { e:'2️⃣', n:'2 contre 1 en montée', dose:'13 min', d:'2 attaquantes, 1 défenseuse, gardienne.', cue:'Fixer la défenseuse (aller vers elle) puis libérer la démarquée.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re vague rapide, 2e vague dans le dos.', cue:'Rythme + écartement pour faire déborder la défense qui recule.' },
-      { e:'3️⃣', n:'3 contre 2 en montée', dose:'22 min', d:'3 attaquantes, 2 défenseuses.', cue:'Circuler vite pour créer le surnombre, renverser et finir.', steps:['Attirer les 2 défenseuses d\'un côté.','Renverser et conclure de l\'autre.'] },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « montée valorisée »', dose:'30 min', d:'But rapide après récupération = double.', cue:'On joue vers l\'avant dès la récupération.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-09-17': { th:'Montée de balle', dur:'1 h 30 · 40 min oppo', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+  '2026-09-17': { th:'Montée de balle', dur:'1 h 30', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🌊', n:'2 vagues de montée 3c2', dose:'25 min', d:'Vagues rapides, finition.', cue:'On réactive le surnombre, court et vif.' },
-    ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « montée valorisée »', dose:'16 min', d:'But rapide après récupération = double.', cue:'On joue vers l\'avant dès la récupération.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
-    ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
-    ]},
-  ]},
-  '2026-09-23': { th:'Montée de balle', dur:'2 h', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
-    { n:'Échauffement', t:'20 min', ex:[
-      { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
-    ]},
-    { n:'Technique', t:'25 min', ex:[
-      { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
+    { n:'Technique', t:'20 min', ex:[
       { e:'2️⃣', n:'2 contre 1 en montée', dose:'13 min', d:'2 attaquantes, 1 défenseuse, gardienne.', cue:'Fixer la défenseuse (aller vers elle) puis libérer la démarquée.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
-      { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re vague rapide, 2e vague dans le dos.', cue:'Rythme + écartement pour faire déborder la défense qui recule.' },
+    { n:'Situation', t:'25 min', ex:[
       { e:'3️⃣', n:'3 contre 2 en montée', dose:'22 min', d:'3 attaquantes, 2 défenseuses.', cue:'Circuler vite pour créer le surnombre, renverser et finir.', steps:['Attirer les 2 défenseuses d\'un côté.','Renverser et conclure de l\'autre.'] },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « montée valorisée »', dose:'30 min', d:'But rapide après récupération = double.', cue:'On joue vers l\'avant dès la récupération.' },
-    ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
-    ]},
-  ]},
-  '2026-09-24': { th:'Montée de balle · pré-J1', dur:'1 h 30 · 40 min oppo', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J1 : on met en confiance.', ph:[
-    { n:'Échauffement', t:'20 min', ex:[
-      { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
-    ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🌊', n:'2 vagues de montée 3c2', dose:'25 min', d:'Vagues rapides, finition.', cue:'On réactive le surnombre, court et vif.' },
-    ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « montée valorisée »', dose:'20 min', d:'But rapide après récupération = double.', cue:'On joue vers l\'avant dès la récupération.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-09-30': { th:'Montée de balle · debrief J1', dur:'2 h', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J1 et on corrige un point.', ph:[
+  '2026-09-23': { th:'Montée de balle', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+    { n:'Échauffement', t:'20 min', ex:[
+      { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+    ]},
+    { n:'Technique', t:'25 min', ex:[
+      { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
+      { e:'2️⃣', n:'2 contre 1 en montée', dose:'13 min', d:'2 attaquantes, 1 défenseuse, gardienne.', cue:'Fixer la défenseuse (aller vers elle) puis libérer la démarquée.' },
+    ]},
+    { n:'Situation', t:'30 min', ex:[
+      { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re vague rapide, 2e vague dans le dos.', cue:'Rythme + écartement pour faire déborder la défense qui recule.' },
+    ]},
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
+    ]},
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
+    ]},
+  ]},
+  '2026-09-24': { th:'Montée de balle · pré-J1', dur:'1 h 30', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J1 : on met en confiance.', ph:[
+    { n:'Échauffement', t:'20 min', ex:[
+      { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
+      { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
+    ]},
+    { n:'Technique', t:'20 min', ex:[
+      { e:'2️⃣', n:'2 contre 1 en montée', dose:'13 min', d:'2 attaquantes, 1 défenseuse, gardienne.', cue:'Fixer la défenseuse (aller vers elle) puis libérer la démarquée.' },
+    ]},
+    { n:'Situation', t:'25 min', ex:[
+      { e:'3️⃣', n:'3 contre 2 en montée', dose:'22 min', d:'3 attaquantes, 2 défenseuses.', cue:'Circuler vite pour créer le surnombre, renverser et finir.', steps:['Attirer les 2 défenseuses d\'un côté.','Renverser et conclure de l\'autre.'] },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « montée valorisée »', dose:'20 min', d:'But rapide après récupération = double.', cue:'On joue vers l\'avant dès la récupération.' },
+    ]},
+    { n:'Retour au calme', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    ]},
+  ]},
+  '2026-09-30': { th:'Montée de balle · debrief J1', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J1 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
@@ -1195,34 +1201,36 @@ const seances = {
       { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
       { e:'2️⃣', n:'2 contre 1 en montée', dose:'13 min', d:'2 attaquantes, 1 défenseuse, gardienne.', cue:'Fixer la défenseuse (aller vers elle) puis libérer la démarquée.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re vague rapide, 2e vague dans le dos.', cue:'Rythme + écartement pour faire déborder la défense qui recule.' },
-      { e:'3️⃣', n:'3 contre 2 en montée', dose:'22 min', d:'3 attaquantes, 2 défenseuses.', cue:'Circuler vite pour créer le surnombre, renverser et finir.', steps:['Attirer les 2 défenseuses d\'un côté.','Renverser et conclure de l\'autre.'] },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « montée valorisée »', dose:'30 min', d:'But rapide après récupération = double.', cue:'On joue vers l\'avant dès la récupération.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-10-01': { th:'Contre-attaque · pré-J2', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J2 : on met en confiance.', ph:[
+  '2026-10-01': { th:'Contre-attaque · pré-J2', dur:'1 h 30', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J2 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'20 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-10-07': { th:'Contre-attaque · debrief J2', dur:'2 h', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J2 et on corrige un point.', ph:[
+  '2026-10-07': { th:'Contre-attaque · debrief J2', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J2 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
@@ -1231,35 +1239,36 @@ const seances = {
       { e:'🥅', n:'Duel face à la gardienne', dose:'12 min', d:'Départ lancée, choix du côté.', cue:'On tire à l\'opposé de la main de la gardienne.' },
       { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re + 2e vague.', cue:'Passes courtes et fortes, on garde l\'écartement.' },
-      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'30 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-10-08': { th:'Contre-attaque', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+  '2026-10-08': { th:'Contre-attaque', dur:'1 h 30', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'16 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'20 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-10-14': { th:'Contre-attaque', dur:'2 h', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+  '2026-10-14': { th:'Contre-attaque', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
@@ -1268,34 +1277,36 @@ const seances = {
       { e:'🥅', n:'Duel face à la gardienne', dose:'12 min', d:'Départ lancée, choix du côté.', cue:'On tire à l\'opposé de la main de la gardienne.' },
       { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re + 2e vague.', cue:'Passes courtes et fortes, on garde l\'écartement.' },
-      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'30 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-10-15': { th:'Contre-attaque · pré-J4', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J4 : on met en confiance.', ph:[
+  '2026-10-15': { th:'Contre-attaque · pré-J4', dur:'1 h 30', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J4 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'20 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-11-04': { th:'Repli & défense', dur:'2 h', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
+  '2026-11-04': { th:'Repli & défense', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
@@ -1304,50 +1315,54 @@ const seances = {
       { e:'🧱', n:'Défendre autour du pivot', dose:'13 min', d:'Défendre une joueuse proche de la zone (nouveauté U13).', cue:'On reste entre le pivot et le but, on annonce.' },
       { e:'🛡️', n:'Défense en recul (1c1)', dose:'13 min', d:'Se placer entre l\'attaquante et le but, reculer.', cue:'On protège son but, on ne se jette pas sur le ballon.', steps:['Rester entre l\'attaquante et le but.','Reculer en contrôlant, mains devant.'] },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🔄', n:'3c3 transition attaque → défense', dose:'18 min', d:'À la perte, changement de statut immédiat.', cue:'On arrête de râler sur la perte, on court défendre.' },
-      { e:'↩️', n:'Repli après tir', dose:'22 min', d:'Après le tir, les arrières se replient aussitôt.', cue:'Le repli commence à la seconde du tir ; interdire la passe dans le dos.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'30 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-11-05': { th:'Repli & défense · pré-J5', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J5 : on met en confiance.', ph:[
+  '2026-11-05': { th:'Repli & défense · pré-J5', dur:'1 h 30', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J5 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🛡️', n:'Défense en recul (1c1)', dose:'13 min', d:'Se placer entre l\'attaquante et le but, reculer.', cue:'On protège son but, on ne se jette pas sur le ballon.', steps:['Rester entre l\'attaquante et le but.','Reculer en contrôlant, mains devant.'] },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'↩️', n:'Repli après tir', dose:'22 min', d:'Après le tir, les arrières se replient aussitôt.', cue:'Le repli commence à la seconde du tir ; interdire la passe dans le dos.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'20 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-11-12': { th:'Repli & défense · pré-J6', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J6 : on met en confiance.', ph:[
+  '2026-11-12': { th:'Repli & défense · pré-J6', dur:'1 h 30', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J6 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🥊', n:'Duel 1 contre 1 défensif', dose:'12 min', d:'Base de la défense placée.', cue:'On oriente l\'attaquante vers l\'extérieur, appuis actifs.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'🔄', n:'3c3 transition attaque → défense', dose:'18 min', d:'À la perte, changement de statut immédiat.', cue:'On arrête de râler sur la perte, on court défendre.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'20 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-11-18': { th:'Repli & défense · debrief J6', dur:'2 h', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J6 et on corrige un point.', ph:[
+  '2026-11-18': { th:'Repli & défense · debrief J6', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J6 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
@@ -1356,34 +1371,36 @@ const seances = {
       { e:'🧱', n:'Défendre autour du pivot', dose:'13 min', d:'Défendre une joueuse proche de la zone (nouveauté U13).', cue:'On reste entre le pivot et le but, on annonce.' },
       { e:'🛡️', n:'Défense en recul (1c1)', dose:'13 min', d:'Se placer entre l\'attaquante et le but, reculer.', cue:'On protège son but, on ne se jette pas sur le ballon.', steps:['Rester entre l\'attaquante et le but.','Reculer en contrôlant, mains devant.'] },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'↩️', n:'Repli après tir', dose:'22 min', d:'Après le tir, les arrières se replient aussitôt.', cue:'Le repli commence à la seconde du tir ; interdire la passe dans le dos.' },
-      { e:'🔄', n:'3c3 transition attaque → défense', dose:'18 min', d:'À la perte, changement de statut immédiat.', cue:'On arrête de râler sur la perte, on court défendre.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'30 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-11-19': { th:'Repli & défense · pré-J7', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J7 : on met en confiance.', ph:[
+  '2026-11-19': { th:'Repli & défense · pré-J7', dur:'1 h 30', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J7 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🛡️', n:'Défense en recul (1c1)', dose:'13 min', d:'Se placer entre l\'attaquante et le but, reculer.', cue:'On protège son but, on ne se jette pas sur le ballon.', steps:['Rester entre l\'attaquante et le but.','Reculer en contrôlant, mains devant.'] },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'🔄', n:'3c3 transition attaque → défense', dose:'18 min', d:'À la perte, changement de statut immédiat.', cue:'On arrête de râler sur la perte, on court défendre.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'20 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-11-25': { th:'Changement de statut · debrief J7', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J7 et on corrige un point.', ph:[
+  '2026-11-25': { th:'Changement de statut · debrief J7', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J7 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
@@ -1392,34 +1409,36 @@ const seances = {
       { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
-      { e:'➖', n:'Infériorité 3c4', dose:'20 min', d:'Défendre en infériorité (repli, fermer le centre).', cue:'Chaque appui compte, on ferme l\'axe.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition »', dose:'30 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-11-26': { th:'Changement de statut · pré-J8', dur:'1 h 30 · 40 min oppo', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J8 : on met en confiance.', ph:[
+  '2026-11-26': { th:'Changement de statut · pré-J8', dur:'1 h 30', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J8 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔄', n:'Rappel statut permanent', dose:'25 min', d:'2 vagues montée ↔ repli.', cue:'On ne s\'arrête jamais.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'➖', n:'Infériorité 3c4', dose:'20 min', d:'Défendre en infériorité (repli, fermer le centre).', cue:'Chaque appui compte, on ferme l\'axe.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « transition »', dose:'20 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-12-02': { th:'Jeu de transition complet · debrief J8', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J8 et on corrige un point.', ph:[
+  '2026-12-02': { th:'Jeu de transition complet · debrief J8', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J8 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
@@ -1428,34 +1447,36 @@ const seances = {
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
-      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-12-03': { th:'Jeu de transition complet · pré-J9', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J9 : on met en confiance.', ph:[
+  '2026-12-03': { th:'Jeu de transition complet · pré-J9', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J9 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-12-09': { th:'Jeu de transition complet · debrief J9', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J9 et on corrige un point.', ph:[
+  '2026-12-09': { th:'Jeu de transition complet · debrief J9', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J9 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
@@ -1464,34 +1485,36 @@ const seances = {
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
-      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2026-12-10': { th:'Jeu de transition complet · pré-J10', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J10 : on met en confiance.', ph:[
+  '2026-12-10': { th:'Jeu de transition complet · pré-J10', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J10 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2026-12-16': { th:'Jeu de transition complet · debrief J10', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J10 et on corrige un point.', ph:[
+  '2026-12-16': { th:'Jeu de transition complet · debrief J10', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J10 et on corrige un point.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
@@ -1500,18 +1523,18 @@ const seances = {
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
-      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-01-06': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
+  '2027-01-06': { th:'Rappel des fondamentaux', dur:'2 h · 40 min oppo (-15 F)', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
@@ -1520,35 +1543,36 @@ const seances = {
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
-      { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'30 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-01-07': { th:'Rappel des fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
+  '2027-01-07': { th:'Rappel des fondamentaux', dur:'1 h 30', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'16 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'20 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-01-13': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
+  '2027-01-13': { th:'Rappel des fondamentaux', dur:'2 h · 40 min oppo (-15 F)', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
@@ -1557,34 +1581,36 @@ const seances = {
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
-      { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'30 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-01-14': { th:'Rappel des fondamentaux · pré-J1', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Dernière séance avant le match J1 : on met en confiance.', ph:[
+  '2027-01-14': { th:'Rappel des fondamentaux · pré-J1', dur:'1 h 30', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Dernière séance avant le match J1 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'20 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-01-20': { th:'Rappel des fondamentaux · debrief J1', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. On débriefe le match J1 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-01-20': { th:'Rappel des fondamentaux · debrief J1', dur:'2 h · 40 min oppo (-15 F)', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. On débriefe le match J1 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
@@ -1593,34 +1619,36 @@ const seances = {
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
-      { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'30 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-01-21': { th:'Rappel des fondamentaux · pré-J2', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Dernière séance avant le match J2 : on met en confiance.', ph:[
+  '2027-01-21': { th:'Rappel des fondamentaux · pré-J2', dur:'1 h 30', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Dernière séance avant le match J2 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'20 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-01-27': { th:'Montée de balle · debrief J2', dur:'2 h', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J2 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-01-27': { th:'Montée de balle · debrief J2', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J2 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
@@ -1629,34 +1657,36 @@ const seances = {
       { e:'🧤', n:'Relance de gardienne + course', dose:'12 min', d:'La gardienne relance vite sur une ailière lancée.', cue:'La contre commence par la gardienne, on cherche la profondeur.' },
       { e:'2️⃣', n:'2 contre 1 en montée', dose:'13 min', d:'2 attaquantes, 1 défenseuse, gardienne.', cue:'Fixer la défenseuse (aller vers elle) puis libérer la démarquée.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re vague rapide, 2e vague dans le dos.', cue:'Rythme + écartement pour faire déborder la défense qui recule.' },
-      { e:'3️⃣', n:'3 contre 2 en montée', dose:'22 min', d:'3 attaquantes, 2 défenseuses.', cue:'Circuler vite pour créer le surnombre, renverser et finir.', steps:['Attirer les 2 défenseuses d\'un côté.','Renverser et conclure de l\'autre.'] },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « montée valorisée »', dose:'30 min', d:'But rapide après récupération = double.', cue:'On joue vers l\'avant dès la récupération.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-01-28': { th:'Montée de balle · pré-J3', dur:'1 h 30 · 40 min oppo', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J3 : on met en confiance.', ph:[
+  '2027-01-28': { th:'Montée de balle · pré-J3', dur:'1 h 30', ob:'Travail : montée de balle. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J3 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🌊', n:'2 vagues de montée 3c2', dose:'25 min', d:'Vagues rapides, finition.', cue:'On réactive le surnombre, court et vif.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'2️⃣', n:'2 contre 1 en montée', dose:'13 min', d:'2 attaquantes, 1 défenseuse, gardienne.', cue:'Fixer la défenseuse (aller vers elle) puis libérer la démarquée.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'3️⃣', n:'3 contre 2 en montée', dose:'22 min', d:'3 attaquantes, 2 défenseuses.', cue:'Circuler vite pour créer le surnombre, renverser et finir.', steps:['Attirer les 2 défenseuses d\'un côté.','Renverser et conclure de l\'autre.'] },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « montée valorisée »', dose:'20 min', d:'But rapide après récupération = double.', cue:'On joue vers l\'avant dès la récupération.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-02-03': { th:'Contre-attaque · debrief J3', dur:'2 h', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J3 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-02-03': { th:'Contre-attaque · debrief J3', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J3 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
@@ -1665,34 +1695,36 @@ const seances = {
       { e:'🥅', n:'Duel face à la gardienne', dose:'12 min', d:'Départ lancée, choix du côté.', cue:'On tire à l\'opposé de la main de la gardienne.' },
       { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re + 2e vague.', cue:'Passes courtes et fortes, on garde l\'écartement.' },
-      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'30 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-02-04': { th:'Contre-attaque · pré-J4', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J4 : on met en confiance.', ph:[
+  '2027-02-04': { th:'Contre-attaque · pré-J4', dur:'1 h 30', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J4 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'20 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-02-10': { th:'Contre-attaque · debrief J4', dur:'2 h', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J4 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-02-10': { th:'Contre-attaque · debrief J4', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J4 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
@@ -1701,35 +1733,36 @@ const seances = {
       { e:'🥅', n:'Duel face à la gardienne', dose:'12 min', d:'Départ lancée, choix du côté.', cue:'On tire à l\'opposé de la main de la gardienne.' },
       { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🌊', n:'Montée de balle en 2 vagues', dose:'18 min', d:'1re + 2e vague.', cue:'Passes courtes et fortes, on garde l\'écartement.' },
-      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'30 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-02-11': { th:'Contre-attaque', dur:'1 h 30 · 40 min oppo', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-02-11': { th:'Contre-attaque', dur:'1 h 30', ob:'Travail : contre-attaque. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'⚡', n:'Contre-attaque enchaînée', dose:'25 min', d:'Récupération → montée → tir.', cue:'Vitesse vers l\'avant.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'⚡', n:'Contre-attaque 2c1', dose:'13 min', d:'Départ après une récupération simulée.', cue:'On regarde vers l\'avant dès la récupération.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'16 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♻️', n:'Relais-match « contre continue »', dose:'22 min', d:'À la récupération, on contre immédiatement.', cue:'Continuité défense → attaque, beaucoup de transitions.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'⏱️', n:'Match 5c5 « 8 secondes »', dose:'20 min', d:'8 s pour armer un tir après récupération.', cue:'On accélère la transition, but en contre = double.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-03-03': { th:'Repli & défense', dur:'2 h', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-03-03': { th:'Repli & défense', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
@@ -1738,34 +1771,36 @@ const seances = {
       { e:'🧱', n:'Défendre autour du pivot', dose:'13 min', d:'Défendre une joueuse proche de la zone (nouveauté U13).', cue:'On reste entre le pivot et le but, on annonce.' },
       { e:'🛡️', n:'Défense en recul (1c1)', dose:'13 min', d:'Se placer entre l\'attaquante et le but, reculer.', cue:'On protège son but, on ne se jette pas sur le ballon.', steps:['Rester entre l\'attaquante et le but.','Reculer en contrôlant, mains devant.'] },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🔄', n:'3c3 transition attaque → défense', dose:'18 min', d:'À la perte, changement de statut immédiat.', cue:'On arrête de râler sur la perte, on court défendre.' },
-      { e:'↩️', n:'Repli après tir', dose:'22 min', d:'Après le tir, les arrières se replient aussitôt.', cue:'Le repli commence à la seconde du tir ; interdire la passe dans le dos.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'30 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-03-04': { th:'Repli & défense · pré-J5', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J5 : on met en confiance.', ph:[
+  '2027-03-04': { th:'Repli & défense · pré-J5', dur:'1 h 30', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J5 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🛡️', n:'Défense en recul (1c1)', dose:'13 min', d:'Se placer entre l\'attaquante et le but, reculer.', cue:'On protège son but, on ne se jette pas sur le ballon.', steps:['Rester entre l\'attaquante et le but.','Reculer en contrôlant, mains devant.'] },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'↩️', n:'Repli après tir', dose:'22 min', d:'Après le tir, les arrières se replient aussitôt.', cue:'Le repli commence à la seconde du tir ; interdire la passe dans le dos.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'20 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-03-10': { th:'Repli & défense · debrief J5', dur:'2 h', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J5 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-03-10': { th:'Repli & défense · debrief J5', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J5 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
@@ -1774,34 +1809,36 @@ const seances = {
       { e:'🥊', n:'Duel 1 contre 1 défensif', dose:'12 min', d:'Base de la défense placée.', cue:'On oriente l\'attaquante vers l\'extérieur, appuis actifs.' },
       { e:'🧱', n:'Défendre autour du pivot', dose:'13 min', d:'Défendre une joueuse proche de la zone (nouveauté U13).', cue:'On reste entre le pivot et le but, on annonce.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'🔄', n:'3c3 transition attaque → défense', dose:'18 min', d:'À la perte, changement de statut immédiat.', cue:'On arrête de râler sur la perte, on court défendre.' },
+    ]},
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
+    ]},
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
+    ]},
+  ]},
+  '2027-03-11': { th:'Repli & défense · pré-J6', dur:'1 h 30', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J6 : on met en confiance.', ph:[
+    { n:'Échauffement', t:'20 min', ex:[
+      { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
+      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
+    ]},
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🧱', n:'Défendre autour du pivot', dose:'13 min', d:'Défendre une joueuse proche de la zone (nouveauté U13).', cue:'On reste entre le pivot et le but, on annonce.' },
+    ]},
+    { n:'Situation', t:'25 min', ex:[
       { e:'↩️', n:'Repli après tir', dose:'22 min', d:'Après le tir, les arrières se replient aussitôt.', cue:'Le repli commence à la seconde du tir ; interdire la passe dans le dos.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'30 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
-    ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
-    ]},
-  ]},
-  '2027-03-11': { th:'Repli & défense · pré-J6', dur:'1 h 30 · 40 min oppo', ob:'Travail : repli & défense. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J6 : on met en confiance.', ph:[
-    { n:'Échauffement', t:'20 min', ex:[
-      { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
-      { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
-    ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'↩️', n:'Rappel défense en recul + repli', dose:'25 min', d:'Quelques 1c1 puis 2 vagues de repli.', cue:'Court et vif avant l\'opposition.' },
-    ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « repli obligatoire »', dose:'20 min', d:'Après chaque tir, toucher sa ligne de repli.', cue:'Personne ne reste à admirer son tir.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-03-17': { th:'Changement de statut · debrief J6', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J6 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-03-17': { th:'Changement de statut · debrief J6', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J6 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
@@ -1810,34 +1847,36 @@ const seances = {
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
       { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➖', n:'Infériorité 3c4', dose:'20 min', d:'Défendre en infériorité (repli, fermer le centre).', cue:'Chaque appui compte, on ferme l\'axe.' },
-      { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition »', dose:'30 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-03-18': { th:'Changement de statut · pré-J7', dur:'1 h 30 · 40 min oppo', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J7 : on met en confiance.', ph:[
+  '2027-03-18': { th:'Changement de statut · pré-J7', dur:'1 h 30', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J7 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔄', n:'Rappel statut permanent', dose:'25 min', d:'2 vagues montée ↔ repli.', cue:'On ne s\'arrête jamais.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « transition »', dose:'20 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-03-24': { th:'Changement de statut · debrief J7', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J7 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-03-24': { th:'Changement de statut · debrief J7', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J7 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
@@ -1846,35 +1885,36 @@ const seances = {
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
       { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➖', n:'Infériorité 3c4', dose:'20 min', d:'Défendre en infériorité (repli, fermer le centre).', cue:'Chaque appui compte, on ferme l\'axe.' },
-      { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition »', dose:'30 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-03-25': { th:'Changement de statut', dur:'1 h 30 · 40 min oppo', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-03-25': { th:'Changement de statut', dur:'1 h 30', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔄', n:'Rappel statut permanent', dose:'25 min', d:'2 vagues montée ↔ repli.', cue:'On ne s\'arrête jamais.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition »', dose:'16 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « transition »', dose:'20 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-03-31': { th:'Changement de statut', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-03-31': { th:'Changement de statut', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
@@ -1883,34 +1923,36 @@ const seances = {
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
       { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➖', n:'Infériorité 3c4', dose:'20 min', d:'Défendre en infériorité (repli, fermer le centre).', cue:'Chaque appui compte, on ferme l\'axe.' },
-      { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition »', dose:'30 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-04-01': { th:'Jeu de transition complet · pré-J8', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J8 : on met en confiance.', ph:[
+  '2027-04-01': { th:'Jeu de transition complet · pré-J8', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J8 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-04-07': { th:'Jeu de transition complet · debrief J8', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J8 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-04-07': { th:'Jeu de transition complet · debrief J8', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J8 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
@@ -1919,34 +1961,36 @@ const seances = {
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
-      { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-04-08': { th:'Jeu de transition complet · pré-J9', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J9 : on met en confiance.', ph:[
+  '2027-04-08': { th:'Jeu de transition complet · pré-J9', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J9 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-04-28': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-04-28': { th:'Jeu de transition complet', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
@@ -1955,34 +1999,36 @@ const seances = {
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
-      { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-04-29': { th:'Jeu de transition complet · pré-J10', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J10 : on met en confiance.', ph:[
+  '2027-04-29': { th:'Jeu de transition complet · pré-J10', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Dernière séance avant le match J10 : on met en confiance.', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
+    { n:'Situation', t:'25 min', ex:[
+      { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
       { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🏐', n:'Petits matchs 4c4 (activation)', dose:'20 min', d:'Jeu léger, repères d\'équipe.', cue:'On reste vive et confiante avant le match.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-05-05': { th:'Changement de statut · debrief J10', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J10 et on corrige un point. Rythme soutenu (phase 2).', ph:[
+  '2027-05-05': { th:'Changement de statut · debrief J10', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. On débriefe le match J10 et on corrige un point. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
@@ -1991,35 +2037,36 @@ const seances = {
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
       { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➖', n:'Infériorité 3c4', dose:'20 min', d:'Défendre en infériorité (repli, fermer le centre).', cue:'Chaque appui compte, on ferme l\'axe.' },
-      { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition »', dose:'30 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-05-06': { th:'Changement de statut', dur:'1 h 30 · 40 min oppo', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-05-06': { th:'Changement de statut', dur:'1 h 30', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔄', n:'Rappel statut permanent', dose:'25 min', d:'2 vagues montée ↔ repli.', cue:'On ne s\'arrête jamais.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition »', dose:'16 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « transition »', dose:'20 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-05-12': { th:'Changement de statut', dur:'2 h', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-05-12': { th:'Changement de statut', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : changement de statut. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
@@ -2028,18 +2075,18 @@ const seances = {
       { e:'⚡', n:'Récupération → contre', dose:'11 min', d:'Dès la récupération, on repart.', cue:'Le déclencheur, c\'est la récupération de balle.' },
       { e:'🔄', n:'4c4 changement de statut', dose:'14 min', d:'Jeu continu, att↔def sans temps mort.', cue:'1 point d\'équipe chaque repli qui stoppe une contre.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➖', n:'Infériorité 3c4', dose:'20 min', d:'Défendre en infériorité (repli, fermer le centre).', cue:'Chaque appui compte, on ferme l\'axe.' },
-      { e:'➕', n:'Supériorité 4c3', dose:'20 min', d:'Attaquer le surnombre par la montée de balle.', cue:'On joue vite le surnombre.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition »', dose:'30 min', d:'Montée rapide = double, repli réussi = point.', cue:'Attaque et défense récompensées à parts égales.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-05-19': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-05-19': { th:'Jeu de transition complet', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
@@ -2048,35 +2095,36 @@ const seances = {
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
-      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-05-20': { th:'Jeu de transition complet', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-05-20': { th:'Jeu de transition complet', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'16 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-05-26': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-05-26': { th:'Jeu de transition complet', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
@@ -2085,35 +2133,36 @@ const seances = {
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
-      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-05-27': { th:'Jeu de transition complet', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-05-27': { th:'Jeu de transition complet', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'16 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-06-02': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-06-02': { th:'Jeu de transition complet', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
@@ -2122,35 +2171,36 @@ const seances = {
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
-      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-06-03': { th:'Jeu de transition complet', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-06-03': { th:'Jeu de transition complet', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'16 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-06-09': { th:'Jeu de transition complet', dur:'2 h', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-06-09': { th:'Jeu de transition complet', dur:'2 h · 40 min oppo (-15 F)', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'👑', n:'Jeu : le roi du terrain', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Dribble de protection, tête haute : maniement en s\'amusant.' },
@@ -2159,35 +2209,36 @@ const seances = {
       { e:'♾️', n:'Vague continue montée ↔ repli', dose:'15 min', d:'Une équipe monte, se replie, l\'autre contre, en boucle.', cue:'L\'exercice-roi : montée de balle, repli et changement de statut.', steps:['Attaque rapide → finition → repli immédiat.','L\'adversaire contre aussitôt.'] },
       { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'➕', n:'Sur/sous-nombre 4c3 puis 3c4', dose:'20 min', d:'Attaquer le surnombre, défendre l\'infériorité.', cue:'On enchaîne les deux rôles.' },
-      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'30 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-06-10': { th:'Jeu de transition complet', dur:'1 h 30 · 40 min oppo', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
+  '2027-06-10': { th:'Jeu de transition complet', dur:'1 h 30', ob:'Travail : jeu de transition complet. Même philosophie : jouer vite vers l\'avant et se replier ensemble. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🔟', n:'Jeu : la passe à dix', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Sans dribble : démarquage et passe précise, esprit collectif.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'♾️', n:'Rappel vague continue', dose:'25 min', d:'Montée ↔ repli enchaînés.', cue:'On relie tout ce qui a été vu.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'🔄', n:'4c4 statut permanent', dose:'10 min', d:'Aucune remise en jeu lente.', cue:'Handball moderne : transitions permanentes.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'16 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'♾️', n:'Vague continue (intensité)', dose:'18 min', d:'Boucle continue à haut rythme.', cue:'On tient l\'intensité, propreté d\'exécution.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « transition valorisée »', dose:'20 min', d:'Montée rapide = double, repli = point défensif.', cue:'Un jeu complet, on récompense tout.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-06-16': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
+  '2027-06-16': { th:'Rappel des fondamentaux', dur:'2 h · 40 min oppo (-15 F)', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎯', n:'Jeu : gardien chasseur inversé', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Lecture de trajectoire, esquive, réactivité.' },
@@ -2196,35 +2247,36 @@ const seances = {
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
-      { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'30 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-06-17': { th:'Rappel des fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
+  '2027-06-17': { th:'Rappel des fondamentaux', dur:'1 h 30', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'💣', n:'Jeu : la bombe à retardement', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'On passe vite : décision rapide sous pression.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'16 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'20 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-06-23': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
+  '2027-06-23': { th:'Rappel des fondamentaux', dur:'2 h · 40 min oppo (-15 F)', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'⛓️', n:'Jeu : balle aux prisonniers', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Esquive, passes et lecture du jeu.' },
@@ -2233,35 +2285,36 @@ const seances = {
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
-      { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'30 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
-  '2027-06-24': { th:'Rappel des fondamentaux', dur:'1 h 30 · 40 min oppo', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
+  '2027-06-24': { th:'Rappel des fondamentaux', dur:'1 h 30', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🎪', n:'Jeu : le relais surprise', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Agilité, dribble et créativité : on ose le geste.' },
     ]},
-    { n:'Apprentissage', t:'25 min', ex:[
-      { e:'🔁', n:'Rappel transition (2 vagues)', dose:'25 min', d:'Montée puis repli.', cue:'On relance la saison en douceur mais avec du rythme.' },
+    { n:'Technique', t:'20 min', ex:[
+      { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
     ]},
-    { n:'Opposition', t:'40 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'16 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
-      { e:'🚫', n:'Match 4c4 « sans dribble »', dose:'12 min', d:'Interdiction de dribbler.', cue:'On avance en passant et en se démarquant.' },
-      { e:'🏆', n:'Tournoi 4c4', dose:'12 min', d:'Matchs courts, tout le monde joue.', cue:'But rapide valorisé, intensité de match.' },
+    { n:'Situation', t:'25 min', ex:[
+      { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
+    ]},
+    { n:'Match à thème', t:'20 min', ex:[
+      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'20 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
     ]},
     { n:'Retour au calme', t:'5 min', ex:[
       { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
     ]},
   ]},
-  '2027-06-30': { th:'Rappel des fondamentaux', dur:'2 h', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
+  '2027-06-30': { th:'Rappel des fondamentaux', dur:'2 h · 40 min oppo (-15 F)', ob:'Reprise après les vacances : on remet en place les fondamentaux et la philosophie de jeu (montée de balle, contre-attaque, repli), on relance le rythme. Rythme soutenu (phase 2).', ph:[
     { n:'Échauffement', t:'20 min', ex:[
       { e:'🤾‍♀️', n:'Maniement + mobilité', dose:'5 min', d:'Un ballon chacune : dribbles 2 mains, jonglages en trottinant.', cue:'On chauffe balle en main.' },
       { e:'🦅', n:'Jeu : la revanche de l\'entraîneur', dose:'15 min', d:'Règles complètes dans l\'onglet Jeux & principes.', cue:'Réactivité et prise d\'information.' },
@@ -2270,15 +2323,15 @@ const seances = {
       { e:'🎯', n:'Rappel passe & tir en course', dose:'13 min', d:'Colonnes : passe en mouvement puis tir en course.', cue:'On réveille les gestes de base après la coupure.' },
       { e:'2️⃣', n:'Rappel montée de balle 2c1', dose:'12 min', d:'Fixer et libérer.', cue:'On remet en place le jeu vers l\'avant.' },
     ]},
-    { n:'Situation', t:'40 min', ex:[
+    { n:'Situation', t:'30 min', ex:[
       { e:'↩️', n:'Rappel repli & changement de statut', dose:'22 min', d:'Repli après tir + transition att→def.', cue:'On réactive l\'état d\'esprit défensif.' },
-      { e:'🌊', n:'Montée de balle 3c2', dose:'18 min', d:'Surnombre et finition.', cue:'Passes courtes et fortes.' },
     ]},
-    { n:'Match à thème', t:'30 min', ex:[
-      { e:'🏐', n:'Match 5c5 « tous les repères »', dose:'30 min', d:'On rejoue montée rapide + repli.', cue:'On remet la philosophie en jeu après les vacances.' },
+    { n:'Opposition · avec les -15 F', t:'40 min', ex:[
+      { e:'🤝', n:'Opposition aux -15 F (match à thème)', dose:'20 min', d:'Matchs contre l\'équipe -15 F : on applique le thème du jour face à plus fort.', cue:'Face à plus grandes, on joue vite et collectif : la transition prend le dessus sur le physique.' },
+      { e:'🔁', n:'Situations d\'opposition -15 F', dose:'20 min', d:'Sur/sous-nombre ou jeu réduit contre les -15 F.', cue:'On cherche le surnombre et la vitesse, on ne subit pas : on joue vers l\'avant.' },
     ]},
-    { n:'Retour au calme', t:'5 min', ex:[
-      { e:'🧘‍♀️', n:'Étirements & bilan', dose:'5 min', d:'En cercle.', cue:'On garde le positif, on cible 1 progrès pour la fois d\'après.' },
+    { n:'Retour au calme (point)', t:'5 min', ex:[
+      { e:'🧘‍♀️', n:'Retour au calme & point', dose:'5 min', d:'En cercle, moment d\'échange.', cue:'On fait le point sur la séance et sur l\'opposition aux -15 F : ce qui a marché, ce qu\'on vise la prochaine fois.' },
     ]},
   ]},
 };
