@@ -2851,7 +2851,7 @@ function presColumns(){
       if(it.t==='m'){
         const mm=it.d.match(/(\d{2})\/(\d{2})/);
         const key= mm ? `${year}-${mm[2]}-${mm[1]}` : 'm-'+mo.mois+'-'+it.lib;
-        cols.push({key, label:it.d, sub:(it.lib||'').replace('Championnat · ',''), type:'m'});
+        cols.push({key, label:it.d, sub:(it.lib||'').replace('Championnat · ',''), we:it.we||'', type:'m'});
       } else {
         cols.push({key:it.iso, label:it.d, sub:'', type:'e'});
       }
@@ -2937,11 +2937,75 @@ function presMatchSheetHTML(){
   h+='<div class="mrow"><label>Secrétaire</label><select onchange="presRoleEdit(\'secretaire\',this.value)">'+dirOpts(info.secretaire)+'</select></div>';
   h+='<div class="mrow"><label>👑 Capitaine</label><select onchange="presRoleEdit(\'capitaine\',this.value)">'+playerOpts+'</select></div>';
   if(capName) h+='<div class="cap-badge">👑 Capitaine du match : '+pEsc(capName)+'</div>';
+  h+='<button class="pres-btn" style="margin-top:12px;background:var(--violet);border-color:var(--violet);color:#fff" onclick="presConvocImage()">📲 Générer la convocation (image)</button>';
+  h+='<p class="pres-hint" style="margin:8px 0 0">Coche les 🟪 convoquées (C) et le capitaine, puis génère l\'image à envoyer sur WhatsApp le jeudi.</p>';
   h+='</div>';
   return h;
 }
 function presMatchSelChange(k){ presMatchSel=k; renderPres(); }
 function presRoleEdit(f,v){ if(!presMatchInfo[presMatchSel]) presMatchInfo[presMatchSel]={}; presMatchInfo[presMatchSel][f]=v; presSaveMatchInfo(); renderPres(); }
+
+function rr(c,rx,ry,w,h,r){ c.beginPath(); c.moveTo(rx+r,ry); c.arcTo(rx+w,ry,rx+w,ry+h,r); c.arcTo(rx+w,ry+h,rx,ry+h,r); c.arcTo(rx,ry+h,rx,ry,r); c.arcTo(rx,ry,rx+w,ry,r); c.closePath(); }
+function presConvocImage(){
+  const key=presMatchSel; if(!key){ alert('Choisis un match.'); return; }
+  const cols=[]; presColumns().forEach(mo=>mo.cols.forEach(c=>cols.push(c)));
+  const col=cols.find(c=>c.key===key)||{};
+  const info=presMatchInfo[key]||{};
+  const byNum=(a,b)=>(parseInt(a.num||'99',10)-parseInt(b.num||'99',10));
+  const conv=presRoster.filter(p=>p.name&&(presAttend[key]||{})[p.id]==='C').sort(byNum);
+  const remp=presRoster.filter(p=>p.name&&(presAttend[key]||{})[p.id]==='R').sort(byNum);
+  const capId=info.capitaine;
+  const W=1080,H=1500;
+  const cv=document.createElement('canvas'); cv.width=W; cv.height=H; const x=cv.getContext('2d');
+  const g=x.createLinearGradient(0,0,0,H); g.addColorStop(0,'#160a2e'); g.addColorStop(1,'#0d0620'); x.fillStyle=g; x.fillRect(0,0,W,H);
+  x.fillStyle='#a855f7'; x.fillRect(0,0,W,12);
+  function T(t,px,py,size,color,weight,align){ x.fillStyle=color||'#f5f0ff'; x.font=(weight||'700')+' '+size+"px 'Barlow Condensed', Arial, sans-serif"; x.textAlign=align||'left'; x.fillText(t,px,py); }
+  const logoSrc=(document.querySelector('.badge .logo')||document.querySelector('.logo')||{}).src;
+  function body(){
+    T('HCB LIBOURNE · U13 FILLES', 300, 95, 30, '#c084fc','700');
+    T('CONVOCATION', 300, 155, 62, '#f5f0ff','800');
+    let y=260;
+    x.fillStyle='#1f1138'; rr(x,60,y,W-120,150,18); x.fill();
+    T(col.sub||'Match', 90, y+58, 46, '#f4e7b0','800');
+    T(col.label||'', 90, y+110, 40, '#f5f0ff','700');
+    if(col.we){ x.font="600 26px 'Barlow', Arial, sans-serif"; x.textAlign='right'; x.fillStyle='#c9b6ef'; x.fillText(col.we, W-90, y+110); }
+    y+=205;
+    T('CONVOQUÉES ('+conv.length+')', 80, y, 42, '#c084fc','800'); y+=18;
+    x.strokeStyle='#3a2a55'; x.lineWidth=2; x.beginPath(); x.moveTo(80,y); x.lineTo(W-80,y); x.stroke(); y+=20;
+    const bottomLimit=H-370;
+    const items=conv.length+(remp.length?remp.length+1:0);
+    let lh=items>0?Math.floor((bottomLimit-y)/items):52; lh=Math.max(38,Math.min(56,lh));
+    const fs=lh>=50?38:(lh>=44?34:30);
+    if(conv.length){ conv.forEach(p=>{ y+=lh; const cap=p.id===capId?'   👑 capitaine':''; T((p.num?('#'+p.num+'   '):'')+p.name+cap, 100, y, fs, '#f5f0ff','600'); }); }
+    else { y+=lh; T('(à compléter avant l\'envoi)', 100, y, 32, '#9a86c8','600'); }
+    if(remp.length){ y+=lh+8; T('REMPLAÇANTES / REPOS', 80, y, 30, '#94a3b8','800'); remp.forEach(p=>{ y+=lh-4; T((p.num?('#'+p.num+'   '):'')+p.name, 100, y, fs-2, '#c9b6ef','600'); }); }
+    const by=H-330;
+    x.fillStyle='#1a0d30'; rr(x,60,by,W-120,250,18); x.fill();
+    let sy=by+52;
+    T('ENCADREMENT', 90, sy, 30, '#c084fc','800'); sy+=48;
+    T('Coachs : '+(presStaff.coachA||'')+'  ·  '+(presStaff.coachB||''), 90, sy, 29, '#f5f0ff','600'); sy+=42;
+    T('Responsable de salle : '+(info.salle||'à définir'), 90, sy, 27, '#f5f0ff','600'); sy+=38;
+    T('Responsable du score : '+(info.score||'à définir'), 90, sy, 27, '#f5f0ff','600'); sy+=38;
+    T('Secrétaire : '+(info.secretaire||'à définir'), 90, sy, 27, '#f5f0ff','600');
+    T('Merci de confirmer votre présence 🙌', W/2, H-38, 30, '#c9b6ef','600','center');
+    exportImg();
+  }
+  function exportImg(){
+    cv.toBlob(function(blob){
+      if(!blob){ alert('Génération impossible.'); return; }
+      const fname='convocation-'+((col.sub||'match').replace(/[^A-Za-z0-9]/g,''))+'.png';
+      const file=new File([blob],fname,{type:'image/png'});
+      const shareText='🤾‍♀️ Convocation '+(col.sub||'match')+' '+(col.label||'')+(col.we?(' ('+col.we+')'):'');
+      if(navigator.canShare && navigator.canShare({files:[file]})){
+        navigator.share({files:[file], text:shareText}).catch(function(){});
+      } else {
+        const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=fname; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){URL.revokeObjectURL(url);},1500);
+      }
+    },'image/png');
+  }
+  if(logoSrc){ const im=new Image(); im.onload=function(){ x.save(); rr(x,70,42,180,180,22); x.clip(); x.fillStyle='#fff'; x.fillRect(70,42,180,180); x.drawImage(im,74,46,172,172); x.restore(); body(); }; im.onerror=function(){ body(); }; im.src=logoSrc; }
+  else body();
+}
 
 function presStatsHTML(){
   if(!presRoster.length) return '<div id="presStats"></div>';
@@ -2987,11 +3051,11 @@ function presExportCSV(){
   const csv=rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(';')).join('\r\n');
   presDownload('presences-'+(presView==='e'?'entrainements':'matchs')+'.csv', '﻿'+csv, 'text/csv;charset=utf-8');
 }
-function presBackup(){ presDownload('sauvegarde-presences-u13.json', JSON.stringify({roster:presRoster, attend:presAttend}, null, 2), 'application/json'); }
+function presBackup(){ presDownload('sauvegarde-presences-u13.json', JSON.stringify({roster:presRoster, attend:presAttend, staff:presStaff, matchinfo:presMatchInfo}, null, 2), 'application/json'); }
 function presRestore(input){
   const f=input.files&&input.files[0]; if(!f) return;
   const r=new FileReader();
-  r.onload=e=>{ try{ const d=JSON.parse(e.target.result); if(Array.isArray(d.roster)) presRoster=d.roster; if(d.attend&&typeof d.attend==='object') presAttend=d.attend; presSaveRoster(); presSaveAttend(); renderPres(); alert('Sauvegarde restaurée ✅'); }catch(err){ alert('Fichier invalide.'); } };
+  r.onload=e=>{ try{ const d=JSON.parse(e.target.result); if(Array.isArray(d.roster)) presRoster=d.roster; if(d.attend&&typeof d.attend==='object') presAttend=d.attend; if(d.staff&&typeof d.staff==='object'){ presStaff=d.staff; if(!Array.isArray(presStaff.dir)) presStaff.dir=[]; } if(d.matchinfo&&typeof d.matchinfo==='object') presMatchInfo=d.matchinfo; presSaveRoster(); presSaveAttend(); presSaveStaff(); presSaveMatchInfo(); renderPres(); alert('Sauvegarde restaurée ✅'); }catch(err){ alert('Fichier invalide.'); } };
   r.readAsText(f); input.value='';
 }
 function presDownload(filename, text, mime){
@@ -3010,6 +3074,7 @@ function renderPres(){
   document.documentElement.style.setProperty('--wk', '#a855f7');
   document.documentElement.style.setProperty('--wk-light', '#c084fc');
   const vm=presViewMonths();
+  if(presView==='m'){ const ml=presMatchList(); if(!presMatchSel || !ml.some(m=>m.key===presMatchSel)) presMatchSel=presDefaultMatch(); }
   let legend='<div class="pres-legend">';
   if(presView==='e'){ legend+='<span><i style="background:#34d399;color:#06281c">P</i>Présente</span><span><i style="background:#fb5e6e;color:#3a0710">A</i>Absente</span><span><i style="background:#f4a03a;color:#3a2400">B</i>Blessée</span>'; }
   else { legend+='<span><i style="background:#a855f7;color:#fff">C</i>Convoquée</span><span><i style="background:#34d399;color:#06281c">P</i>A joué</span><span><i style="background:#94a3b8;color:#10151f">R</i>Repos/rempl.</span><span><i style="background:#fb5e6e;color:#3a0710">A</i>Absente</span><span><i style="background:#f4a03a;color:#3a2400">B</i>Blessée</span>'; }
