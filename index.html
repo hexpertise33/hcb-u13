@@ -306,6 +306,12 @@
   .bilan-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:7px 12px;background:var(--carte);border:1px solid var(--ligne);border-radius:8px;margin-bottom:5px;font-size:13px}
   .bilan-row b{color:var(--violet-clair)}
   .bilan-row .rate{color:#34d399;font-weight:700}
+  .pres tfoot td{background:#241243;color:var(--violet-clair);font-family:'Barlow Condensed';font-weight:800;font-size:14px}
+  .pres tfoot .cnum,.pres tfoot .cname{background:#241243}
+  .pres tfoot .cname{text-align:left;padding:6px 10px;font-size:12px;text-transform:uppercase;letter-spacing:.02em}
+  .stat-line{background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(168,85,247,.05));border:1px solid var(--ligne);border-radius:10px;padding:11px 14px;margin:0 0 14px;font-size:14px;color:var(--blanc)}
+  .stat-line b{color:var(--violet-clair)}
+  .stat-line b.rate{color:#34d399}
 </style>
 
 <div class="wrap">
@@ -2848,24 +2854,47 @@ function presCell(key,pid){
   presSaveAttend();
   const el=document.querySelector('[data-cell="'+key+'__'+pid+'"]');
   if(el){ el.className='cell '+next; el.textContent=next; }
-  const b=document.getElementById('presBilan'); if(b) b.outerHTML=presBilanHTML();
+  const f=document.querySelector('[data-foot="'+key+'"]'); if(f) f.textContent=presColCount(key);
+  const s=document.getElementById('presStats'); if(s) s.outerHTML=presStatsHTML();
 }
 
-function presBilanHTML(){
-  if(!presRoster.length) return '<div id="presBilan"></div>';
+function presColCount(key){ let n=0; presRoster.forEach(p=>{ if((presAttend[key]||{})[p.id]==='P') n++; }); return n; }
+
+function presStatsHTML(){
+  if(!presRoster.length) return '<div id="presStats"></div>';
   const cols=[]; presViewMonths().forEach(mo=>mo.cols.forEach(c=>cols.push(c)));
-  let h='<div class="bilan" id="presBilan"><h3>Bilan '+(presView==='e'?'entraînements':'matchs')+'</h3>';
-  presRoster.filter(p=>p.name||p.num).forEach(p=>{
+  const rows=presRoster.filter(p=>p.name||p.num).map(p=>{
     let P=0,A=0,B=0,C=0,R=0;
     cols.forEach(c=>{ const v=(presAttend[c.key]||{})[p.id]; if(v==='P')P++;else if(v==='A')A++;else if(v==='B')B++;else if(v==='C')C++;else if(v==='R')R++; });
-    const label='<b>'+pEsc(p.num?('#'+p.num+' '):'')+pEsc(p.name)+'</b>';
-    if(presView==='e'){ const d=P+A+B; const rate=d?Math.round(P/d*100):0;
-      h+='<div class="bilan-row"><span>'+label+'</span><span>'+P+' prés. · '+A+' abs · '+B+' bless.'+(d?' · <span class="rate">'+rate+'%</span>':'')+'</span></div>';
-    } else {
-      h+='<div class="bilan-row"><span>'+label+'</span><span>'+C+' conv. · '+P+' joué · '+R+' rempl./repos · '+A+' abs · '+B+' bless.</span></div>';
-    }
+    const denom=P+A+B; const rate=denom?Math.round(P/denom*100):null;
+    return {p,P,A,B,C,R,denom,rate};
   });
-  return h+'</div>';
+  const markedCols=cols.filter(c=>presRoster.some(p=>(presAttend[c.key]||{})[p.id])).length;
+  let h='<div id="presStats">';
+  if(presView==='e'){
+    const totP=rows.reduce((a,r)=>a+r.P,0), totMk=rows.reduce((a,r)=>a+r.denom,0);
+    const avg=markedCols?(totP/markedCols):0, teamRate=totMk?Math.round(totP/totMk*100):0;
+    h+='<div class="stat-line">📊 Moyenne <b>'+avg.toFixed(1)+'</b> présentes / séance faite · Assiduité équipe <b class="rate">'+teamRate+'%</b></div>';
+    const rank=rows.filter(r=>r.denom>0).sort((a,b)=>b.rate-a.rate || b.P-a.P);
+    h+='<div class="bilan"><h3>🏅 Classement assiduité</h3>';
+    if(rank.length) rank.forEach((r,i)=>{ h+='<div class="bilan-row"><span><b>'+(i+1)+'. '+pEsc(r.p.num?('#'+r.p.num+' '):'')+pEsc(r.p.name||'')+'</b></span><span><span class="rate">'+r.rate+'%</span> · '+r.P+'/'+r.denom+' séances</span></div>'; });
+    else h+='<p class="pres-hint">Coche des présences pour voir le classement.</p>';
+    h+='</div>';
+  } else {
+    const totC=rows.reduce((a,r)=>a+r.C,0), totJ=rows.reduce((a,r)=>a+r.P,0);
+    const avgC=markedCols?(totC/markedCols):0;
+    h+='<div class="stat-line">📊 Moyenne <b>'+avgC.toFixed(1)+'</b> convoquées / match renseigné · <b>'+totJ+'</b> matchs joués au total</div>';
+    const rank=rows.slice().sort((a,b)=>b.P-a.P || b.C-a.C);
+    h+='<div class="bilan"><h3>🏅 Classement matchs</h3>';
+    rank.forEach((r,i)=>{ h+='<div class="bilan-row"><span><b>'+(i+1)+'. '+pEsc(r.p.num?('#'+r.p.num+' '):'')+pEsc(r.p.name||'')+'</b></span><span>'+r.P+' joué · '+r.C+' conv.</span></div>'; });
+    h+='</div>';
+  }
+  h+='<div class="bilan"><h3>Détail '+(presView==='e'?'entraînements':'matchs')+'</h3>';
+  rows.forEach(r=>{ const label='<b>'+pEsc(r.p.num?('#'+r.p.num+' '):'')+pEsc(r.p.name)+'</b>';
+    if(presView==='e'){ h+='<div class="bilan-row"><span>'+label+'</span><span>'+r.P+' prés. · '+r.A+' abs · '+r.B+' bless.'+(r.denom?' · <span class="rate">'+r.rate+'%</span>':'')+'</span></div>'; }
+    else { h+='<div class="bilan-row"><span>'+label+'</span><span>'+r.C+' conv. · '+r.P+' joué · '+r.R+' rempl./repos · '+r.A+' abs · '+r.B+' bless.</span></div>'; }
+  });
+  return h+'</div></div>';
 }
 
 function presExportCSV(){
@@ -2927,8 +2956,11 @@ function renderPres(){
   html+='<p class="pres-hint">Tape une case pour changer le statut (elle se colore). Tout est enregistré automatiquement sur cet appareil. Pense à « Sauvegarde » de temps en temps pour ne rien perdre et pouvoir transférer sur un autre appareil.</p>';
   html+=eff;
   html+='<div class="pres-tools"><button class="pres-btn" onclick="presExportCSV()">⬇️ Exporter CSV</button><button class="pres-btn" onclick="presBackup()">💾 Sauvegarde</button><label class="pres-btn" style="cursor:pointer">↺ Restaurer<input type="file" accept="application/json,.json" style="display:none" onchange="presRestore(this)"></label></div>';
-  html+='<div class="pres-wrap"><table class="pres">'+thead+tbody+'</table></div>';
-  html+=presBilanHTML();
+  let tfoot='<tfoot><tr><td class="cnum"></td><td class="cname">Présentes</td>';
+  vm.forEach(mo=>mo.cols.forEach(c=>{ tfoot+='<td class="foot" data-foot="'+c.key+'">'+presColCount(c.key)+'</td>'; }));
+  tfoot+='</tr></tfoot>';
+  html+='<div class="pres-wrap"><table class="pres">'+thead+tbody+tfoot+'</table></div>';
+  html+=presStatsHTML();
   appEl.innerHTML=html;
 }
 presLoad();
