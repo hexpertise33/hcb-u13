@@ -312,6 +312,8 @@
   .stat-line{background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(168,85,247,.05));border:1px solid var(--ligne);border-radius:10px;padding:11px 14px;margin:0 0 14px;font-size:14px;color:var(--blanc)}
   .stat-line b{color:var(--violet-clair)}
   .stat-line b.rate{color:#34d399}
+  .pres th.today{background:#4a2688;color:#fff}
+  .pres td.today{box-shadow:inset 2px 0 0 #c084fc,inset -2px 0 0 #c084fc}
 </style>
 
 <div class="wrap">
@@ -2860,6 +2862,23 @@ function presCell(key,pid){
 
 function presColCount(key){ let n=0; presRoster.forEach(p=>{ if((presAttend[key]||{})[p.id]==='P') n++; }); return n; }
 
+function presTargetCol(){
+  const keys=[]; presViewMonths().forEach(mo=>mo.cols.forEach(c=>keys.push(c.key)));
+  if(!keys.length) return null;
+  const t=new Date();
+  const today=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  if(keys.includes(today)) return today;
+  return keys.find(k=>k>=today) || keys[keys.length-1];
+}
+function presGoToday(){
+  const key=presTargetCol(); if(!key) return;
+  document.querySelectorAll('.pres .today').forEach(e=>e.classList.remove('today'));
+  document.querySelectorAll('.pres [data-cell^="'+key+'__"]').forEach(e=>e.classList.add('today'));
+  const f=document.querySelector('.pres [data-foot="'+key+'"]'); if(f) f.classList.add('today');
+  const th=document.querySelector('.pres th[data-col="'+key+'"]');
+  if(th){ th.classList.add('today'); th.scrollIntoView({inline:'center', block:'nearest'}); }
+}
+
 function presStatsHTML(){
   if(!presRoster.length) return '<div id="presStats"></div>';
   const cols=[]; presViewMonths().forEach(mo=>mo.cols.forEach(c=>cols.push(c)));
@@ -2939,7 +2958,7 @@ function renderPres(){
   let thead='<thead><tr><th class="cnum">N°</th><th class="cname">Joueuse</th>';
   vm.forEach(mo=>{ thead+='<th class="mois-h" colspan="'+mo.cols.length+'">'+pEsc(mo.mois)+'</th>'; });
   thead+='</tr><tr><th class="cnum"></th><th class="cname"></th>';
-  vm.forEach(mo=>mo.cols.forEach(c=>{ const parts=c.label.split(' '); const date=parts[1]||c.label; const sub=presView==='m'?(c.sub||'Match'):(parts[0]||''); thead+='<th title="'+pEsc(c.label)+'">'+pEsc(date)+'<small>'+pEsc(sub)+'</small></th>'; }));
+  vm.forEach(mo=>mo.cols.forEach(c=>{ const parts=c.label.split(' '); const date=parts[1]||c.label; const sub=presView==='m'?(c.sub||'Match'):(parts[0]||''); thead+='<th data-col="'+c.key+'" title="'+pEsc(c.label)+'">'+pEsc(date)+'<small>'+pEsc(sub)+'</small></th>'; }));
   thead+='</tr></thead>';
 
   let tbody='<tbody>';
@@ -2951,7 +2970,7 @@ function renderPres(){
   tbody+='</tbody>';
 
   let html='<div class="week-head"><h2>Feuille de présence</h2><p>Coche la présence à chaque entraînement et chaque match. Les colonnes viennent du calendrier de la saison.</p></div>';
-  html+='<div class="pres-tools"><button class="pres-btn '+(presView==='e'?'on':'')+'" onclick="presSetView(\'e\')">🏋️ Entraînements</button><button class="pres-btn '+(presView==='m'?'on':'')+'" onclick="presSetView(\'m\')">🏆 Matchs</button></div>';
+  html+='<div class="pres-tools"><button class="pres-btn '+(presView==='e'?'on':'')+'" onclick="presSetView(\'e\')">🏋️ Entraînements</button><button class="pres-btn '+(presView==='m'?'on':'')+'" onclick="presSetView(\'m\')">🏆 Matchs</button><button class="pres-btn" onclick="presGoToday()">📍 Aujourd\'hui</button></div>';
   html+=legend;
   html+='<p class="pres-hint">Tape une case pour changer le statut (elle se colore). Tout est enregistré automatiquement sur cet appareil. Pense à « Sauvegarde » de temps en temps pour ne rien perdre et pouvoir transférer sur un autre appareil.</p>';
   html+=eff;
