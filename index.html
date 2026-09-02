@@ -314,6 +314,19 @@
   .stat-line b.rate{color:#34d399}
   .pres th.today{background:#4a2688;color:#fff}
   .pres td.today{box-shadow:inset 2px 0 0 #c084fc,inset -2px 0 0 #c084fc}
+  .pres th.selcol{background:#0f3d33;color:#a7f3d0}
+  .pres td.selcol{box-shadow:inset 2px 0 0 #34d399,inset -2px 0 0 #34d399}
+  .pres tbody td.cell{position:relative}
+  .pres tbody td.cell.cap::after{content:'👑';position:absolute;top:-4px;right:0;font-size:11px;line-height:1;text-shadow:0 1px 2px #000}
+  .rlab{min-width:70px;color:rgba(245,240,255,.8);font-size:14px}
+  .msheet{background:var(--carte);border:1px solid var(--ligne);border-radius:12px;padding:12px 14px;margin:0 0 14px}
+  .msheet h3{font-family:'Barlow Condensed';text-transform:uppercase;font-weight:800;color:var(--violet-clair);font-size:16px;margin:0 0 10px}
+  .msheet .mrow{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13.5px;flex-wrap:wrap}
+  .msheet .mrow label{min-width:160px;color:rgba(245,240,255,.82)}
+  .msheet select{flex:1;min-width:150px;background:#0e0620;border:1px solid var(--ligne);border-radius:8px;color:var(--blanc);padding:8px 10px;font-size:14px;font-family:inherit}
+  .msheet .coachs{color:var(--blanc);font-size:13.5px;margin:2px 0 10px;padding:8px 10px;background:#0e0620;border:1px solid var(--ligne);border-radius:8px}
+  .msheet .coachs b{color:var(--violet-clair)}
+  .msheet .cap-badge{margin-top:10px;color:#f4e7b0;font-weight:700;font-size:14px}
 </style>
 
 <div class="wrap">
@@ -2799,6 +2812,7 @@ const PRES_DEFAULT=[
 const PRES_SEEDV=2;
 const PRES_CYCLE={ e:['','P','A','B'], m:['','C','P','R','A','B'] };
 let presRoster=[], presAttend={}, presView='e';
+let presStaff=null, presMatchInfo={}, presMatchSel=null, presStaffOpen=false, presEffOpen=false;
 
 function presLoad(){
   try{ const r=JSON.parse(localStorage.getItem(PRES_ROSTER_KEY)); presRoster=Array.isArray(r)?r:PRES_DEFAULT.map(x=>({...x})); }
@@ -2816,9 +2830,16 @@ function presLoad(){
     }
   }catch(e){}
   try{ presAttend=JSON.parse(localStorage.getItem(PRES_ATTEND_KEY))||{}; }catch(e){ presAttend={}; }
+  try{ presStaff=JSON.parse(localStorage.getItem('hcbU13_staff')); }catch(e){ presStaff=null; }
+  if(!presStaff || typeof presStaff!=='object') presStaff={coachA:'David Bertrand', coachB:'Damien Grede', dir:['Yann Soucaze','Maman Elsa','Damien (Papa Anna)']};
+  if(!Array.isArray(presStaff.dir)) presStaff.dir=[];
+  if(!localStorage.getItem('hcbU13_staff')) presSaveStaff();
+  try{ presMatchInfo=JSON.parse(localStorage.getItem('hcbU13_matchinfo'))||{}; }catch(e){ presMatchInfo={}; }
 }
 function presSaveRoster(){ try{ localStorage.setItem(PRES_ROSTER_KEY, JSON.stringify(presRoster)); }catch(e){} }
 function presSaveAttend(){ try{ localStorage.setItem(PRES_ATTEND_KEY, JSON.stringify(presAttend)); }catch(e){} }
+function presSaveStaff(){ try{ localStorage.setItem('hcbU13_staff', JSON.stringify(presStaff)); }catch(e){} }
+function presSaveMatchInfo(){ try{ localStorage.setItem('hcbU13_matchinfo', JSON.stringify(presMatchInfo)); }catch(e){} }
 function pEsc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 function presColumns(){
@@ -2844,9 +2865,9 @@ function presViewMonths(){
 }
 
 function presSetView(v){ presView=v; renderPres(); }
-function presEdit(id,field,val){ const p=presRoster.find(x=>x.id===id); if(p){ p[field]=val.trim(); presSaveRoster(); renderPres(); } }
-function presDel(id){ presRoster=presRoster.filter(x=>x.id!==id); Object.keys(presAttend).forEach(k=>{ if(presAttend[k]) delete presAttend[k][id]; }); presSaveRoster(); presSaveAttend(); renderPres(); }
-function presAdd(){ presRoster.push({id:'p'+Date.now()+'-'+Math.floor(Math.random()*1000), num:'', name:''}); presSaveRoster(); renderPres(); }
+function presEdit(id,field,val){ const p=presRoster.find(x=>x.id===id); if(p){ p[field]=val.trim(); presEffOpen=true; presSaveRoster(); renderPres(); } }
+function presDel(id){ presRoster=presRoster.filter(x=>x.id!==id); Object.keys(presAttend).forEach(k=>{ if(presAttend[k]) delete presAttend[k][id]; }); presEffOpen=true; presSaveRoster(); presSaveAttend(); renderPres(); }
+function presAdd(){ presRoster.push({id:'p'+Date.now()+'-'+Math.floor(Math.random()*1000), num:'', name:''}); presEffOpen=true; presSaveRoster(); renderPres(); }
 
 function presCell(key,pid){
   const cur=(presAttend[key]||{})[pid]||'';
@@ -2878,6 +2899,49 @@ function presGoToday(){
   const th=document.querySelector('.pres th[data-col="'+key+'"]');
   if(th){ th.classList.add('today'); th.scrollIntoView({inline:'center', block:'nearest'}); }
 }
+
+function presStaffHTML(){
+  let h='<details class="eff" '+(presStaffOpen?'open':'')+' ontoggle="presStaffOpen=this.open"><summary>👔 Staff</summary>';
+  h+='<div class="eff-row"><label class="rlab">Coach A</label><input class="nm" value="'+pEsc(presStaff.coachA||'')+'" onchange="presStaffEdit(\'coachA\',this.value)"></div>';
+  h+='<div class="eff-row"><label class="rlab">Coach B</label><input class="nm" value="'+pEsc(presStaff.coachB||'')+'" onchange="presStaffEdit(\'coachB\',this.value)"></div>';
+  h+='<div class="pres-hint" style="margin:8px 0 4px">Licenciés dirigeants (responsable salle / score / secrétaire)</div>';
+  presStaff.dir.forEach((d,i)=>{ h+='<div class="eff-row"><input class="nm" value="'+pEsc(d)+'" placeholder="Nom du dirigeant" onchange="presDirEdit('+i+',this.value)"><button class="eff-del" title="Supprimer" onclick="presDirDel('+i+')">🗑️</button></div>'; });
+  h+='<button class="pres-btn eff-add" onclick="presDirAdd()">＋ Ajouter un dirigeant</button></details>';
+  return h;
+}
+function presStaffEdit(f,v){ presStaff[f]=v.trim(); presSaveStaff(); renderPres(); }
+function presDirEdit(i,v){ presStaff.dir[i]=v.trim(); presSaveStaff(); renderPres(); }
+function presDirAdd(){ presStaff.dir.push(''); presStaffOpen=true; presSaveStaff(); renderPres(); }
+function presDirDel(i){ presStaff.dir.splice(i,1); presStaffOpen=true; presSaveStaff(); renderPres(); }
+
+function presMatchList(){
+  const out=[]; presColumns().forEach(mo=>mo.cols.forEach(c=>{ if(c.type==='m') out.push({key:c.key, label:(c.sub||'Match')+' · '+c.label}); })); return out;
+}
+function presDefaultMatch(){
+  const list=presMatchList(); if(!list.length) return null;
+  const t=new Date(); const today=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
+  return (list.find(m=>m.key>=today)||list[list.length-1]).key;
+}
+function presMatchSheetHTML(){
+  const list=presMatchList(); if(!list.length) return '';
+  if(!presMatchSel || !list.some(m=>m.key===presMatchSel)) presMatchSel=presDefaultMatch();
+  const info=presMatchInfo[presMatchSel]||{};
+  const dirOpts=(sel)=>'<option value="">(à définir)</option>'+presStaff.dir.filter(d=>d).map(d=>'<option '+(sel===d?'selected':'')+'>'+pEsc(d)+'</option>').join('');
+  const playerOpts='<option value="">(à définir)</option>'+presRoster.filter(p=>p.name).map(p=>'<option value="'+p.id+'" '+(info.capitaine===p.id?'selected':'')+'>'+pEsc((p.num?('#'+p.num+' '):'')+p.name)+'</option>').join('');
+  const cap=presRoster.find(p=>p.id===info.capitaine); const capName=cap?((cap.num?('#'+cap.num+' '):'')+cap.name):'';
+  let h='<div class="msheet"><h3>📋 Feuille de match</h3>';
+  h+='<div class="mrow"><label>Match</label><select onchange="presMatchSelChange(this.value)">'+list.map(m=>'<option value="'+m.key+'" '+(m.key===presMatchSel?'selected':'')+'>'+pEsc(m.label)+'</option>').join('')+'</select></div>';
+  h+='<div class="coachs">🧑‍🏫 <b>Coach A</b> : '+pEsc(presStaff.coachA||'(à définir)')+' · <b>Coach B</b> : '+pEsc(presStaff.coachB||'(à définir)')+'</div>';
+  h+='<div class="mrow"><label>Responsable de salle</label><select onchange="presRoleEdit(\'salle\',this.value)">'+dirOpts(info.salle)+'</select></div>';
+  h+='<div class="mrow"><label>Responsable du score</label><select onchange="presRoleEdit(\'score\',this.value)">'+dirOpts(info.score)+'</select></div>';
+  h+='<div class="mrow"><label>Secrétaire</label><select onchange="presRoleEdit(\'secretaire\',this.value)">'+dirOpts(info.secretaire)+'</select></div>';
+  h+='<div class="mrow"><label>👑 Capitaine</label><select onchange="presRoleEdit(\'capitaine\',this.value)">'+playerOpts+'</select></div>';
+  if(capName) h+='<div class="cap-badge">👑 Capitaine du match : '+pEsc(capName)+'</div>';
+  h+='</div>';
+  return h;
+}
+function presMatchSelChange(k){ presMatchSel=k; renderPres(); }
+function presRoleEdit(f,v){ if(!presMatchInfo[presMatchSel]) presMatchInfo[presMatchSel]={}; presMatchInfo[presMatchSel][f]=v; presSaveMatchInfo(); renderPres(); }
 
 function presStatsHTML(){
   if(!presRoster.length) return '<div id="presStats"></div>';
@@ -2951,20 +3015,20 @@ function renderPres(){
   else { legend+='<span><i style="background:#a855f7;color:#fff">C</i>Convoquée</span><span><i style="background:#34d399;color:#06281c">P</i>A joué</span><span><i style="background:#94a3b8;color:#10151f">R</i>Repos/rempl.</span><span><i style="background:#fb5e6e;color:#3a0710">A</i>Absente</span><span><i style="background:#f4a03a;color:#3a2400">B</i>Blessée</span>'; }
   legend+='</div>';
 
-  let eff='<details class="eff"><summary>👥 Effectif ('+presRoster.length+')</summary>';
+  let eff='<details class="eff" '+(presEffOpen?'open':'')+' ontoggle="presEffOpen=this.open"><summary>👥 Effectif ('+presRoster.length+')</summary>';
   presRoster.forEach(p=>{ eff+='<div class="eff-row"><input class="num" inputmode="numeric" maxlength="3" value="'+pEsc(p.num)+'" placeholder="N°" onchange="presEdit(\''+p.id+'\',\'num\',this.value)"><input class="nm" value="'+pEsc(p.name)+'" placeholder="Prénom" onchange="presEdit(\''+p.id+'\',\'name\',this.value)"><button class="eff-del" title="Supprimer" onclick="presDel(\''+p.id+'\')">🗑️</button></div>'; });
   eff+='<button class="pres-btn eff-add" onclick="presAdd()">＋ Ajouter une joueuse</button></details>';
 
   let thead='<thead><tr><th class="cnum">N°</th><th class="cname">Joueuse</th>';
   vm.forEach(mo=>{ thead+='<th class="mois-h" colspan="'+mo.cols.length+'">'+pEsc(mo.mois)+'</th>'; });
   thead+='</tr><tr><th class="cnum"></th><th class="cname"></th>';
-  vm.forEach(mo=>mo.cols.forEach(c=>{ const parts=c.label.split(' '); const date=parts[1]||c.label; const sub=presView==='m'?(c.sub||'Match'):(parts[0]||''); thead+='<th data-col="'+c.key+'" title="'+pEsc(c.label)+'">'+pEsc(date)+'<small>'+pEsc(sub)+'</small></th>'; }));
+  vm.forEach(mo=>mo.cols.forEach(c=>{ const parts=c.label.split(' '); const date=parts[1]||c.label; const sub=presView==='m'?(c.sub||'Match'):(parts[0]||''); const sc=(presView==='m'&&c.key===presMatchSel)?' selcol':''; thead+='<th data-col="'+c.key+'" class="'+sc.trim()+'" title="'+pEsc(c.label)+'">'+pEsc(date)+'<small>'+pEsc(sub)+'</small></th>'; }));
   thead+='</tr></thead>';
 
   let tbody='<tbody>';
   presRoster.forEach(p=>{
     tbody+='<tr><td class="cnum">'+pEsc(p.num)+'</td><td class="cname">'+pEsc(p.name)+'</td>';
-    vm.forEach(mo=>mo.cols.forEach(c=>{ const code=(presAttend[c.key]||{})[p.id]||''; tbody+='<td class="cell '+code+'" data-cell="'+c.key+'__'+p.id+'" onclick="presCell(\''+c.key+'\',\''+p.id+'\')">'+code+'</td>'; }));
+    vm.forEach(mo=>mo.cols.forEach(c=>{ const code=(presAttend[c.key]||{})[p.id]||''; const sel=presView==='m'&&c.key===presMatchSel; const isCap=sel&&(presMatchInfo[c.key]||{}).capitaine===p.id; tbody+='<td class="cell '+code+(sel?' selcol':'')+(isCap?' cap':'')+'" data-cell="'+c.key+'__'+p.id+'" onclick="presCell(\''+c.key+'\',\''+p.id+'\')">'+code+'</td>'; }));
     tbody+='</tr>';
   });
   tbody+='</tbody>';
@@ -2974,9 +3038,11 @@ function renderPres(){
   html+=legend;
   html+='<p class="pres-hint">Tape une case pour changer le statut (elle se colore). Tout est enregistré automatiquement sur cet appareil. Pense à « Sauvegarde » de temps en temps pour ne rien perdre et pouvoir transférer sur un autre appareil.</p>';
   html+=eff;
+  html+=presStaffHTML();
+  if(presView==='m') html+=presMatchSheetHTML();
   html+='<div class="pres-tools"><button class="pres-btn" onclick="presExportCSV()">⬇️ Exporter CSV</button><button class="pres-btn" onclick="presBackup()">💾 Sauvegarde</button><label class="pres-btn" style="cursor:pointer">↺ Restaurer<input type="file" accept="application/json,.json" style="display:none" onchange="presRestore(this)"></label></div>';
   let tfoot='<tfoot><tr><td class="cnum"></td><td class="cname">Présentes</td>';
-  vm.forEach(mo=>mo.cols.forEach(c=>{ tfoot+='<td class="foot" data-foot="'+c.key+'">'+presColCount(c.key)+'</td>'; }));
+  vm.forEach(mo=>mo.cols.forEach(c=>{ const sc=(presView==='m'&&c.key===presMatchSel)?' selcol':''; tfoot+='<td class="foot'+sc+'" data-foot="'+c.key+'">'+presColCount(c.key)+'</td>'; }));
   tfoot+='</tr></tfoot>';
   html+='<div class="pres-wrap"><table class="pres">'+thead+tbody+tfoot+'</table></div>';
   html+=presStatsHTML();
