@@ -3116,7 +3116,7 @@ function renderPres(){
   tbody+='</tbody>';
 
   let html='<div class="week-head"><h2>Feuille de présence</h2><p>Coche la présence à chaque entraînement et chaque match. Les colonnes viennent du calendrier de la saison.</p></div>';
-  html+='<div class="pres-tools"><button class="pres-btn '+(presView==='e'?'on':'')+'" onclick="presSetView(\'e\')">🏋️ Entraînements</button><button class="pres-btn '+(presView==='m'?'on':'')+'" onclick="presSetView(\'m\')">🏆 Matchs</button><button class="pres-btn" onclick="presGoToday()">📍 Aujourd\'hui</button></div>';
+  html+='<div class="pres-tools"><button class="pres-btn '+(presView==='e'?'on':'')+'" onclick="presSetView(\'e\')">🏋️ Entraînements</button><button class="pres-btn '+(presView==='m'?'on':'')+'" onclick="presSetView(\'m\')">🏆 Matchs</button></div>';
   html+=legend;
   html+='<p class="pres-hint">Tape une case pour changer le statut (elle se colore). Tout est enregistré automatiquement sur cet appareil. Pense à « Sauvegarde » de temps en temps pour ne rien perdre et pouvoir transférer sur un autre appareil.</p>';
   html+=eff;
