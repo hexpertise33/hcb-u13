@@ -312,8 +312,6 @@
   .stat-line{background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(168,85,247,.05));border:1px solid var(--ligne);border-radius:10px;padding:11px 14px;margin:0 0 14px;font-size:14px;color:var(--blanc)}
   .stat-line b{color:var(--violet-clair)}
   .stat-line b.rate{color:#34d399}
-  .pres th.today{background:#4a2688;color:#fff}
-  .pres td.today{box-shadow:inset 2px 0 0 #c084fc,inset -2px 0 0 #c084fc}
   .pres th.selcol{background:#0f3d33;color:#a7f3d0}
   .pres td.selcol{box-shadow:inset 2px 0 0 #34d399,inset -2px 0 0 #34d399}
   .pres tbody td.cell{position:relative}
@@ -2882,23 +2880,6 @@ function presCell(key,pid){
 }
 
 function presColCount(key){ let n=0; presRoster.forEach(p=>{ if((presAttend[key]||{})[p.id]==='P') n++; }); return n; }
-
-function presTargetCol(){
-  const keys=[]; presViewMonths().forEach(mo=>mo.cols.forEach(c=>keys.push(c.key)));
-  if(!keys.length) return null;
-  const t=new Date();
-  const today=t.getFullYear()+'-'+String(t.getMonth()+1).padStart(2,'0')+'-'+String(t.getDate()).padStart(2,'0');
-  if(keys.includes(today)) return today;
-  return keys.find(k=>k>=today) || keys[keys.length-1];
-}
-function presGoToday(){
-  const key=presTargetCol(); if(!key) return;
-  document.querySelectorAll('.pres .today').forEach(e=>e.classList.remove('today'));
-  document.querySelectorAll('.pres [data-cell^="'+key+'__"]').forEach(e=>e.classList.add('today'));
-  const f=document.querySelector('.pres [data-foot="'+key+'"]'); if(f) f.classList.add('today');
-  const th=document.querySelector('.pres th[data-col="'+key+'"]');
-  if(th){ th.classList.add('today'); th.scrollIntoView({inline:'center', block:'nearest'}); }
-}
 
 function presStaffHTML(){
   let h='<details class="eff" '+(presStaffOpen?'open':'')+' ontoggle="presStaffOpen=this.open"><summary>👔 Staff</summary>';
