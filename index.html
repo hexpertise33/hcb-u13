@@ -2782,12 +2782,13 @@ function renderCalendar(){
 const PRES_ROSTER_KEY='hcbU13_roster';
 const PRES_ATTEND_KEY='hcbU13_attend';
 const PRES_DEFAULT=[
-  {id:'p1',num:'',name:'Inès'},{id:'p2',num:'',name:'Cheraz'},{id:'p3',num:'',name:'Mélia'},
-  {id:'p4',num:'',name:'Zelly'},{id:'p5',num:'',name:'Alicia'},{id:'p6',num:'',name:'Constance'},
-  {id:'p7',num:'',name:'Emy'},{id:'p8',num:'',name:'Juliette'},{id:'p9',num:'',name:'Elsa'},
-  {id:'p10',num:'',name:'Maelle'},{id:'p11',num:'',name:'Anna'},
-  {id:'p12',num:'',name:''},{id:'p13',num:'',name:''},{id:'p14',num:'',name:''},{id:'p15',num:'',name:''},
+  {id:'p1',num:'1',name:'Inès'},{id:'p2',num:'2',name:'Cheraz'},{id:'p3',num:'3',name:'Mélia'},
+  {id:'p4',num:'4',name:'Zelly'},{id:'p5',num:'5',name:'Alicia'},{id:'p6',num:'6',name:'Constance'},
+  {id:'p7',num:'7',name:'Emy'},{id:'p8',num:'8',name:'Juliette'},{id:'p9',num:'9',name:'Elsa'},
+  {id:'p10',num:'10',name:'Maelle'},{id:'p11',num:'11',name:'Anna'},
+  {id:'p12',num:'12',name:''},{id:'p13',num:'13',name:''},{id:'p14',num:'14',name:''},{id:'p15',num:'',name:''},
 ];
+const PRES_SEEDV=2;
 const PRES_CYCLE={ e:['','P','A','B'], m:['','C','P','R','A','B'] };
 let presRoster=[], presAttend={}, presView='e';
 
@@ -2795,6 +2796,17 @@ function presLoad(){
   try{ const r=JSON.parse(localStorage.getItem(PRES_ROSTER_KEY)); presRoster=Array.isArray(r)?r:PRES_DEFAULT.map(x=>({...x})); }
   catch(e){ presRoster=PRES_DEFAULT.map(x=>({...x})); }
   if(!localStorage.getItem(PRES_ROSTER_KEY)) presSaveRoster();
+  // migration : attribuer les numéros de maillot aux lignes existantes sans écraser tes saisies
+  try{
+    const v=parseInt(localStorage.getItem('hcbU13_seedv')||'0',10);
+    if(v<PRES_SEEDV){
+      const map={}; PRES_DEFAULT.forEach(d=>{ if(d.num) map[d.id]=d.num; });
+      let changed=false;
+      presRoster.forEach(p=>{ if((!p.num||p.num==='') && map[p.id]){ p.num=map[p.id]; changed=true; } });
+      if(changed) presSaveRoster();
+      localStorage.setItem('hcbU13_seedv', String(PRES_SEEDV));
+    }
+  }catch(e){}
   try{ presAttend=JSON.parse(localStorage.getItem(PRES_ATTEND_KEY))||{}; }catch(e){ presAttend={}; }
 }
 function presSaveRoster(){ try{ localStorage.setItem(PRES_ROSTER_KEY, JSON.stringify(presRoster)); }catch(e){} }
