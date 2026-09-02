@@ -2932,8 +2932,13 @@ function presMatchSheetHTML(){
   let h='<div class="msheet"><h3>📋 Feuille de match</h3>';
   h+='<div class="mrow"><label>Match</label><select onchange="presMatchSelChange(this.value)">'+list.map(m=>'<option value="'+m.key+'" '+(m.key===presMatchSel?'selected':'')+'>'+pEsc(m.label)+'</option>').join('')+'</select></div>';
   h+='<div class="coachs">🧑‍🏫 <b>Coach A</b> : '+pEsc(presStaff.coachA||'(à définir)')+' · <b>Coach B</b> : '+pEsc(presStaff.coachB||'(à définir)')+'</div>';
-  h+='<div class="mrow"><label>🕐 Heure de RDV</label><input value="'+pEsc(info.heure||'')+'" placeholder="ex. 13h30" onchange="presRoleEdit(\'heure\',this.value)"></div>';
+  h+='<div class="mrow"><label>🏠 Domicile / Extérieur</label><select onchange="presRoleEdit(\'dom\',this.value)"><option value="">(à définir)</option><option '+(info.dom==='Domicile'?'selected':'')+'>Domicile</option><option '+(info.dom==='Extérieur'?'selected':'')+'>Extérieur</option></select></div>';
+  h+='<div class="mrow"><label>🏟️ Lieu du match</label><input value="'+pEsc(info.lieuMatch||'')+'" placeholder="ex. Gymnase adverse" onchange="presRoleEdit(\'lieuMatch\',this.value)"></div>';
+  h+='<div class="mrow"><label>🏆 Heure de match</label><input value="'+pEsc(info.heureMatch||'')+'" placeholder="ex. 15h00" onchange="presRoleEdit(\'heureMatch\',this.value)"></div>';
+  h+='<div class="mrow"><label>⏱️ RDV avant match (min)</label><input inputmode="numeric" value="'+pEsc(info.rdvAvant||'')+'" placeholder="60" onchange="presRoleEdit(\'rdvAvant\',this.value)"></div>';
+  h+='<div class="mrow"><label>🕐 Heure de RDV</label><input value="'+pEsc(info.heure||'')+'" placeholder="auto : '+(presRdvComputed(info)||'heure de match − 60 min')+'" onchange="presRoleEdit(\'heure\',this.value)"></div>';
   h+='<div class="mrow"><label>📍 Lieu de RDV</label><input value="'+pEsc(info.lieu||'')+'" placeholder="ex. Gymnase du Verdet" onchange="presRoleEdit(\'lieu\',this.value)"></div>';
+  h+='<p class="pres-hint" style="margin:2px 0 0">Laisse l\'heure de RDV vide pour la calculer automatiquement (heure de match moins les minutes indiquées).</p>';
   h+='<div class="mrow"><label>Responsable de salle</label><select onchange="presRoleEdit(\'salle\',this.value)">'+dirOpts(info.salle)+'</select></div>';
   h+='<div class="mrow"><label>Responsable du score</label><select onchange="presRoleEdit(\'score\',this.value)">'+dirOpts(info.score)+'</select></div>';
   h+='<div class="mrow"><label>Secrétaire</label><select onchange="presRoleEdit(\'secretaire\',this.value)">'+dirOpts(info.secretaire)+'</select></div>';
@@ -2946,6 +2951,9 @@ function presMatchSheetHTML(){
 }
 function presMatchSelChange(k){ presMatchSel=k; renderPres(); }
 function presRoleEdit(f,v){ if(!presMatchInfo[presMatchSel]) presMatchInfo[presMatchSel]={}; presMatchInfo[presMatchSel][f]=v; presSaveMatchInfo(); renderPres(); }
+function presParseH(s){ const m=String(s||'').match(/(\d{1,2})\s*[h:.]\s*(\d{0,2})|(\d{1,2})\s*h?$/); if(!m) return null; let h,mi; if(m[1]!=null){ h=+m[1]; mi=m[2]?+m[2]:0; } else { h=+m[3]; mi=0; } if(isNaN(h)||h>23||mi>59) return null; return h*60+mi; }
+function presFmtH(mins){ mins=((mins%1440)+1440)%1440; return Math.floor(mins/60)+'h'+String(mins%60).padStart(2,'0'); }
+function presRdvComputed(info){ if(info.heure) return info.heure; const t=presParseH(info.heureMatch); if(t!=null){ const off=parseInt(info.rdvAvant||'60',10); return presFmtH(t-(isNaN(off)?60:off)); } return ''; }
 
 function rr(c,rx,ry,w,h,r){ c.beginPath(); c.moveTo(rx+r,ry); c.arcTo(rx+w,ry,rx+w,ry+h,r); c.arcTo(rx+w,ry+h,rx,ry+h,r); c.arcTo(rx,ry+h,rx,ry,r); c.arcTo(rx,ry,rx+w,ry,r); c.closePath(); }
 function presConvocImage(){
@@ -2971,9 +2979,11 @@ function presConvocImage(){
     T(col.sub||'Match', 90, y+58, 46, '#f4e7b0','800');
     T(col.label||'', 90, y+110, 40, '#f5f0ff','700');
     if(col.we){ x.font="600 26px 'Barlow', Arial, sans-serif"; x.textAlign='right'; x.fillStyle='#c9b6ef'; x.fillText(col.we, W-90, y+110); }
-    y+=190;
-    if(info.heure||info.lieu){ const parts=[]; if(info.heure) parts.push('🕐 '+info.heure); if(info.lieu) parts.push('📍 '+info.lieu); T('RENDEZ-VOUS   '+parts.join('    '), 80, y+34, 32, '#a7f3d0','700'); y+=104; }
-    else { y+=14; }
+    y+=190; let ry=y+34, drew=false;
+    const rdv=presRdvComputed(info);
+    if(rdv||info.lieu){ const p=[]; if(rdv) p.push('🕐 '+rdv); if(info.lieu) p.push('📍 '+info.lieu); T('RENDEZ-VOUS   '+p.join('    '), 80, ry, 32, '#a7f3d0','700'); ry+=52; drew=true; }
+    { const p=[]; if(info.heureMatch) p.push('🏆 '+info.heureMatch); if(info.dom==='Extérieur') p.push('🚌 '+(info.lieuMatch||'déplacement')); else if(info.lieuMatch) p.push('🏟️ '+info.lieuMatch); else if(info.dom==='Domicile') p.push('🏠 à domicile'); if(p.length){ T('MATCH   '+p.join('    '), 80, ry, 30, '#c9b6ef','600'); ry+=52; drew=true; } }
+    y = drew ? ry+20 : y+14;
     T('CONVOQUÉES ('+conv.length+')', 80, y, 42, '#c084fc','800'); y+=18;
     x.strokeStyle='#3a2a55'; x.lineWidth=2; x.beginPath(); x.moveTo(80,y); x.lineTo(W-80,y); x.stroke(); y+=20;
     const bottomLimit=H-370;
@@ -3000,7 +3010,9 @@ function presConvocImage(){
       const fname='convocation-'+((col.sub||'match').replace(/[^A-Za-z0-9]/g,''))+'.png';
       const file=new File([blob],fname,{type:'image/png'});
       let shareText='🤾‍♀️ Convocation '+(col.sub||'match')+' '+(col.label||'')+(col.we?(' ('+col.we+')'):'');
-      if(info.heure) shareText+='\n🕐 RDV '+info.heure; if(info.lieu) shareText+='\n📍 '+info.lieu;
+      const rdvTxt=presRdvComputed(info);
+      if(info.heureMatch) shareText+='\n🏆 Match '+info.heureMatch+(info.dom==='Extérieur'?(' 🚌 '+(info.lieuMatch||'déplacement')):(info.lieuMatch?(' 🏟️ '+info.lieuMatch):''));
+      if(rdvTxt) shareText+='\n🕐 RDV '+rdvTxt; if(info.lieu) shareText+='\n📍 '+info.lieu;
       if(navigator.canShare && navigator.canShare({files:[file]})){
         navigator.share({files:[file], text:shareText}).catch(function(){});
       } else {
