@@ -323,7 +323,7 @@
   .msheet h3{font-family:'Barlow Condensed';text-transform:uppercase;font-weight:800;color:var(--violet-clair);font-size:16px;margin:0 0 10px}
   .msheet .mrow{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13.5px;flex-wrap:wrap}
   .msheet .mrow label{min-width:160px;color:rgba(245,240,255,.82)}
-  .msheet select{flex:1;min-width:150px;background:#0e0620;border:1px solid var(--ligne);border-radius:8px;color:var(--blanc);padding:8px 10px;font-size:14px;font-family:inherit}
+  .msheet select,.msheet input{flex:1;min-width:150px;background:#0e0620;border:1px solid var(--ligne);border-radius:8px;color:var(--blanc);padding:8px 10px;font-size:14px;font-family:inherit}
   .msheet .coachs{color:var(--blanc);font-size:13.5px;margin:2px 0 10px;padding:8px 10px;background:#0e0620;border:1px solid var(--ligne);border-radius:8px}
   .msheet .coachs b{color:var(--violet-clair)}
   .msheet .cap-badge{margin-top:10px;color:#f4e7b0;font-weight:700;font-size:14px}
@@ -2932,6 +2932,8 @@ function presMatchSheetHTML(){
   let h='<div class="msheet"><h3>📋 Feuille de match</h3>';
   h+='<div class="mrow"><label>Match</label><select onchange="presMatchSelChange(this.value)">'+list.map(m=>'<option value="'+m.key+'" '+(m.key===presMatchSel?'selected':'')+'>'+pEsc(m.label)+'</option>').join('')+'</select></div>';
   h+='<div class="coachs">🧑‍🏫 <b>Coach A</b> : '+pEsc(presStaff.coachA||'(à définir)')+' · <b>Coach B</b> : '+pEsc(presStaff.coachB||'(à définir)')+'</div>';
+  h+='<div class="mrow"><label>🕐 Heure de RDV</label><input value="'+pEsc(info.heure||'')+'" placeholder="ex. 13h30" onchange="presRoleEdit(\'heure\',this.value)"></div>';
+  h+='<div class="mrow"><label>📍 Lieu de RDV</label><input value="'+pEsc(info.lieu||'')+'" placeholder="ex. Gymnase du Verdet" onchange="presRoleEdit(\'lieu\',this.value)"></div>';
   h+='<div class="mrow"><label>Responsable de salle</label><select onchange="presRoleEdit(\'salle\',this.value)">'+dirOpts(info.salle)+'</select></div>';
   h+='<div class="mrow"><label>Responsable du score</label><select onchange="presRoleEdit(\'score\',this.value)">'+dirOpts(info.score)+'</select></div>';
   h+='<div class="mrow"><label>Secrétaire</label><select onchange="presRoleEdit(\'secretaire\',this.value)">'+dirOpts(info.secretaire)+'</select></div>';
@@ -2969,7 +2971,9 @@ function presConvocImage(){
     T(col.sub||'Match', 90, y+58, 46, '#f4e7b0','800');
     T(col.label||'', 90, y+110, 40, '#f5f0ff','700');
     if(col.we){ x.font="600 26px 'Barlow', Arial, sans-serif"; x.textAlign='right'; x.fillStyle='#c9b6ef'; x.fillText(col.we, W-90, y+110); }
-    y+=205;
+    y+=190;
+    if(info.heure||info.lieu){ const parts=[]; if(info.heure) parts.push('🕐 '+info.heure); if(info.lieu) parts.push('📍 '+info.lieu); T('RENDEZ-VOUS   '+parts.join('    '), 80, y+34, 32, '#a7f3d0','700'); y+=104; }
+    else { y+=14; }
     T('CONVOQUÉES ('+conv.length+')', 80, y, 42, '#c084fc','800'); y+=18;
     x.strokeStyle='#3a2a55'; x.lineWidth=2; x.beginPath(); x.moveTo(80,y); x.lineTo(W-80,y); x.stroke(); y+=20;
     const bottomLimit=H-370;
@@ -2995,7 +2999,8 @@ function presConvocImage(){
       if(!blob){ alert('Génération impossible.'); return; }
       const fname='convocation-'+((col.sub||'match').replace(/[^A-Za-z0-9]/g,''))+'.png';
       const file=new File([blob],fname,{type:'image/png'});
-      const shareText='🤾‍♀️ Convocation '+(col.sub||'match')+' '+(col.label||'')+(col.we?(' ('+col.we+')'):'');
+      let shareText='🤾‍♀️ Convocation '+(col.sub||'match')+' '+(col.label||'')+(col.we?(' ('+col.we+')'):'');
+      if(info.heure) shareText+='\n🕐 RDV '+info.heure; if(info.lieu) shareText+='\n📍 '+info.lieu;
       if(navigator.canShare && navigator.canShare({files:[file]})){
         navigator.share({files:[file], text:shareText}).catch(function(){});
       } else {
