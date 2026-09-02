@@ -284,15 +284,15 @@
   .eff-row input.nm{flex:1;min-width:0}
   .eff-del{background:none;border:none;color:#fb5e6e;font-size:17px;cursor:pointer;padding:4px 8px;flex-shrink:0}
   .eff-add{margin:8px 0 12px}
-  .pres-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--ligne);border-radius:12px;margin-bottom:16px;background:#120820}
+  .pres-wrap{overflow:auto;max-height:70vh;-webkit-overflow-scrolling:touch;border:1px solid var(--ligne);border-radius:12px;margin-bottom:16px;background:#120820}
   table.pres{border-collapse:separate;border-spacing:0;font-size:13px}
   .pres th,.pres td{border-right:1px solid var(--ligne);border-bottom:1px solid var(--ligne);text-align:center;white-space:nowrap}
-  .pres thead th{position:sticky;top:0;background:#1a0d30;color:var(--violet-clair);font-family:'Barlow Condensed';font-weight:700;padding:4px 6px;font-size:11px;z-index:2;line-height:1.15}
+  .pres thead th{position:sticky;top:0;background:#1a0d30;color:var(--violet-clair);font-family:'Barlow Condensed';font-weight:700;padding:4px 6px;font-size:11px;z-index:5;line-height:1.15}
   .pres thead th small{display:block;font-size:9px;color:rgba(245,240,255,.5);font-weight:600}
   .pres .cnum,.pres .cname{position:sticky;background:#1a0d30;z-index:3}
   .pres .cnum{left:0;min-width:32px;width:32px;color:var(--violet-clair);font-family:'Barlow Condensed';font-weight:700}
   .pres .cname{left:32px;text-align:left;padding:6px 10px;min-width:110px;font-weight:600}
-  .pres thead .cnum,.pres thead .cname{z-index:4}
+  .pres thead .cnum,.pres thead .cname{z-index:6}
   .pres .mois-h{background:rgba(168,85,247,.18);color:var(--violet-clair);font-size:11px;font-family:'Barlow Condensed';font-weight:800;letter-spacing:.03em;text-transform:uppercase}
   .pres tbody td.cell{min-width:36px;width:36px;height:38px;cursor:pointer;font-weight:800;font-family:'Barlow Condensed';font-size:15px;user-select:none;color:rgba(245,240,255,.22)}
   .pres tbody td.cell.P{background:#34d399;color:#06281c}
@@ -306,8 +306,8 @@
   .bilan-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:7px 12px;background:var(--carte);border:1px solid var(--ligne);border-radius:8px;margin-bottom:5px;font-size:13px}
   .bilan-row b{color:var(--violet-clair)}
   .bilan-row .rate{color:#34d399;font-weight:700}
-  .pres tfoot td{background:#241243;color:var(--violet-clair);font-family:'Barlow Condensed';font-weight:800;font-size:14px}
-  .pres tfoot .cnum,.pres tfoot .cname{background:#241243}
+  .pres tfoot td{position:sticky;bottom:0;background:#241243;color:var(--violet-clair);font-family:'Barlow Condensed';font-weight:800;font-size:14px;z-index:5}
+  .pres tfoot .cnum,.pres tfoot .cname{background:#241243;z-index:6}
   .pres tfoot .cname{text-align:left;padding:6px 10px;font-size:12px;text-transform:uppercase;letter-spacing:.02em}
   .stat-line{background:linear-gradient(135deg,rgba(168,85,247,.18),rgba(168,85,247,.05));border:1px solid var(--ligne);border-radius:10px;padding:11px 14px;margin:0 0 14px;font-size:14px;color:var(--blanc)}
   .stat-line b{color:var(--violet-clair)}
