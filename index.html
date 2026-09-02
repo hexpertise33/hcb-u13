@@ -77,7 +77,7 @@
 
   /* Onglets */
   .tabs{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
     margin:26px 0 8px;position:sticky;top:0;z-index:5;
     background:linear-gradient(var(--fond) 70%,transparent);padding:10px 0;
   }
@@ -267,6 +267,45 @@
   .dg-legend i{width:13px;height:13px;border-radius:50%;flex-shrink:0;display:inline-block}
   .dg-legend i.ln{width:18px;height:0;border-radius:0;border-top:3px solid #f4e7b0}
   .dg-legend i.pa{width:18px;height:0;border-radius:0;border-top:3px dashed #c084fc}
+  /* Feuille de présence */
+  .pres-tools{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+  .pres-btn{background:var(--carte);border:1px solid var(--ligne);color:var(--blanc);border-radius:10px;padding:9px 13px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px}
+  .pres-btn:hover{border-color:var(--violet)}
+  .pres-btn.on{background:var(--violet);border-color:var(--violet);color:#fff}
+  .pres-legend{display:flex;flex-wrap:wrap;gap:8px 14px;background:var(--carte);border:1px solid var(--ligne);border-radius:12px;padding:10px 14px;margin:0 0 12px;font-size:12.5px;color:rgba(245,240,255,.82)}
+  .pres-legend span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+  .pres-legend i{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:12px;font-family:'Barlow Condensed'}
+  .pres-hint{color:rgba(245,240,255,.6);font-size:13px;margin:0 0 14px;line-height:1.5}
+  .eff{margin:0 0 16px;background:var(--carte);border:1px solid var(--ligne);border-radius:12px;padding:2px 14px}
+  .eff summary{cursor:pointer;font-family:'Barlow Condensed';text-transform:uppercase;font-weight:800;color:var(--violet-clair);letter-spacing:.03em;padding:10px 0;font-size:15px}
+  .eff-row{display:flex;gap:8px;align-items:center;margin:6px 0}
+  .eff-row input{background:#0e0620;border:1px solid var(--ligne);border-radius:8px;color:var(--blanc);padding:8px 10px;font-size:14px;font-family:inherit}
+  .eff-row input.num{width:56px;text-align:center}
+  .eff-row input.nm{flex:1;min-width:0}
+  .eff-del{background:none;border:none;color:#fb5e6e;font-size:17px;cursor:pointer;padding:4px 8px;flex-shrink:0}
+  .eff-add{margin:8px 0 12px}
+  .pres-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--ligne);border-radius:12px;margin-bottom:16px;background:#120820}
+  table.pres{border-collapse:separate;border-spacing:0;font-size:13px}
+  .pres th,.pres td{border-right:1px solid var(--ligne);border-bottom:1px solid var(--ligne);text-align:center;white-space:nowrap}
+  .pres thead th{position:sticky;top:0;background:#1a0d30;color:var(--violet-clair);font-family:'Barlow Condensed';font-weight:700;padding:4px 6px;font-size:11px;z-index:2;line-height:1.15}
+  .pres thead th small{display:block;font-size:9px;color:rgba(245,240,255,.5);font-weight:600}
+  .pres .cnum,.pres .cname{position:sticky;background:#1a0d30;z-index:3}
+  .pres .cnum{left:0;min-width:32px;width:32px;color:var(--violet-clair);font-family:'Barlow Condensed';font-weight:700}
+  .pres .cname{left:32px;text-align:left;padding:6px 10px;min-width:110px;font-weight:600}
+  .pres thead .cnum,.pres thead .cname{z-index:4}
+  .pres .mois-h{background:rgba(168,85,247,.18);color:var(--violet-clair);font-size:11px;font-family:'Barlow Condensed';font-weight:800;letter-spacing:.03em;text-transform:uppercase}
+  .pres tbody td.cell{min-width:36px;width:36px;height:38px;cursor:pointer;font-weight:800;font-family:'Barlow Condensed';font-size:15px;user-select:none;color:rgba(245,240,255,.22)}
+  .pres tbody td.cell.P{background:#34d399;color:#06281c}
+  .pres tbody td.cell.A{background:#fb5e6e;color:#3a0710}
+  .pres tbody td.cell.B{background:#f4a03a;color:#3a2400}
+  .pres tbody td.cell.C{background:#a855f7;color:#fff}
+  .pres tbody td.cell.R{background:#94a3b8;color:#10151f}
+  .pres tbody tr:nth-child(even) .cnum,.pres tbody tr:nth-child(even) .cname{background:#1f1138}
+  .bilan{margin:4px 0 20px}
+  .bilan h3{font-family:'Barlow Condensed';text-transform:uppercase;font-weight:800;color:var(--violet-clair);font-size:16px;margin:0 0 8px}
+  .bilan-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:7px 12px;background:var(--carte);border:1px solid var(--ligne);border-radius:8px;margin-bottom:5px;font-size:13px}
+  .bilan-row b{color:var(--violet-clair)}
+  .bilan-row .rate{color:#34d399;font-weight:700}
 </style>
 
 <div class="wrap">
@@ -2503,6 +2542,12 @@ jeuxBtn.innerHTML = `🎮<small>Jeux & principes</small>`;
 jeuxBtn.onclick = () => selectJeux(jeuxBtn);
 tabsEl.appendChild(jeuxBtn);
 
+const presBtn = document.createElement('button');
+presBtn.className = 'tab';
+presBtn.innerHTML = `📋<small>Présences</small>`;
+presBtn.onclick = () => selectPres(presBtn);
+tabsEl.appendChild(presBtn);
+
 function toggleAll(btn){
   const body = btn.closest('.s-body');
   const dets = body.querySelectorAll('details.drop');
@@ -2732,6 +2777,149 @@ function renderCalendar(){
   html += `<p class="cal-note">Dernier entraînement : mercredi 30 juin 2027. Mercredi = séance de 2 h, jeudi = 1 h 30 (dont 40 min d’opposition).</p>`;
   appEl.innerHTML = html;
 }
+
+// ===== Feuille de présence =====
+const PRES_ROSTER_KEY='hcbU13_roster';
+const PRES_ATTEND_KEY='hcbU13_attend';
+const PRES_DEFAULT=[
+  {id:'p1',num:'',name:'Inès'},{id:'p2',num:'',name:'Cheraz'},{id:'p3',num:'',name:'Mélia'},
+  {id:'p4',num:'',name:'Zelly'},{id:'p5',num:'',name:'Alicia'},{id:'p6',num:'',name:'Constance'},
+  {id:'p7',num:'',name:'Emy'},{id:'p8',num:'',name:'Juliette'},{id:'p9',num:'',name:'Elsa'},
+  {id:'p10',num:'',name:'Maelle'},{id:'p11',num:'',name:'Anna'},
+  {id:'p12',num:'',name:''},{id:'p13',num:'',name:''},{id:'p14',num:'',name:''},{id:'p15',num:'',name:''},
+];
+const PRES_CYCLE={ e:['','P','A','B'], m:['','C','P','R','A','B'] };
+let presRoster=[], presAttend={}, presView='e';
+
+function presLoad(){
+  try{ const r=JSON.parse(localStorage.getItem(PRES_ROSTER_KEY)); presRoster=Array.isArray(r)?r:PRES_DEFAULT.map(x=>({...x})); }
+  catch(e){ presRoster=PRES_DEFAULT.map(x=>({...x})); }
+  if(!localStorage.getItem(PRES_ROSTER_KEY)) presSaveRoster();
+  try{ presAttend=JSON.parse(localStorage.getItem(PRES_ATTEND_KEY))||{}; }catch(e){ presAttend={}; }
+}
+function presSaveRoster(){ try{ localStorage.setItem(PRES_ROSTER_KEY, JSON.stringify(presRoster)); }catch(e){} }
+function presSaveAttend(){ try{ localStorage.setItem(PRES_ATTEND_KEY, JSON.stringify(presAttend)); }catch(e){} }
+function pEsc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function presColumns(){
+  const out=[];
+  saison.forEach(mo=>{
+    const parts=mo.mois.split(' '); const year=parts[parts.length-1];
+    const cols=[];
+    mo.items.forEach(it=>{
+      if(it.t==='m'){
+        const mm=it.d.match(/(\d{2})\/(\d{2})/);
+        const key= mm ? `${year}-${mm[2]}-${mm[1]}` : 'm-'+mo.mois+'-'+it.lib;
+        cols.push({key, label:it.d, sub:(it.lib||'').replace('Championnat · ',''), type:'m'});
+      } else {
+        cols.push({key:it.iso, label:it.d, sub:'', type:'e'});
+      }
+    });
+    out.push({mois:parts[0], cols});
+  });
+  return out;
+}
+function presViewMonths(){
+  return presColumns().map(mo=>({mois:mo.mois, cols:mo.cols.filter(c=>c.type===presView)})).filter(mo=>mo.cols.length);
+}
+
+function presSetView(v){ presView=v; renderPres(); }
+function presEdit(id,field,val){ const p=presRoster.find(x=>x.id===id); if(p){ p[field]=val.trim(); presSaveRoster(); renderPres(); } }
+function presDel(id){ presRoster=presRoster.filter(x=>x.id!==id); Object.keys(presAttend).forEach(k=>{ if(presAttend[k]) delete presAttend[k][id]; }); presSaveRoster(); presSaveAttend(); renderPres(); }
+function presAdd(){ presRoster.push({id:'p'+Date.now()+'-'+Math.floor(Math.random()*1000), num:'', name:''}); presSaveRoster(); renderPres(); }
+
+function presCell(key,pid){
+  const cur=(presAttend[key]||{})[pid]||'';
+  const arr=PRES_CYCLE[presView]; const next=arr[(arr.indexOf(cur)+1)%arr.length];
+  if(!presAttend[key]) presAttend[key]={};
+  if(next) presAttend[key][pid]=next; else delete presAttend[key][pid];
+  presSaveAttend();
+  const el=document.querySelector('[data-cell="'+key+'__'+pid+'"]');
+  if(el){ el.className='cell '+next; el.textContent=next; }
+  const b=document.getElementById('presBilan'); if(b) b.outerHTML=presBilanHTML();
+}
+
+function presBilanHTML(){
+  if(!presRoster.length) return '<div id="presBilan"></div>';
+  const cols=[]; presViewMonths().forEach(mo=>mo.cols.forEach(c=>cols.push(c)));
+  let h='<div class="bilan" id="presBilan"><h3>Bilan '+(presView==='e'?'entraînements':'matchs')+'</h3>';
+  presRoster.filter(p=>p.name||p.num).forEach(p=>{
+    let P=0,A=0,B=0,C=0,R=0;
+    cols.forEach(c=>{ const v=(presAttend[c.key]||{})[p.id]; if(v==='P')P++;else if(v==='A')A++;else if(v==='B')B++;else if(v==='C')C++;else if(v==='R')R++; });
+    const label='<b>'+pEsc(p.num?('#'+p.num+' '):'')+pEsc(p.name)+'</b>';
+    if(presView==='e'){ const d=P+A+B; const rate=d?Math.round(P/d*100):0;
+      h+='<div class="bilan-row"><span>'+label+'</span><span>'+P+' prés. · '+A+' abs · '+B+' bless.'+(d?' · <span class="rate">'+rate+'%</span>':'')+'</span></div>';
+    } else {
+      h+='<div class="bilan-row"><span>'+label+'</span><span>'+C+' conv. · '+P+' joué · '+R+' rempl./repos · '+A+' abs · '+B+' bless.</span></div>';
+    }
+  });
+  return h+'</div>';
+}
+
+function presExportCSV(){
+  const cols=[]; presViewMonths().forEach(mo=>mo.cols.forEach(c=>cols.push(c)));
+  const rows=[['N°','Joueuse'].concat(cols.map(c=>c.label+(c.sub?' '+c.sub:'')))];
+  presRoster.forEach(p=>{ rows.push([p.num||'', p.name||''].concat(cols.map(c=>(presAttend[c.key]||{})[p.id]||''))); });
+  const csv=rows.map(r=>r.map(x=>'"'+String(x).replace(/"/g,'""')+'"').join(';')).join('\r\n');
+  presDownload('presences-'+(presView==='e'?'entrainements':'matchs')+'.csv', '﻿'+csv, 'text/csv;charset=utf-8');
+}
+function presBackup(){ presDownload('sauvegarde-presences-u13.json', JSON.stringify({roster:presRoster, attend:presAttend}, null, 2), 'application/json'); }
+function presRestore(input){
+  const f=input.files&&input.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=e=>{ try{ const d=JSON.parse(e.target.result); if(Array.isArray(d.roster)) presRoster=d.roster; if(d.attend&&typeof d.attend==='object') presAttend=d.attend; presSaveRoster(); presSaveAttend(); renderPres(); alert('Sauvegarde restaurée ✅'); }catch(err){ alert('Fichier invalide.'); } };
+  r.readAsText(f); input.value='';
+}
+function presDownload(filename, text, mime){
+  const blob=new Blob([text],{type:mime||'text/plain'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download=filename; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
+}
+
+function selectPres(btn){
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderPres();
+}
+function renderPres(){
+  document.documentElement.style.setProperty('--wk', '#a855f7');
+  document.documentElement.style.setProperty('--wk-light', '#c084fc');
+  const vm=presViewMonths();
+  let legend='<div class="pres-legend">';
+  if(presView==='e'){ legend+='<span><i style="background:#34d399;color:#06281c">P</i>Présente</span><span><i style="background:#fb5e6e;color:#3a0710">A</i>Absente</span><span><i style="background:#f4a03a;color:#3a2400">B</i>Blessée</span>'; }
+  else { legend+='<span><i style="background:#a855f7;color:#fff">C</i>Convoquée</span><span><i style="background:#34d399;color:#06281c">P</i>A joué</span><span><i style="background:#94a3b8;color:#10151f">R</i>Repos/rempl.</span><span><i style="background:#fb5e6e;color:#3a0710">A</i>Absente</span><span><i style="background:#f4a03a;color:#3a2400">B</i>Blessée</span>'; }
+  legend+='</div>';
+
+  let eff='<details class="eff"><summary>👥 Effectif ('+presRoster.length+')</summary>';
+  presRoster.forEach(p=>{ eff+='<div class="eff-row"><input class="num" inputmode="numeric" maxlength="3" value="'+pEsc(p.num)+'" placeholder="N°" onchange="presEdit(\''+p.id+'\',\'num\',this.value)"><input class="nm" value="'+pEsc(p.name)+'" placeholder="Prénom" onchange="presEdit(\''+p.id+'\',\'name\',this.value)"><button class="eff-del" title="Supprimer" onclick="presDel(\''+p.id+'\')">🗑️</button></div>'; });
+  eff+='<button class="pres-btn eff-add" onclick="presAdd()">＋ Ajouter une joueuse</button></details>';
+
+  let thead='<thead><tr><th class="cnum">N°</th><th class="cname">Joueuse</th>';
+  vm.forEach(mo=>{ thead+='<th class="mois-h" colspan="'+mo.cols.length+'">'+pEsc(mo.mois)+'</th>'; });
+  thead+='</tr><tr><th class="cnum"></th><th class="cname"></th>';
+  vm.forEach(mo=>mo.cols.forEach(c=>{ const parts=c.label.split(' '); const date=parts[1]||c.label; const sub=presView==='m'?(c.sub||'Match'):(parts[0]||''); thead+='<th title="'+pEsc(c.label)+'">'+pEsc(date)+'<small>'+pEsc(sub)+'</small></th>'; }));
+  thead+='</tr></thead>';
+
+  let tbody='<tbody>';
+  presRoster.forEach(p=>{
+    tbody+='<tr><td class="cnum">'+pEsc(p.num)+'</td><td class="cname">'+pEsc(p.name)+'</td>';
+    vm.forEach(mo=>mo.cols.forEach(c=>{ const code=(presAttend[c.key]||{})[p.id]||''; tbody+='<td class="cell '+code+'" data-cell="'+c.key+'__'+p.id+'" onclick="presCell(\''+c.key+'\',\''+p.id+'\')">'+code+'</td>'; }));
+    tbody+='</tr>';
+  });
+  tbody+='</tbody>';
+
+  let html='<div class="week-head"><h2>Feuille de présence</h2><p>Coche la présence à chaque entraînement et chaque match. Les colonnes viennent du calendrier de la saison.</p></div>';
+  html+='<div class="pres-tools"><button class="pres-btn '+(presView==='e'?'on':'')+'" onclick="presSetView(\'e\')">🏋️ Entraînements</button><button class="pres-btn '+(presView==='m'?'on':'')+'" onclick="presSetView(\'m\')">🏆 Matchs</button></div>';
+  html+=legend;
+  html+='<p class="pres-hint">Tape une case pour changer le statut (elle se colore). Tout est enregistré automatiquement sur cet appareil. Pense à « Sauvegarde » de temps en temps pour ne rien perdre et pouvoir transférer sur un autre appareil.</p>';
+  html+=eff;
+  html+='<div class="pres-tools"><button class="pres-btn" onclick="presExportCSV()">⬇️ Exporter CSV</button><button class="pres-btn" onclick="presBackup()">💾 Sauvegarde</button><label class="pres-btn" style="cursor:pointer">↺ Restaurer<input type="file" accept="application/json,.json" style="display:none" onchange="presRestore(this)"></label></div>';
+  html+='<div class="pres-wrap"><table class="pres">'+thead+tbody+'</table></div>';
+  html+=presBilanHTML();
+  appEl.innerHTML=html;
+}
+presLoad();
 
 renderCalendar();
 </script>
